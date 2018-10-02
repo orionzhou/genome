@@ -52,16 +52,22 @@ ti = read_tsv(fi, col_names = F) %>%
 
 to = ti %>% group_by(mid, sids, gid) %>%
     summarise(bp = max(bp)) %>% ungroup()
+to %>% mutate(exonic = ifelse(gid == '.', T, F)) %>% count(exonic)
 
 ft = '/home/springer/zhoux379/data/genome/B73/61_functional/06.tf.tsv'
 tt = read_tsv(ft) %>% distinct(gid) %>% mutate(tf = T)
 
 tz = to %>% left_join(tt, by = 'gid')
-tz %>% dplyr::count(tf)
+fo = file.path(dirw, "15.uniformmu.exon.tsv")
+write_tsv(tz, fo)
 
-tz %>% filter(gid != '.') %>%
+x = tz %>% filter(gid != '.') %>%
     group_by(gid) %>% summarise(n_mu = n()) %>% ungroup() %>%
+    mutate(n_mu = ifelse(n_mu >= 3, ">=3", n_mu)) %>%
     count(n_mu)
+x
+sum(x$n)
+sum(x %>% filter(n_mu != '1') %>% pull(n))
 
 tz %>% filter(gid != '.', !is.na(tf)) %>%
     group_by(gid) %>% summarise(n_mu = n()) %>% ungroup() %>%
