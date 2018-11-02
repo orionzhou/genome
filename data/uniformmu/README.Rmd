@@ -51,7 +51,7 @@ A total of 14,831 genes have at least one exonic insertion sites, 9,046 have at 
 
 - Table 1.  Summary of genes with at least one exonic UniformMu insertion sites.
 
-```{r echo = FALSE}
+```{r message=FALSE, warning=FALSE}
 require(tidyverse)
 require(knitr)
 require(kableExtra)
@@ -62,9 +62,8 @@ ti = read_tsv(fi)
 tt = ti %>% count(n_mu)
 kable(tt, format = 'markdown', booktabs = T, 
     align = 'r',
-    col.names = c('# exonic insertions', '# genes')) %>%
-    #caption = "Table 1.  Alignment statistics.") %>%
-  #column_spec(1, bold=T) %>%#, width_min='7cm') %>%
-  kable_styling(latex_options = c('striped','scale_down'))
+    col.names = c('# exonic insertions', '# genes'),
+    caption = "Table 1.  Alignment statistics.") #%>%
+  #column_spec(1, bold=T) %>%#, width_min='7cm')
 ```
 

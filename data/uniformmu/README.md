@@ -55,25 +55,27 @@ have at least two exonic insertions.
 
 <!-- end list -->
 
-    ## Parsed with column specification:
-    ## cols(
-    ##   gid = col_character(),
-    ##   n_mu = col_character(),
-    ##   mid = col_character(),
-    ##   sids = col_character(),
-    ##   tf = col_logical(),
-    ##   ttype = col_character(),
-    ##   impact = col_character(),
-    ##   eff = col_character(),
-    ##   de_BM = col_character()
-    ## )
-
-    ## Warning in kable_styling(., latex_options = c("striped", "scale_down")):
-    ## Please specify format in kable. kableExtra can customize either HTML or
-    ## LaTeX outputs. See https://haozhu233.github.io/kableExtra/ for details.
+``` r
+require(tidyverse)
+require(knitr)
+require(kableExtra)
+options(knitr.kable.NA = '')
+dirw = '~/projects/genomes/data/uniformmu' 
+fi = file.path(dirw, '/15.uniformmu.exon.tsv')
+ti = read_tsv(fi)
+tt = ti %>% count(n_mu)
+kable(tt, format = 'markdown', booktabs = T, 
+    align = 'r',
+    col.names = c('# exonic insertions', '# genes'),
+    caption = "Table 1.  Alignment statistics.") #%>%
+```
 
 | \# exonic insertions | \# genes |
 | -------------------: | -------: |
 |                 \>=3 |     5699 |
 |                    1 |     5784 |
 |                    2 |     3347 |
+
+``` r
+  #column_spec(1, bold=T) %>%#, width_min='7cm')
+```
