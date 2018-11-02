@@ -55,12 +55,14 @@ to = ti %>% group_by(mid, sids, gid) %>%
     summarise(bp = max(bp)) %>% ungroup()
 to %>% mutate(exonic = ifelse(gid == '.', T, F)) %>% count(exonic)
 
+n_mus = c('1','2','>=3')
 tg1 = to %>% filter(gid != '.') %>%
     group_by(gid) %>% 
     summarise(n_mu = n(), 
               mid = str_c(mid, sep = "|", collapse = "|"),
               sids = str_c(sids, sep = "|", collapse = "|")) %>% ungroup() %>%
-    mutate(n_mu = ifelse(n_mu >= 3, ">=3", n_mu)) 
+    mutate(n_mu = ifelse(n_mu >= 3, ">=3", n_mu)) %>%
+    mutate(n_mu = factor(n_mu, levels = n_mus))
 
 # add TF info
 ft = '~/data/genome/B73/61_functional/06.tf.tsv'
@@ -71,9 +73,11 @@ tg2 = tg1 %>% left_join(tt, by = 'gid') %>%
 # add W22-B73 lookup table
 fi = '~/projects/wgc/data/05_stats/10.B73_W22.tsv'
 ti = read_tsv(fi)
+impacts = c("no_change","low",'modifier','moderate','high','non-syntenic')
 tg3 = tg2 %>% left_join(ti, by = 'gid') %>%
     filter(!is.na(syn)) %>%
     mutate(impact = ifelse(syn=='syntenic', impact, syn)) %>%
+    mutate(impact = factor(impact, levels = impacts)) %>%
     select(-po, -syn,-tid)
 
 # add B73-Mo17 variation data
@@ -88,14 +92,21 @@ tm0 = tm %>% select(gid, Tissue, pDE) %>%
     select(-n_de_BM)
 tg4 = tg3 %>% left_join(tm0, by = 'gid') %>% replace_na(list(de_BM='0'))
 
-tp = tg4
+# output
+ti = tg4
 fo = file.path(dirw, "15.uniformmu.exon.tsv")
-write_tsv(tp, fo)
+write_tsv(ti, fo)
+fo = file.path(dirw, "15.uniformmu.exon.rda")
+save(ti, file = fo)
 
-tp %>% count(n_mu)
-impacts = c("no_change","low",'modifier','moderate')
-tp %>% filter(impact %in% impacts) %>% count(de_BM)
-tp %>% filter(tf, n_mu >= 2, impact %in% impacts) %>% count(de_BM)
+ti %>% count(n_mu)
+ti %>% count(impact)
+ti %>% count(de_BM)
+ti %>% count(tf)
+low_impacts = c("no_change","low",'modifier','moderate')
+ti %>% filter(impact %in% low_impacts)
+ti %>% filter(tf, n_mu != '1', impact %in% low_impacts)
+ti %>% filter(tf, n_mu != '1', impact %in% low_impacts) %>% count(de_BM)
 #}}}
 
 
