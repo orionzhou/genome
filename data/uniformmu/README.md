@@ -60,9 +60,10 @@ have at least two exonic insertions.
 |                 \>=3 |     5699 |
 
 Structural integrity of these 14,831 B73 genes in the W22 genome were
-checked based on variants called by whole genome comparison between B73
-and W22. 10,236 genes have either no, low (such as synonymous change) or
-moderate (such as mis-sense) levels of changes in W22 compared to B73.
+checked based on variants called by [whole genome comparison between B73
+and W22](https://github.com/orionzhou/wgc/blob/master/Rmd/wgc.md).
+10,236 genes have either no, low (such as synonymous change) or moderate
+(such as mis-sense) levels of changes in W22 compared to B73.
 
   - Table 2. Summary of gene changes between B73 and W22.
 
