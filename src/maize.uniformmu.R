@@ -3,6 +3,7 @@ require(tidyverse)
 dirp = '~/projects/genomes'
 dird = file.path(dirp, 'data')
 dirw = file.path(dird, 'uniformmu')
+#}}}
 
 #{{{ reformat chr labels
 fi = file.path(dirw, "uniformmu_latest_release_v3.gff3")
@@ -30,7 +31,7 @@ write_tsv(to, fo, col_names = F)
 #}}}
 
 #{{{ create exon range BED
-fi = '/home/springer/zhoux379/data/genome/B73/50_annotation/10.tsv'
+fi = '~/data/genome/B73/50_annotation/10.tsv'
 ti = read_tsv(fi)
 
 to = ti %>% filter(etype == 'exon') %>%
@@ -54,24 +55,48 @@ to = ti %>% group_by(mid, sids, gid) %>%
     summarise(bp = max(bp)) %>% ungroup()
 to %>% mutate(exonic = ifelse(gid == '.', T, F)) %>% count(exonic)
 
-ft = '/home/springer/zhoux379/data/genome/B73/61_functional/06.tf.tsv'
+tg1 = to %>% filter(gid != '.') %>%
+    group_by(gid) %>% 
+    summarise(n_mu = n(), 
+              mid = str_c(mid, sep = "|", collapse = "|"),
+              sids = str_c(sids, sep = "|", collapse = "|")) %>% ungroup() %>%
+    mutate(n_mu = ifelse(n_mu >= 3, ">=3", n_mu)) 
+
+# add TF info
+ft = '~/data/genome/B73/61_functional/06.tf.tsv'
 tt = read_tsv(ft) %>% distinct(gid) %>% mutate(tf = T)
+tg2 = tg1 %>% left_join(tt, by = 'gid') %>%
+    replace_na(list(tf = F))
 
-tz = to %>% left_join(tt, by = 'gid')
+# add W22-B73 lookup table
+fi = '~/projects/wgc/data/05_stats/10.B73_W22.tsv'
+ti = read_tsv(fi)
+tg3 = tg2 %>% left_join(ti, by = 'gid') %>%
+    filter(!is.na(syn)) %>%
+    mutate(impact = ifelse(syn=='syntenic', impact, syn)) %>%
+    select(-po, -syn,-tid)
+
+# add B73-Mo17 variation data
+fi = '~/projects/briggs/data/42_de/11.de.dom.rda'
+x = load(fi)
+tm0 = tm %>% select(gid, Tissue, pDE) %>% 
+    filter(!is.na(pDE) & pDE != 'non_DE') %>%
+    count(gid) %>% 
+    rename(n_de_BM = n) %>%
+    mutate(de_BM = cut(n_de_BM, breaks = c(0,1,5,10,Inf),
+                       labels = c("0",'1-5','5-10','10+'), right = F)) %>%
+    select(-n_de_BM)
+tg4 = tg3 %>% left_join(tm0, by = 'gid') %>% replace_na(list(de_BM='0'))
+
+tp = tg4
 fo = file.path(dirw, "15.uniformmu.exon.tsv")
-write_tsv(tz, fo)
+write_tsv(tp, fo)
 
-x = tz %>% filter(gid != '.') %>%
-    group_by(gid) %>% summarise(n_mu = n()) %>% ungroup() %>%
-    mutate(n_mu = ifelse(n_mu >= 3, ">=3", n_mu)) %>%
-    count(n_mu)
-x
-sum(x$n)
-sum(x %>% filter(n_mu != '1') %>% pull(n))
-
-tz %>% filter(gid != '.', !is.na(tf)) %>%
-    group_by(gid) %>% summarise(n_mu = n()) %>% ungroup() %>%
-    count(n_mu)
+tp %>% count(n_mu)
+impacts = c("no_change","low",'modifier','moderate')
+tp %>% filter(impact %in% impacts) %>% count(de_BM)
+tp %>% filter(tf, n_mu >= 2, impact %in% impacts) %>% count(de_BM)
 #}}}
 
-#}}}
+
+
