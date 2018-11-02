@@ -37,15 +37,13 @@ header-includes:
 ---
 \pagenumbering{gobble}
 
-Raw GFF3 file mapping to B73 AGPv3 were obtained from maizeGDB
-  - 79,407 insertion sites and related stocks information
-
-Insertion sites were lifted over to AGPv4
-  - 77,085 sites
-
-The overlap of these sites with AGPv4 exons were checked:
-  - 36,648 sites overlap w. at least one exon(s)
-  - 38,778 sites do not overlap w. an exon (i.e., either in introns, UTRs or intergenic spaces)
+* Raw GFF3 file mapping to B73 AGPv3 were obtained from maizeGDB
+  * 79,407 insertion sites and related stocks information
+* Insertion sites were lifted over to AGPv4
+  * 77,085 sites
+* The overlap of these sites with AGPv4 exons were checked:
+  * 36,648 sites overlap w. at least one exon(s)
+  * 38,778 sites do not overlap w. an exon (i.e., either in introns, UTRs or intergenic spaces)
 
 A total of 14,831 genes have at least one exonic insertion sites, 9,046 have at least two exonic insertions.
 
