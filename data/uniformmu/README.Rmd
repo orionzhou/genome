@@ -60,7 +60,7 @@ dirw = '~/projects/genomes/data/uniformmu'
 fi = file.path(dirw, '/15.uniformmu.exon.tsv')
 ti = read_tsv(fi)
 tt = ti %>% count(n_mu)
-kable(tt, format = 'latex', booktabs = T, 
+kable(tt, format = 'markdown', booktabs = T, 
     align = 'r',
     col.names = c('# exonic insertions', '# genes')) %>%
     #caption = "Table 1.  Alignment statistics.") %>%

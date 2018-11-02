@@ -67,3 +67,13 @@ have at least two exonic insertions.
     ##   eff = col_character(),
     ##   de_BM = col_character()
     ## )
+
+    ## Warning in kable_styling(., latex_options = c("striped", "scale_down")):
+    ## Please specify format in kable. kableExtra can customize either HTML or
+    ## LaTeX outputs. See https://haozhu233.github.io/kableExtra/ for details.
+
+| \# exonic insertions | \# genes |
+| -------------------: | -------: |
+|                 \>=3 |     5699 |
+|                    1 |     5784 |
+|                    2 |     3347 |
