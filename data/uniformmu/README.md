@@ -92,13 +92,16 @@ in at least 5 tissues prioritized.
 Finally, 826 of these genes are transcription factor based on
 [PlantTFDB](http://planttfdb.cbi.pku.edu.cn/index.php?sp=Zma).
 
-[This table](/data/uniformmu/15.uniformmu.exon.tsv) lists all 14,831
-genes with at least one exonic UniformMu insertion sites, with columns:
-\* `gid`: AGPv4 gene ID \* `n_mu`: number exonic UniformMu insertion
-sites \* `mid`, `sids`: mutant ID and stock ID \* `tf`: whether this
-gene is TF \* `ttype`: type of gene, ncRNA or protein-coding mRNA \*
-`impact`, `eff`: impact and effect of the change from B73 to W22 \*
-`de_BM`: number of tissues showing DE between B73 and Mo17
+  - [This table](/data/uniformmu/15.uniformmu.exon.tsv) lists all 14,831
+    genes with at least one exonic UniformMu insertion sites, with
+    columns:
+      - `gid`: AGPv4 gene ID
+      - `n_mu`: number exonic UniformMu insertion sites
+      - `mid`, `sids`: mutant ID and stock ID
+      - `tf`: whether this gene is TF
+      - `ttype`: type of gene, ncRNA or protein-coding mRNA
+      - `impact`, `eff`: impact and effect of the change from B73 to W22
+      - `de_BM`: number of tissues showing DE between B73 and Mo17
 
 A total of 339 TFs have at least 2 exonic insertions and have gene
 structure conserved in the W22 genome.

@@ -89,7 +89,7 @@ kable(tt, format = 'markdown', booktabs = T,
 
 Finally, 826 of these genes are transcription factor based on [PlantTFDB](http://planttfdb.cbi.pku.edu.cn/index.php?sp=Zma).
 
-[This table](/data/uniformmu/15.uniformmu.exon.tsv) lists all 14,831 genes with at least one exonic UniformMu insertion sites, with columns:
+* [This table](/data/uniformmu/15.uniformmu.exon.tsv) lists all 14,831 genes with at least one exonic UniformMu insertion sites, with columns:
   * `gid`: AGPv4 gene ID
   * `n_mu`: number exonic UniformMu insertion sites
   * `mid`, `sids`: mutant ID and stock ID
