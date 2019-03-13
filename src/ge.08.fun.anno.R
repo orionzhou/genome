@@ -1,23 +1,12 @@
-#{{{
-require(tidyverse)
-#
-dirw = '~/data/genome/B73/61_functional'
-fg = file.path(dirw, "../50_annotation/10.gtb")
-tg = read_tsv(fg, col_types = 'ccciiccccccccccccc')
-gids = unique(tg$par)
-length(gids)
-#
+source('functions.R')
+dirw = file.path(dirg, 'B73/61_functional')
+gcfg = read_genome_conf()
+gids = gcfg$size.gene$gid
 fm = file.path(dirw, "../gene_mapping/maize.v3TOv4.geneIDhistory.txt")
 tm = read_tsv(fm, col_names = F) %>%
     transmute(ogid = X1, gid = X2, change = X3, method = X4, type = X5)
 length(unique(tm$gid))
 sum(unique(tm$gid) %in% gids)
-#
-Mode <- function(x) {
-    ux <- unique(x)
-    ux[which.max(tabulate(match(x, ux)))]
-}
-#}}}
 
 #{{{ # interpro
 dirg = '~/data/genome/Zmays_v4/61.interpro'
@@ -104,16 +93,13 @@ ti = read_tsv(fi, col_names = T) %>%
 
 tf = ti %>%
     inner_join(tm, by = 'ogid') %>%
-    filter(gid %in% gids) %>%
     #filter(type == '1-to-1') %>%
-    select(gid, fam)
-tfs = tf %>% distinct(fam) %>% arrange(fam) %>%
-    mutate(fid = sprintf("tf%04d", 1:length(fam)))
-tf = tf %>% inner_join(tfs, by = 'fam') %>%
-    select(fid, gid, fam) %>%
-    arrange(fid, gid)
+    distinct(gid, fam) %>%
+    filter(gid %in% gids) %>%
+    group_by(gid) %>%
+    summarise(fam = Mode(fam)) %>% ungroup()
 
-tf %>% count(fid)
+tf %>% count(fam)
 fo = file.path(dirw, "06.tf.tsv")
 write_tsv(tf, fo)
 #}}}
