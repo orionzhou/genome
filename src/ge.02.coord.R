@@ -26,6 +26,26 @@ fo = file.path(dirw, '10.ase.bed')
 write_tsv(ta, fo, col_names = F)
 #}}}
 
+#{{{ TSS for each gene
+dirw = file.path(dirg, genome, '50_annotation')
+fi = file.path(dirw, "15.tsv")
+ti = read_tsv(fi) %>% filter(etype == 'exon')
+
+tc = ti %>% filter(ttype=='mRNA') %>%
+    group_by(gid, tid) %>%
+    summarise(chrom=chrom[1], start=min(start), end=max(end), srd=srd[1]) %>%
+    ungroup() %>%
+    mutate(tss = ifelse(srd=='-', end, start)) %>%
+    arrange(chrom, tss) %>%
+    mutate(gstart=start, gend=end) %>%
+    mutate(start=tss-1, end=tss) %>%
+    select(chrom,start,end,srd, gid, tid, gstart,gend)
+
+to = tc
+fo = file.path(dirw, '15.tss.bed')
+write_tsv(to, fo, col_names = F)
+#}}}
+
 #{{{ gap stats
 genomes = c("B73", "W22", "PH207")
 

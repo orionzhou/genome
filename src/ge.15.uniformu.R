@@ -7,7 +7,7 @@ dirw = file.path(dird, 'uniformmu')
 
 #{{{ reformat chr labels
 fi = file.path(dirw, "uniformmu_latest_release_v3.gff3")
-ti = read_tsv(fi, col_names = F) 
+ti = read_tsv(fi, col_names = F)
 to = ti %>% mutate(X1 = str_replace(X1, "Chr([\\d+])", "\\1"))
 fo = file.path(dirw, "01.uniformmu_v3.gff")
 write_tsv(to, fo, col_names = F)
@@ -25,13 +25,13 @@ ti = read_tsv(fi, col_names = F) %>%
     select(chrom, beg, end, name, stocks) %>%
     arrange(chrom, beg, end)
 
-to = ti %>% mutate(beg = beg - 1) 
+to = ti %>% mutate(beg = beg - 1)
 fo = file.path(dirw, "11.uniformmu.bed")
 write_tsv(to, fo, col_names = F)
 #}}}
 
 #{{{ create exon range BED
-fi = '~/data/genome/B73/50_annotation/10.tsv'
+fi = '~/projects/genome/data/B73/50_annotation/10.tsv'
 ti = read_tsv(fi)
 
 to = ti %>% filter(etype == 'exon') %>%
