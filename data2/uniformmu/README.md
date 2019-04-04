@@ -52,7 +52,7 @@ First, all 470 TFs were filtered by the following criteria:
 Next, three different sets were obtained:
 * 34 TFs with support from previous eQTL studies
 * 20 TFs supported by the biomAP dataset with the most number of targets (53 - 286)
-* 21 TFs in one of the five families (`HSF,LBD,SBP,TCP,WRKY,MYB`) and at least 2 insertion sites
+* 21 TFs in one of these families (`HSF,LBD,SBP,TCP,WRKY,MYB`) and at least 2 insertion sites
 
 [Final list of 70 selected TFs](https://docs.google.com/spreadsheets/d/1O4fHFqv-60JWQNa0E55ePWOd7gGJdj89HCXyt8e1nVA/edit?usp=sharing)
 ## Selection of UniformMu stocks
@@ -62,7 +62,7 @@ For TFs with >=3 insertions, different insertion sites were ranked by the rules 
 * the more upstream (five prime) insertion site is given higher rank
 
 For insertion sites with multiple stocks, the first stock is taken
-[124 UniformMu insertion sites / stocks selected](32.gene.stocks.tsv)
+[124 UniformMu insertion sites selected](https://docs.google.com/spreadsheets/d/1O4fHFqv-60JWQNa0E55ePWOd7gGJdj89HCXyt8e1nVA/edit?usp=sharing)
 
 ## UniformMu stock ordering
 
@@ -70,5 +70,5 @@ These stocks were checked for previous ordering history (from `Springer_UniformM
 * 12 stocks were ordered in a previous season
 * 109 stocks were not ordered before and will be ordered
 
-[stocks to order](34.stocks.tsv)
+[109 stocks to order](https://docs.google.com/spreadsheets/d/1O4fHFqv-60JWQNa0E55ePWOd7gGJdj89HCXyt8e1nVA/edit?usp=sharing)
 
