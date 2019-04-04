@@ -171,7 +171,8 @@ ti2 = ti %>% mutate(cond = str_replace(cond, "_Ref_counts.txt", "")) %>%
 #
 tis_map = c('A'='Anther','En'='Endosperm','Em'='Embryo','I'='Internode',
 'IE'='Ear', 'L'='Leaf','L10'='Leaf10', 'R'='Root', 'SC'='Shoot', 'T'='Tassel')
-ti3 = ti2 %>% filter(Tissue %in% c("En","Em","L10","SC","R","I")) %>%
+ti3 = ti2 %>% filter(Genotype %in% c("B","W")) %>%
+    filter(Tissue %in% c("En","Em","L10","SC","R","I")) %>%
     mutate(Tissue=tis_map[Tissue]) %>%
     mutate(cond = sprintf("%s_%s", Genotype, Tissue)) %>%
     select(gid,cond,rpm) %>%
@@ -180,7 +181,7 @@ ti3 = ti2 %>% filter(Tissue %in% c("En","Em","L10","SC","R","I")) %>%
 te = ti3
 #}}}
 
-#{{{ select TF mutants
+#{{{ further characterize all TF mutants
 fi = file.path(dirw, "16.gene.mu.tsv")
 ta = read_tsv(fi)
 
@@ -214,18 +215,63 @@ fo = file.path(dirw, '20.tf.tsv')
 write_tsv(to, fo)
 #}}}
 
+#{{{ select TF mutants
 fi = file.path(dirw, '20.tf.tsv')
 ti = read_tsv(fi)
+ti
+ti2 = ti %>% filter(n_mu >= 1, map_type == 'One-to-One', max_W22_exp >= 2)
 
-gids1 = ti %>% filter(eQTL != '', str_detect(eQTL,',')) %>% pull(gid_B73)
-gids2 = ti %>% filter(n.tgt >= 3) %>% arrange(desc(n.tgt)) %>%
+gids1 = ti2 %>% filter(eQTL != '', str_detect(eQTL,',')) %>% pull(gid_B73)
+gids2 = ti2 %>% filter(n.tgt >= 3) %>% arrange(desc(n.tgt)) %>%
     filter(row_number() <= 20) %>% pull(gid_B73)
-gids3 = ti %>%
-    filter(fam %in% c("HSF","LBD","SBP","TCP","WRKY"),
-           n_mu >= 2, map_type == 'One-to-One', max_W22_exp >= 2) %>%
+gids3 = ti2 %>%
+    filter(fam %in% c("HSF","LBD","SBP","TCP","WRKY"), n_mu >= 2) %>%
     pull(gid_B73)
-gids = c(gids1, gids2, gids3)
-to = ti %>% filter(gid_B73 %in% gids)
+to1 = tibble(select='eQTL', gid=gids1)
+to2 = tibble(select='biomAP', gid=gids2)
+to3 = tibble(select='multi-fam', gid=gids3)
+to = rbind(to1,to2,to3) %>% group_by(gid) %>%
+    summarise(select=paste(select,collapse=',')) %>% ungroup()
+to = ti %>% inner_join(to, by=c('gid_B73'='gid')) %>%
+    select(gid_B73, select, everything()) %>%
+    arrange(select, fam, gid_B73)
 
 fo = file.path(dirw, '30.tf.selected.tsv')
 write_tsv(to, fo)
+#}}}
+
+#{{{ stock order
+fi = file.path(dirw, '30.tf.selected.tsv')
+ti = read_tsv(fi)
+fi = file.path(dirw, "15.mu.genic.tsv")
+mu = read_tsv(fi)
+etypes = c("cds",'utr5','utr3')
+
+tm = ti %>% select(gid=gid_B73, select_reason=select, n_mu=n_mu) %>%
+    inner_join(mu, by='gid') %>% filter(etype!='intron')
+tm %>% count(gid, n_mu) %>% mutate(nd = n-n_mu) %>% pull(nd)
+tm = tm %>% mutate(etype=factor(etype, levels=etypes)) %>%
+    arrange(gid, etype, eidx) %>%
+    group_by(gid) %>%
+    filter(row_number() <= 3) %>% ungroup()
+
+tm2 = tm %>% select(-n_mu) %>%
+    mutate(sid = str_split(sids, ',')) %>%
+    mutate(sid = map_chr(sid, 1)) %>%
+    arrange(select_reason, gid)
+
+fo = file.path(dirw, '32.gene.stocks.tsv')
+write_tsv(tm2, fo)
+
+tm3 = tm2 %>% group_by(sid) %>%
+    summarise(gid=paste(gid, collapse='|'),
+              select_reason = paste(select_reason, collapse='|')) %>%
+    ungroup() %>%
+    left_join(t_od, by=c('sid'='stock')) %>%
+    arrange(season, sid)
+tm3 %>% filter(is.na(season))
+
+fo = file.path(dirw, '34.stocks.tsv')
+write_tsv(tm3, fo)
+#}}}
+
