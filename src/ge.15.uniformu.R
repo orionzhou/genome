@@ -1,8 +1,13 @@
 #{{{
+require(devtools)
+load_all('~/git/rmaize')
 require(tidyverse)
-dirp = '~/projects/genomes'
-dird = file.path(dirp, 'data')
+dirp = '~/projects/genome'
+dird = file.path(dirp, 'data2')
 dirw = file.path(dird, 'uniformmu')
+f_od = file.path(dirw, 'Springer_UniformMu_orders.xlsx')
+t_od = read_xlsx(f_od)
+colnames(t_od) = c("row",'stock','season')
 #}}}
 
 #{{{ reformat chr labels
@@ -31,83 +36,196 @@ write_tsv(to, fo, col_names = F)
 #}}}
 
 #{{{ create exon range BED
-fi = '~/projects/genome/data/B73/50_annotation/10.tsv'
+fi = '~/projects/genome/data/B73/50_annotation/15.tsv'
 ti = read_tsv(fi)
+#
+infer_intron <- function(td) {
+    #{{{
+    chrom = td$chrom[1]; srd = td$srd[1]
+    begs = td$start; ends = td$end
+    tibble(chrom = chrom,
+           start = ends[-nrow(td)]+1, end=begs[-1],
+           srd = srd)
+    #}}}
+}
 
-to = ti %>% filter(etype == 'exon') %>%
-    select(chrom, start, end, srd, gid, tid) %>%
+tx = ti %>% filter(etype=='exon') %>% select(-etype)
+gids_2exon = tx %>% count(gid) %>% filter(n>1) %>% pull(gid)
+t_intr = tx %>% filter(gid %in% gids_2exon) %>%
+    arrange(chrom, start) %>%
+    group_by(gid) %>% nest() %>%
+    mutate(intron=map(data, infer_intron)) %>%
+    select(-data) %>% unnest() %>% mutate(etype = 'intron')
+
+etype_map = c("CDS"='cds','five_prime_UTR'='utr5','three_prime_UTR'='utr3')
+to = ti %>% filter(ttype == 'mRNA', etype != 'exon') %>%
+    mutate(etype=etype_map[etype]) %>%
+    select(gid, etype, chrom, start, end, srd)
+to = rbind(to, t_intr)
+to1 = to %>% filter(srd == '+') %>%
+    arrange(chrom, start) %>%
+    group_by(gid, etype) %>%
+    mutate(eidx = 1:n()) %>% ungroup()
+to2 = to %>% filter(srd == '-') %>%
+    arrange(chrom, desc(start)) %>%
+    group_by(gid, etype) %>%
+    mutate(eidx = 1:n()) %>% ungroup()
+
+to = rbind(to1, to2) %>% arrange(chrom, start) %>%
     mutate(start = start - 1) %>%
-    arrange(chrom, start)
-fo = file.path(dirw, "12.exon.bed")
+    select(chrom,start,end,srd,gid,etype,eidx)
+fo = file.path(dirw, "12.genic.bed")
 write_tsv(to, fo, col_names = F)
-#}}}
+
 # intersectBed -a 11 -b 12 -wao > 13
 
-#{{{
+etypes = c('cds','utr5','utr3','intron')
 fi = file.path(dirw, "13.ovlp.bed")
-ti = read_tsv(fi, col_names = F) %>%
-    mutate(mchrom = X1, mbeg = X2, mend = X3, mid = X4, sids = X5,
-           echrom = X6, ebeg = X7, eend = X8, esrd = X9, gid = X10, tid = X11,
-           bp = X12) %>%
-    select(mid, sids, gid, tid, bp) 
+ti = read_tsv(fi, col_names = c('mchrom','mbeg','mend','mid','sids',
+                                'echrom','ebeg','eend','esrd','gid',
+                                'etype','eidx','bp')) %>%
+    select(mid, sids, gid, etype, eidx, bp) %>%
+    mutate(etype = factor(etype, levels=etypes)) %>%
+    arrange(mid, sids, gid, etype, desc(bp), eidx) %>%
+    group_by(mid, sids, gid) %>%
+    summarise(etype=etype[1], eidx=eidx[1]) %>% ungroup()
+ti %>% mutate(genic = ifelse(gid == '.', T, F)) %>% count(genic)
+mu = ti %>% filter(gid != '.')
 
-to = ti %>% group_by(mid, sids, gid) %>%
-    summarise(bp = max(bp)) %>% ungroup()
-to %>% mutate(exonic = ifelse(gid == '.', T, F)) %>% count(exonic)
+fo = file.path(dirw, '15.mu.genic.tsv')
+write_tsv(mu, fo)
+#}}}
 
+#{{{ add meta
+fi = file.path(dirw, "15.mu.genic.tsv")
+mu = read_tsv(fi)
 n_mus = c('1','2','>=3')
-tg1 = to %>% filter(gid != '.') %>%
-    group_by(gid) %>% 
-    summarise(n_mu = n(), 
+tg1 = mu %>% filter(etype != 'intron') %>%
+    group_by(gid) %>%
+    summarise(n_mu = n(),
               mid = str_c(mid, sep = "|", collapse = "|"),
               sids = str_c(sids, sep = "|", collapse = "|")) %>% ungroup() %>%
-    mutate(n_mu = ifelse(n_mu >= 3, ">=3", n_mu)) %>%
-    mutate(n_mu = factor(n_mu, levels = n_mus))
+    mutate(n_mu_p = ifelse(n_mu >= 3, ">=3", n_mu)) %>%
+    mutate(n_mu_p = factor(n_mu_p, levels = n_mus))
 
 # add TF info
-ft = '~/data/genome/B73/61_functional/06.tf.tsv'
-tt = read_tsv(ft) %>% distinct(gid) %>% mutate(tf = T)
+ft = file.path(dirp, 'data/B73/61_functional/06.tf.tsv')
+tt = read_tsv(ft)
+tts = tt %>% count(fam) %>% rename(fam_size=n)
+tt = tt %>% inner_join(tts, by='fam') %>%
+    group_by(fam) %>% mutate(fam_idx = 1:n()) %>% ungroup() %>%
+    mutate(fam_idx_size = sprintf("%d/%d", fam_idx, fam_size)) %>%
+    mutate(tf = T)
 tg2 = tg1 %>% left_join(tt, by = 'gid') %>%
     replace_na(list(tf = F))
 
-# add W22-B73 lookup table
+# add W22 gene ID
+fi = '~/projects/genome/data/B73/gene_mapping/B73_W22.tsv'
+ti = read_tsv(fi,col_names=c('chr1','start1','end1','gid1','chr2','start2','end2','gid2','src','type')) %>%
+    transmute(gid=gid1, gid_W22=gid2, map_type=type)
+ti2 = ti %>% group_by(gid) %>%
+    summarise(gid_W22 = paste(gid_W22,collapse=','),
+              map_type = paste(sort(unique(map_type)), collapse=',')) %>% ungroup()
+tg3 = tg2 %>% left_join(ti2, by='gid')
+
+# add W22-B73 gene model change
 fi = '~/projects/wgc/data/05_stats/10.B73_W22.tsv'
 ti = read_tsv(fi)
 impacts = c("no_change","low",'modifier','moderate','high','non-syntenic')
-tg3 = tg2 %>% left_join(ti, by = 'gid') %>%
-    filter(!is.na(syn)) %>%
+tg4 = tg3 %>% left_join(ti, by = 'gid') %>%
+    replace_na(list(syn='non-syntenic')) %>%
     mutate(impact = ifelse(syn=='syntenic', impact, syn)) %>%
     mutate(impact = factor(impact, levels = impacts)) %>%
     select(-po, -syn,-tid)
-
-# add B73-Mo17 variation data
-fi = '~/projects/briggs/data/42_de/11.de.dom.rda'
-x = load(fi)
-tm0 = tm %>% select(gid, Tissue, pDE) %>% 
-    filter(!is.na(pDE) & pDE != 'non_DE') %>%
-    count(gid) %>% 
-    rename(n_de_BM = n) %>%
-    mutate(de_BM = cut(n_de_BM, breaks = c(0,1,5,10,Inf),
-                       labels = c("0",'1-5','5-10','10+'), right = F)) %>%
-    select(-n_de_BM)
-tg4 = tg3 %>% left_join(tm0, by = 'gid') %>% replace_na(list(de_BM='0'))
+tg4 %>% filter(tf) %>% count(map_type, impact) %>% print(n=30)
 
 # output
-ti = tg4
-fo = file.path(dirw, "15.uniformmu.exon.tsv")
-write_tsv(ti, fo)
-fo = file.path(dirw, "15.uniformmu.exon.rda")
-save(ti, file = fo)
+to = tg4
+fo = file.path(dirw, "16.gene.mu.tsv")
+write_tsv(to, fo)
 
-ti %>% count(n_mu)
+ti %>% count(n_mu_p)
 ti %>% count(impact)
-ti %>% count(de_BM)
 ti %>% count(tf)
 low_impacts = c("no_change","low",'modifier','moderate')
 ti %>% filter(impact %in% low_impacts)
 ti %>% filter(tf, n_mu != '1', impact %in% low_impacts)
-ti %>% filter(tf, n_mu != '1', impact %in% low_impacts) %>% count(de_BM)
+ti %>% filter(tf, n_mu != '1', impact %in% low_impacts)
 #}}}
 
+#{{{ process W22 expression
+fi1 = file.path(dirw, 'Samples_B73_Ref_HTseq.txt')
+fi2 = file.path(dirw, 'Samples_W22_Ref_HTseq.txt')
+ti = read_tsv(fi1) %>% gather(cond, counts, -Genes) %>%
+    rename(gid=Genes) %>%
+    filter(!str_detect(gid, '^_'))
+#
+ti2 = ti %>% mutate(cond = str_replace(cond, "_Ref_counts.txt", "")) %>%
+    separate(cond, c('cond','ref'), sep='_') %>%
+    separate(cond, c('Genotype',"Tissue",'Rep'), sep='-') %>%
+    group_by(gid,Genotype,Tissue) %>%
+    summarize(counts = sum(counts)) %>% ungroup() %>%
+    group_by(Genotype, Tissue) %>%
+    mutate(rpm = counts/sum(counts) * 1000000) %>%
+    ungroup()
+#
+tis_map = c('A'='Anther','En'='Endosperm','Em'='Embryo','I'='Internode',
+'IE'='Ear', 'L'='Leaf','L10'='Leaf10', 'R'='Root', 'SC'='Shoot', 'T'='Tassel')
+ti3 = ti2 %>% filter(Tissue %in% c("En","Em","L10","SC","R","I")) %>%
+    mutate(Tissue=tis_map[Tissue]) %>%
+    mutate(cond = sprintf("%s_%s", Genotype, Tissue)) %>%
+    select(gid,cond,rpm) %>%
+    mutate(rpm = sprintf("%.01f", rpm)) %>%
+    spread(cond, rpm)
+te = ti3
+#}}}
 
+#{{{ select TF mutants
+fi = file.path(dirw, "16.gene.mu.tsv")
+ta = read_tsv(fi)
 
+# add TF45 info
+fi = '~/projects/grn/data/08_y1h/10.tsv'
+ti = read_tsv(fi) %>% distinct(reg) %>% transmute(gid=reg, TF45=T)
+ta2 = ta %>% left_join(ti, by='gid') %>% replace_na(list(TF45=F))
+ta2 = ta2 %>% filter(tf | TF45) %>% select(-tf)
+
+# add biomap support
+fi = '~/projects/grn/data/14_eval_sum/02.valid.bm.spc.rds'
+ti = readRDS(fi)$tf
+ta3 = ta2 %>% left_join(ti, by=c('gid'='reg.gid')) %>%
+	replace_na(list(n.tgt=0))
+
+# add eQTL support
+fi = '~/projects/grn/data/14_eval_sum/02.hs.tsv'
+ti = read_tsv(fi)
+ta4 = ta3 %>% left_join(ti, by=c('gid'='reg.gid')) %>%
+	rename(eQTL=qtags) %>%
+	replace_na(list(eQTL=''))
+
+# add W22 expression
+ta5 = ta4 %>% left_join(te, by='gid') %>%
+    mutate(max_W22_exp=pmax(W_Embryo,W_Endosperm,W_Internode,W_Leaf10,W_Root,W_Shoot))
+
+to = ta5
+to = to %>% rename(gid_B73=gid) %>%
+    select(-n_mu_p, -fam_idx_size, -ttype)
+fo = file.path(dirw, '20.tf.tsv')
+write_tsv(to, fo)
+#}}}
+
+fi = file.path(dirw, '20.tf.tsv')
+ti = read_tsv(fi)
+
+gids1 = ti %>% filter(eQTL != '', str_detect(eQTL,',')) %>% pull(gid_B73)
+gids2 = ti %>% filter(n.tgt >= 3) %>% arrange(desc(n.tgt)) %>%
+    filter(row_number() <= 20) %>% pull(gid_B73)
+gids3 = ti %>%
+    filter(fam %in% c("HSF","LBD","SBP","TCP","WRKY"),
+           n_mu >= 2, map_type == 'One-to-One', max_W22_exp >= 2) %>%
+    pull(gid_B73)
+gids = c(gids1, gids2, gids3)
+to = ti %>% filter(gid_B73 %in% gids)
+
+fo = file.path(dirw, '30.tf.selected.tsv')
+write_tsv(to, fo)
