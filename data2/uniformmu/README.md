@@ -52,7 +52,7 @@ First, all 470 TFs were filtered by the following criteria:
 Next, three different sets were obtained:
 * 34 TFs with support from previous eQTL studies
 * 20 TFs supported by the biomAP dataset with the most number of targets (53 - 286)
-* 21 TFs in one of the five families (`HSF,LBD,SBP,TCP,WRKY`) and at least 2 insertion sites
+* 21 TFs in one of the five families (`HSF,LBD,SBP,TCP,WRKY,MYB`) and at least 2 insertion sites
 
 [Final list of 70 selected TFs](https://docs.google.com/spreadsheets/d/1O4fHFqv-60JWQNa0E55ePWOd7gGJdj89HCXyt8e1nVA/edit?usp=sharing)
 ## Selection of UniformMu stocks
