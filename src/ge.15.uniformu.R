@@ -100,7 +100,9 @@ write_tsv(mu, fo)
 fi = file.path(dirw, "15.mu.genic.tsv")
 mu = read_tsv(fi)
 n_mus = c('1','2','>=3')
-tg1 = mu %>% filter(etype != 'intron') %>%
+tg1 = mu %>%
+    #filter(etype != 'intron') %>%
+    filter(etype == 'cds') %>%
     group_by(gid) %>%
     summarise(n_mu = n(),
               mid = str_c(mid, sep = "|", collapse = "|"),
@@ -144,13 +146,13 @@ to = tg4
 fo = file.path(dirw, "16.gene.mu.tsv")
 write_tsv(to, fo)
 
-ti %>% count(n_mu_p)
-ti %>% count(impact)
-ti %>% count(tf)
+to %>% count(n_mu_p)
+to %>% count(impact)
+to %>% count(tf)
 low_impacts = c("no_change","low",'modifier','moderate')
-ti %>% filter(impact %in% low_impacts)
-ti %>% filter(tf, n_mu != '1', impact %in% low_impacts)
-ti %>% filter(tf, n_mu != '1', impact %in% low_impacts)
+to %>% filter(impact %in% low_impacts)
+to %>% filter(tf, n_mu != '1', impact %in% low_impacts)
+to %>% filter(tf, n_mu != '1', impact %in% low_impacts)
 #}}}
 
 #{{{ process W22 expression
@@ -201,7 +203,7 @@ ta3 = ta2 %>% left_join(ti, by=c('gid'='reg.gid')) %>%
 fi = '~/projects/grn/data/14_eval_sum/02.hs.tsv'
 ti = read_tsv(fi)
 ta4 = ta3 %>% left_join(ti, by=c('gid'='reg.gid')) %>%
-	rename(eQTL=qtags) %>%
+	rename(eQTL=qtags, eQTL_n=n_qtag, eQTL_fc=fc, eQTL_grp_size=max.grp.size) %>%
 	replace_na(list(eQTL=''))
 
 # add W22 expression
@@ -221,11 +223,13 @@ ti = read_tsv(fi)
 ti
 ti2 = ti %>% filter(n_mu >= 1, map_type == 'One-to-One', max_W22_exp >= 2)
 
-gids1 = ti2 %>% filter(eQTL != '', str_detect(eQTL,',')) %>% pull(gid_B73)
+gids1 = ti2 %>% filter(eQTL != '') %>%
+    #filter(str_detect(eQTL,',')) %>%
+    pull(gid_B73)
 gids2 = ti2 %>% filter(n.tgt >= 3) %>% arrange(desc(n.tgt)) %>%
     filter(row_number() <= 20) %>% pull(gid_B73)
 gids3 = ti2 %>%
-    filter(fam %in% c("HSF","LBD","SBP","TCP","WRKY"), n_mu >= 2) %>%
+    filter(fam %in% c("HSF","LBD","SBP","TCP","WRKY","MYB"), n_mu >= 2) %>%
     pull(gid_B73)
 to1 = tibble(select='eQTL', gid=gids1)
 to2 = tibble(select='biomAP', gid=gids2)
@@ -245,10 +249,10 @@ fi = file.path(dirw, '30.tf.selected.tsv')
 ti = read_tsv(fi)
 fi = file.path(dirw, "15.mu.genic.tsv")
 mu = read_tsv(fi)
-etypes = c("cds",'utr5','utr3')
+etypes = c("cds")
 
 tm = ti %>% select(gid=gid_B73, select_reason=select, n_mu=n_mu) %>%
-    inner_join(mu, by='gid') %>% filter(etype!='intron')
+    inner_join(mu, by='gid') %>% filter(etype %in% etypes)
 tm %>% count(gid, n_mu) %>% mutate(nd = n-n_mu) %>% pull(nd)
 tm = tm %>% mutate(etype=factor(etype, levels=etypes)) %>%
     arrange(gid, etype, eidx) %>%
@@ -270,6 +274,8 @@ tm3 = tm2 %>% group_by(sid) %>%
     left_join(t_od, by=c('sid'='stock')) %>%
     arrange(season, sid)
 tm3 %>% filter(is.na(season))
+tm3 %>% filter(!is.na(season))
+tm3 %>% filter(!is.na(season)) %>% count(sid)
 
 fo = file.path(dirw, '34.stocks.tsv')
 write_tsv(tm3, fo)

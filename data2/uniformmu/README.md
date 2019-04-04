@@ -11,9 +11,11 @@ Maize UniformMu mutants characterization
 
 [Table listing all UniformMu insertions overlapping w. an AGPv4 gene](15.mu.genic.tsv)
 
-* 15,597 genes have at least one insertion sites (UTR, CDS, intron)
+* 15,597 genes have at least one insertion sites (CDS, UTR5, UTR3, intron)
 * 13,631 have at least one exon insertion(s)
   * 7,905 have at least two exon insertions.
+* 7,421 have at least one CDS insertion(s)
+  * 2,681 have at least two CDS insertions.
 
 Extra information were added to the table:
 * The assignment to transcription factor family based on [PlantTFDB](http://planttfdb.cbi.pku.edu.cn/index.php?sp=Zma) was added.
@@ -29,7 +31,7 @@ Extra information were added to the table:
 
 ## Characterization of TF mutants
 
-Starting from 783 TFs with at least one insertion(s), with additional columns added:
+Starting from 470 TFs with at least one CDS insertion(s), with additional columns added:
 * `TF45`: One of the TF45 involved in phenolic biosynthesis?
 * `n.tgt`, `m.drc`, `tf.type`: support from the biomAP dataset
   * number of targets (`n.tgt`) supported by the biomAP dataset (in >=2 tissues)
@@ -42,17 +44,17 @@ Starting from 783 TFs with at least one insertion(s), with additional columns ad
 
 ## Selection of TF mutants
 
-First, all 783 TFs were filtered by the following criteria:
+First, all 470 TFs were filtered by the following criteria:
 * at least one exon insertion
 * `One-to-One` mapping between the B73 and W22 gene model
 * maximum W22 expression (RPM) > 2
 
 Next, three different sets were obtained:
-* 18 TFs with support from at least 2 previous eQTL studies
-* 20 TFs supported by the biomAP dataset with the most number of targets (72 - 389)
-* 38 TFs in one of the five families (`HSF,LBD,SBP,TCP,WRKY`) and at least 2 insertion sites
+* 34 TFs with support from previous eQTL studies
+* 20 TFs supported by the biomAP dataset with the most number of targets (53 - 286)
+* 21 TFs in one of the five families (`HSF,LBD,SBP,TCP,WRKY`) and at least 2 insertion sites
 
-[Final list of 74 selected TFs](https://docs.google.com/spreadsheets/d/1O4fHFqv-60JWQNa0E55ePWOd7gGJdj89HCXyt8e1nVA/edit?usp=sharing)
+[Final list of 70 selected TFs](https://docs.google.com/spreadsheets/d/1O4fHFqv-60JWQNa0E55ePWOd7gGJdj89HCXyt8e1nVA/edit?usp=sharing)
 ## Selection of UniformMu stocks
 
 For TFs with >=3 insertions, different insertion sites were ranked by the rules below and only the top 3 insertions were selected:
@@ -60,13 +62,13 @@ For TFs with >=3 insertions, different insertion sites were ranked by the rules 
 * the more upstream (five prime) insertion site is given higher rank
 
 For insertion sites with multiple stocks, the first stock is taken
-[168 UniformMu insertion sites / stocks selected](32.gene.stocks.tsv)
+[124 UniformMu insertion sites / stocks selected](32.gene.stocks.tsv)
 
 ## UniformMu stock ordering
 
 These stocks were checked for previous ordering history (from `Springer_UniformMu_orders.xlsx`):
-* 18 stocks were ordered in a previous season
-* 150 stocks were not ordered before and will be ordered
+* 12 stocks were ordered in a previous season
+* 109 stocks were not ordered before and will be ordered
 
 [stocks to order](34.stocks.tsv)
 
