@@ -62,6 +62,7 @@ For TFs with >=3 insertions, different insertion sites were ranked by the rules 
 * the more upstream (five prime) insertion site is given higher rank
 
 For insertion sites with multiple stocks, the first stock is taken
+
 [124 UniformMu insertion sites selected](https://docs.google.com/spreadsheets/d/1O4fHFqv-60JWQNa0E55ePWOd7gGJdj89HCXyt8e1nVA/edit?usp=sharing)
 
 ## UniformMu stock ordering
