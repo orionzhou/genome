@@ -250,34 +250,43 @@ ti = read_tsv(fi)
 fi = file.path(dirw, "15.mu.genic.tsv")
 mu = read_tsv(fi)
 etypes = c("cds")
+fi = file.path(dirw, "31.erika.selected.xlsx")
+tk = read_xlsx(fi) %>% select(gid=gid_B73, mu) %>%
+    replace_na(list(mu='')) %>%
+    mutate(mu = map(mu, str_split, "[\\|]")) %>% mutate(mu = map(mu, 1)) %>%
+    unnest()
 
 tm = ti %>% select(gid=gid_B73, select_reason=select, n_mu=n_mu) %>%
     inner_join(mu, by='gid') %>% filter(etype %in% etypes)
 tm %>% count(gid, n_mu) %>% mutate(nd = n-n_mu) %>% pull(nd)
-tm = tm %>% mutate(etype=factor(etype, levels=etypes)) %>%
+# use Erika's list to filter
+tm.1 = tm %>% filter(!gid %in% tk$gid)
+tm.2 = tm %>% inner_join(tk, by=c('gid'='gid','mid'='mu'))
+tm2 = rbind(tm.1, tm.2)
+#
+tm2 = tm2 %>% mutate(etype=fct_relevel(etype, etypes)) %>%
     arrange(gid, etype, eidx) %>%
     group_by(gid) %>%
     filter(row_number() <= 3) %>% ungroup()
-
-tm2 = tm %>% select(-n_mu) %>%
+tm3 = tm2 %>% select(-n_mu) %>%
     mutate(sid = str_split(sids, ',')) %>%
     mutate(sid = map_chr(sid, 1)) %>%
     arrange(select_reason, gid)
 
 fo = file.path(dirw, '32.gene.stocks.tsv')
-write_tsv(tm2, fo)
+write_tsv(tm3, fo)
 
-tm3 = tm2 %>% group_by(sid) %>%
+tmo = tm3 %>% group_by(sid) %>%
     summarise(gid=paste(gid, collapse='|'),
               select_reason = paste(select_reason, collapse='|')) %>%
     ungroup() %>%
     left_join(t_od, by=c('sid'='stock')) %>%
     arrange(season, sid)
-tm3 %>% filter(is.na(season))
-tm3 %>% filter(!is.na(season))
-tm3 %>% filter(!is.na(season)) %>% count(sid)
+tmo %>% filter(is.na(season))
+tmo %>% filter(!is.na(season))
+tmo %>% filter(!is.na(season)) %>% count(sid)
 
 fo = file.path(dirw, '34.stocks.tsv')
-write_tsv(tm3, fo)
+write_tsv(tmo, fo)
 #}}}
 

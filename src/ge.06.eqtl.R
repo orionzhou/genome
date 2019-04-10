@@ -178,9 +178,10 @@ saveRDS(res, file=fo)
 f_size = '~/data/genome/b73/15_intervals/01.chrom.sizes'
 t_size = read_tsv(fz, col_names=c('chrom','size'), col_types='ci')
 chrs = sprintf("B%02d", 1:10)
+tz = flattern_gcoord_prepare(size)
 
-gpos = flattern_gcoord(ti %>% select(chrom=gchrom, pos=gbeg), t_size)
-qpos = flattern_gcoord(ti %>% select(chrom=qchrom, pos=qpos), t_size)
+gpos = flattern_gcoord(ti %>% select(chrom=gchrom, pos=gbeg), tz)
+qpos = flattern_gcoord(ti %>% select(chrom=qchrom, pos=qpos), tz)
 tp = ti %>% mutate(gpos=!!gpos, qpos=!!qpos)
 
 p1 = ggplot(tp) +

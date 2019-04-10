@@ -3,14 +3,14 @@ suppressPackageStartupMessages(require(argparse))
 
 parser <- ArgumentParser(description = 'save genome stats to .rds')
 parser$add_argument("genome", default='B73', help="genome")
-parser$add_argument("--dirg", default='~/data/genome',
+parser$add_argument("--dirg", default='~/projects/genome/data',
                     help="genome directory [default: %(default)s]")
 args <- parser$parse_args()
 
 genome = args$genome
 dirg = args$dirg
 
-source("~/projects/genomes/src/functions.R")
+source("~/projects/genome/src/functions.R")
 
 dirw = file.path(dirg, genome)
 fi = file.path(dirw, '15_intervals', '01.chrom.bed')

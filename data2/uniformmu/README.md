@@ -54,22 +54,22 @@ Next, three different sets were obtained:
 * 20 TFs supported by the biomAP dataset with the most number of targets (53 - 286)
 * 21 TFs in one of these families (`HSF,LBD,SBP,TCP,WRKY,MYB`) and at least 2 insertion sites
 
-[Final list of 70 selected TFs](https://docs.google.com/spreadsheets/d/1O4fHFqv-60JWQNa0E55ePWOd7gGJdj89HCXyt8e1nVA/edit?usp=sharing)
-## Selection of UniformMu stocks
+## Selection of UniformMu insertion sites and stocks
 
 For TFs with >=3 insertions, different insertion sites were ranked by the rules below and only the top 3 insertions were selected:
+* present in Erika's hand-selected list (3 TFs without good insertion sites were discarded)
 * cds > utr5 > utr3 (based on insertion site location in [15.mu.genic.tsv](15.mu.genic.tsv))
 * the more upstream (five prime) insertion site is given higher rank
 
 For insertion sites with multiple stocks, the first stock is taken
 
-[124 UniformMu insertion sites selected](https://docs.google.com/spreadsheets/d/1O4fHFqv-60JWQNa0E55ePWOd7gGJdj89HCXyt8e1nVA/edit?usp=sharing)
+[Final list of 67 selected TFs, 111 insertion sites and 106 stocks](https://docs.google.com/spreadsheets/d/1O4fHFqv-60JWQNa0E55ePWOd7gGJdj89HCXyt8e1nVA/edit?usp=sharing)
 
 ## UniformMu stock ordering
 
 These stocks were checked for previous ordering history (from `Springer_UniformMu_orders.xlsx`):
-* 12 stocks were ordered in a previous season
-* 109 stocks were not ordered before and will be ordered
+* 11 stocks were ordered in a previous season
+* 95 stocks were not ordered before and will be ordered
 
-[109 stocks to order](https://docs.google.com/spreadsheets/d/1O4fHFqv-60JWQNa0E55ePWOd7gGJdj89HCXyt8e1nVA/edit?usp=sharing)
+[95 stocks to order](https://docs.google.com/spreadsheets/d/1O4fHFqv-60JWQNa0E55ePWOd7gGJdj89HCXyt8e1nVA/edit?usp=sharing)
 
