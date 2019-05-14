@@ -1,5 +1,5 @@
 require(devtools)
 load_all('~/git/rmaize')
-dirg = '~/data/genome'
-dirp = '~/projects/genomes'
+dirp = '~/projects/genome'
 dird = file.path(dirp, 'data')
+dirg = dird

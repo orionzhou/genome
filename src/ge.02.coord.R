@@ -3,7 +3,7 @@ require(GenomicRanges)
 genome = 'B73'
 
 #{{{ exon intervals for each gene
-dirw = file.path(dirg, genome, '50_annotation')
+dirw = file.path(dird, genome, '50_annotation')
 fi = file.path(dirw, "10.tsv")
 ti = read_tsv(fi) %>% filter(etype == 'exon')
 
@@ -24,6 +24,21 @@ ta = tc %>% mutate(start = start - 1) %>% select(chrom, start, end, gid) %>%
     arrange(chrom, start)
 fo = file.path(dirw, '10.ase.bed')
 write_tsv(ta, fo, col_names = F)
+#}}}
+
+#{{{ CDS intervals for pop-gene analysis
+dirw = file.path(dird, genome, '50_annotation')
+fi = file.path(dirw, "15.tsv")
+ti = read_tsv(fi) %>% filter(etype == 'CDS')
+
+to = ti %>% mutate(loc = sprintf("%s:%d-%d", chrom, start, end)) %>%
+    distinct(loc)
+fo = file.path(dirw, '15.cds.txt')
+write_tsv(to, fo, col_names = F)
+
+tid = ti %>% distinct(gid)
+fo = file.path(dirw, '15.gid.txt')
+write_tsv(tid, fo, col_names = F)
 #}}}
 
 #{{{ TSS for each gene

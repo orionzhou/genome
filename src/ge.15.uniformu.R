@@ -5,9 +5,6 @@ require(tidyverse)
 dirp = '~/projects/genome'
 dird = file.path(dirp, 'data2')
 dirw = file.path(dird, 'uniformmu')
-f_od = file.path(dirw, 'Springer_UniformMu_orders.xlsx')
-t_od = read_xlsx(f_od)
-colnames(t_od) = c("row",'stock','season')
 #}}}
 
 #{{{ reformat chr labels
@@ -277,16 +274,41 @@ fo = file.path(dirw, '32.gene.stocks.tsv')
 write_tsv(tm3, fo)
 
 tmo = tm3 %>% group_by(sid) %>%
-    summarise(gid=paste(gid, collapse='|'),
-              select_reason = paste(select_reason, collapse='|')) %>%
+    summarise(mid=paste(mid, collapse=","),
+              gid=paste(gid, collapse=','),
+              select_reason = paste(select_reason, collapse=',')) %>%
     ungroup() %>%
-    left_join(t_od, by=c('sid'='stock')) %>%
-    arrange(season, sid)
-tmo %>% filter(is.na(season))
-tmo %>% filter(!is.na(season))
-tmo %>% filter(!is.na(season)) %>% count(sid)
+    arrange(sid)
 
 fo = file.path(dirw, '34.stocks.tsv')
 write_tsv(tmo, fo)
 #}}}
 
+#{{{ gather info from existing/collaborator stocks
+fi = file.path(dirw, '34.stocks.tsv')
+ti = read_tsv(fi)
+
+# previous stocks
+f_od = file.path(dirw, 'Springer_UniformMu_orders.xlsx')
+t_od = read_xlsx(f_od, col_names = c("row",'stock','season')) %>%
+    mutate(note = sprintf("%s_%s",season, row)) %>%
+    group_by(stock) %>%
+    summarise(note = paste(note, collapse=",")) %>%
+    ungroup()
+
+# mgc reply
+fi = file.path(dirw, '40.stocks.misc.xlsx')
+t_mgc = read_xlsx(fi, col_names = c("sid",'note')) %>%
+    mutate(note = factor(note, unique(note))) %>%
+    arrange(sid, desc(note)) %>%
+    group_by(sid) %>% summarise(note = note[1]) %>% ungroup()
+
+to = ti %>%
+    left_join(t_mgc, by='sid') %>% rename(note1=note) %>%
+    left_join(t_od, by=c('sid'='stock')) %>% rename(note2=note) %>%
+    arrange(note1,note2,sid)
+to %>% count(is.na(note1), is.na(note2))
+
+fo = file.path(dirw, '41.stocks.field.tsv')
+write_tsv(to, fo, na='')
+#}}}
