@@ -4,7 +4,7 @@
   * 131,585 total transcript isoforms (39,351 protein-coding genes)
   * 98,829 non-redundant protein sequences
 * Mo17 resequencing variant calling
-  * [6.3M high quality SNPs](https://github.com/orionzhou/reseq/blob/master/data/35_vnt_ase/vt01.stats.tsv) were used to predict protein sequence change
+  * [6.3M high quality SNPs](https://github.com/orionzhou/reseq/blob/master/data/35_vnt_ase/vt01.stats.tsv) were used to predict protein sequence change in Mo17
   * 49,150 new protein sequences were added (to the B73 proteome)
 * [Mo17 genome assembly]()
   * 46,530 transcript isoforms (38,620 protein coding genes)
