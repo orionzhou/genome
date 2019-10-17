@@ -1,10 +1,8 @@
 source('functions.R')
-dirw = file.path(dirg, 'B73/61_functional')
+dirw = file.path(dirg, 'Zmays_B73/61_functional')
 gcfg = read_genome_conf()
 gids = gcfg$size.gene$gid
-fm = file.path(dirw, "../gene_mapping/maize.v3TOv4.geneIDhistory.txt")
-tm = read_tsv(fm, col_names = F) %>%
-    transmute(ogid = X1, gid = X2, change = X3, method = X4, type = X5)
+tm = v3_to_v4()
 length(unique(tm$gid))
 sum(unique(tm$gid) %in% gids)
 
@@ -40,19 +38,14 @@ write.table(tm2[,c(2,3)], fo2, sep = "\t", row.names = F, col.names = F, quote =
 #{{{ maize-GAMER V4 GO
 fgo = '~/data/db/go/go-basic.tsv'
 tgo = read_tsv(fgo) %>%
-    transmute(goid = goid, level = level, goname = name)
+    select(goid, level, goname=name)
 
-to = tibble()
-ctags = c("Interproscan5", "arabidopsis", "argot2.5", "fanngo", 
-          "pannzer", "uniprot.plants", "aggregate")
-for (ctag in ctags) {
-    fi = sprintf("%s/raw/maize.B73.AGPv4.%s.gaf", dirw, ctag)
-    ti = read_tsv(fi, skip = 1)[,c(2,5,7,9)]
-    colnames(ti) = c("gid", "goid", "evidence", "gotype")
-    ti = ti %>% mutate(ctag = ctag) %>%
-        select(ctag, gid, goid, evidence, gotype)
-    to = to %>% bind_rows(ti)
-}
+to = tibble(ctag = c("Interproscan5", "arabidopsis", "argot2.5", "fanngo",
+    "pannzer", "uniprot.plants", "aggregate")) %>%
+    mutate(fi = sprintf("%s/raw/maize.B73.AGPv4.%s.gaf", dirw, ctag)) %>%
+    mutate(ti = map(fi, read_tsv, skip=1)) %>%
+    select(ctag, ti) %>% unnest() %>%
+    select(ctag, gid=3, goid=6, evidence=8, gotype=10)
 
 goids = unique(to$goid)
 length(goids)
@@ -133,10 +126,9 @@ to = ti %>%
     select(pid, gid, pathway)
 #}}}
 
-#{{{ PMN CornCyc
+#{{{ PMN CornCyc - old
 fi = file.path(dirw, "raw/corncyc_pathways.20180702")
 ti = read_tsv(fi)
-
 to = ti %>% transmute(pid = `Pathway-id`,
                       pname = `Pathway-name`,
                       gid = `Gene-name`) %>%
@@ -146,6 +138,58 @@ to = ti %>% transmute(pid = `Pathway-id`,
 
 fo = file.path(dirw, '07.corncyc.tsv')
 write_tsv(to, fo)
+#}}}
+
+#{{{ PMN CornCyc
+fix_corncyc_str <- function(cstr) {
+    #{{{
+    str_split(cstr, " // ") %>% unlist() %>% str_replace('^\\"', '') %>%
+        str_replace('\\"$', '') %>%
+        str_replace_all("[&;\"]", "") %>%
+        str_replace_all("</?[a-zA-Z0-9_]+>", "")
+    #}}}
+}
+make_net <- function(reactants, products, gids, spontaneous,
+    filter_list = c('H2O','ATP','H+','NADPH','ADP','oxygen','CO2','UDP','NADP+')) {
+    #{{{
+    reactants = reactants[!reactants %in% filter_list]
+    products = products[!products %in% filter_list]
+    if(spontaneous | (length(gids) == 1 & gids == ''))
+        crossing(snode=reactants,enode=products,stype='s',etype='s') %>% as_tibble()
+    else {
+        if(length(reactants) == 0) reactants = 'None'
+        if(length(products) == 0) products = 'None'
+        x1 = crossing(snode=reactants,enode=gids,stype='s',etype='g')
+        x2 = crossing(snode=gids,enode=products,stype='g',etype='s')
+        rbind(x1, x2) %>% as_tibble()
+    }
+    #}}}
+}
+
+fi = file.path(dirw, "raw/corncyc.20190709.txt")
+ti = read_tsv(fi, quote='') %>%
+    rename(rxn=1,spontaneous=2,reactants=3,products=4,gids=5,pathways=6) %>%
+    replace_na(list(spontaneous=F)) %>%
+    mutate(rxn = map(rxn, fix_corncyc_str)) %>%
+    mutate(reactants = map(reactants, fix_corncyc_str)) %>%
+    mutate(products = map(products, fix_corncyc_str)) %>%
+    mutate(gids = map(gids, fix_corncyc_str)) %>%
+    mutate(pathways = map(pathways, fix_corncyc_str)) %>%
+    unnest(pathways, .preserve=c('reactants','products','gids','rxn')) %>%
+    rename(pathway=pathways) %>%
+    filter(pathway != '') %>%
+    select(pathway, everything())
+ti %>% print(width=Inf)
+path1 = 'anthocyanin biosynthesis'
+path2 = "Calvin-Benson-Bassham cycle"
+path3 = "3,8-divinyl-chlorophyllide a biosynthesis I (aerobic, light-dependent)"
+ti %>% filter(pathway==path1) %>% print(width=Inf) %>% pull(gids)
+ti %>% filter(pathway==path3) %>% pull(reactants)
+
+tn = ti %>% mutate(net = pmap(list(reactants,products,gids,spontaneous), make_net))
+
+fo = file.path(dirw, '07.corncyc.rds')
+saveRDS(tn, file=fo)
 #}}}
 
 #{{{ PPIM
@@ -178,6 +222,27 @@ to = ti %>% rename(ogid1 = gid1, ogid2 = gid2) %>%
 to %>% count(type1, type2) %>% print(n=25)
 
 fo = file.path(dirw, '08.ppim.tsv')
+write_tsv(to, fo)
+#}}}
+
+#{{{ Alex syntenic gene list (obsolete)
+dirw = '/home/springer/zhoux379/data/genome/B73/gene_mapping'
+fi = file.path(dirw, "maize_syntenic_genes_Alex\'s_paper.txt")
+ti = read_tsv(fi)
+
+ti = ti[,1:12]
+colnames(ti) = c("achrom", "abeg", "aend", "agid", "bchrom1", "bbeg1", "bend1", "bgid1", "bchrom2", "bbeg2", "bend2", "bgid2")
+
+gids1 = ti$bgid1[!is.na(ti$bgid1)]
+gids2 = ti$bgid2[!is.na(ti$bgid2)]
+gids = unique(c(gids1, gids2))
+stopifnot(length(gids) == length(unique(gids1)) + length(unique(gids2)))
+
+to1 = tibble(gid = gids1, subgenome = 'subgenome1')
+to2 = tibble(gid = gids2, subgenome = 'subgenome2')
+to = rbind(to1, to2)
+
+fo = file.path(dirw, "syn.gid.tsv")
 write_tsv(to, fo)
 #}}}
 
