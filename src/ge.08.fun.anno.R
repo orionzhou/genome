@@ -238,6 +238,13 @@ write_tsv(to, fo)
 to = ti %>% select(sorghum3, maize1=maize1_v4, maize2=maize2_v4)
 fo = file.path(dirw, "synteny_maize.tsv")
 write_tsv(to, fo)
+
+ft = '~/projects/grn/data/09.tf.txt'
+tids = read_tsv(ft, col_names = F) %>% pull(X1)
+to = ti %>% select(sorghum3, maize1=maize1_v4, maize2=maize2_v4) %>%
+    filter(maize1 %in% tids | maize2 %in% tids)
+fo = file.path(dirw, "synteny_maize_tf.tsv")
+write_tsv(to, fo)
 #}}}
 
 #{{{ merge functional annotations from different sources
