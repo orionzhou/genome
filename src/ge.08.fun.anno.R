@@ -66,7 +66,7 @@ colnames(ti) = c("ogid", "goid", "evidence", "gotype")
 
 to = ti %>%
     inner_join(tm, by = 'ogid') %>%
-    filter(gid %in% gids) %>% 
+    filter(gid %in% gids) %>%
     filter(type == '1-to-1') %>%
     select(goid, gid, evidence, gotype)
 length(unique(to$gid))
@@ -225,22 +225,12 @@ fo = file.path(dirw, '08.ppim.tsv')
 write_tsv(to, fo)
 #}}}
 
-#{{{ Alex syntenic gene list (obsolete)
-dirw = '/home/springer/zhoux379/data/genome/B73/gene_mapping'
-fi = file.path(dirw, "maize_syntenic_genes_Alex\'s_paper.txt")
-ti = read_tsv(fi)
+#{{{ syntenic gene list
+dirw = '~/projects/genome/data/Zmays_B73/gene_mapping'
+fi = file.path(dirw, "sorghum3_intell_plusteff.csv")
+replace_nogene <- function(x) str_replace(x, 'No Gene', '')
+ti = read_csv(fi) %>% mutate_all(replace_nogene)
 
-ti = ti[,1:12]
-colnames(ti) = c("achrom", "abeg", "aend", "agid", "bchrom1", "bbeg1", "bend1", "bgid1", "bchrom2", "bbeg2", "bend2", "bgid2")
-
-gids1 = ti$bgid1[!is.na(ti$bgid1)]
-gids2 = ti$bgid2[!is.na(ti$bgid2)]
-gids = unique(c(gids1, gids2))
-stopifnot(length(gids) == length(unique(gids1)) + length(unique(gids2)))
-
-to1 = tibble(gid = gids1, subgenome = 'subgenome1')
-to2 = tibble(gid = gids2, subgenome = 'subgenome2')
-to = rbind(to1, to2)
 
 fo = file.path(dirw, "syn.gid.tsv")
 write_tsv(to, fo)
