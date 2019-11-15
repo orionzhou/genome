@@ -231,8 +231,12 @@ fi = file.path(dirw, "sorghum3_intell_plusteff.csv")
 replace_nogene <- function(x) str_replace(x, 'No Gene', '')
 ti = read_csv(fi) %>% mutate_all(replace_nogene)
 
+to = ti %>% select(-`GEvo Link`)
+fo = file.path(dirw, "synteny_grass.tsv")
+write_tsv(to, fo)
 
-fo = file.path(dirw, "syn.gid.tsv")
+to = ti %>% select(sorghum3, maize1=maize1_v4, maize2=maize2_v4)
+fo = file.path(dirw, "synteny_maize.tsv")
 write_tsv(to, fo)
 #}}}
 
