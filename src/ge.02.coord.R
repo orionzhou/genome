@@ -43,26 +43,40 @@ fo = file.path(dirw, '15.gid.txt')
 write_tsv(tid, fo, col_names = F)
 #}}}
 
-#{{{ TSS for each gene
+#{{{ TSS, promoter & regulatory regions
 dirw = file.path(dirg, genome, '50_annotation')
 fi = file.path(dirw, "15.tsv")
 ti = read_tsv(fi) %>% filter(etype == 'exon') %>% mutate(start=start-1)
 
+bp_promoter = 2000
 tt = ti %>% filter(ttype=='mRNA') %>%
     group_by(gid, tid) %>%
     summarise(chrom=chrom[1], start=min(start), end=max(end), srd=srd[1]) %>%
     ungroup() %>%
+    arrange(chrom, start, end) %>%
     mutate(tss = ifelse(srd=='-', end, start)) %>%
-    arrange(chrom, tss) %>%
-    mutate(gstart=start, gend=end) %>%
-    mutate(start=tss, end=tss+1) %>%
-    select(chrom,start,end,srd, gid, tid, gstart,gend)
+    mutate(pstart = ifelse(srd=='-', tss, tss-bp_promoter)) %>%
+    mutate(pend = ifelse(srd=='-', tss+bp_promoter, tss)) %>%
+    select(gid, tid, chrom,start,end, srd, tss, pstart, pend)
 
-fo = file.path(dirw, '15.tss.bed')
-write_tsv(tt, fo, col_names = F)
+tt1 = tt %>% mutate(tstart=tss, tend=tss+1, score='.') %>%
+    select(chrom,tstart,tend,gid,score,srd) %>% arrange(chrom, tstart)
+fo = file.path(dirw, '16.tss.bed')
+write_tsv(tt1, fo, col_names = F)
+
+tp = tt %>% mutate(score='.') %>% select(chrom, pstart, pend, gid,score,srd)
+fo = file.path(dirw, '16.promoter.2kb.bed')
+write_tsv(tt2, fo, col_names = F)
+# bedtools getfasta -fi ../10_genome.fna -bed 16.promoter.2kb.bed -name -fo 16.promoter.2kb.fas
+# faSize -detailed 16.promoter.2kb.fas > 16.promoter.2kb.sizes
+tp = tt %>% mutate(gstart=0,gend=pend-pstart,srd='+', pid=1:n()) %>%
+    select(gid,gstart,gend,srd, chrom, pstart, pend, pid)
+fo = file.path(dirw, '16.promoter.2kb.chain.bed')
+write_tsv(tp, fo, col_names = F)
+# chain.py fromBed 16.promoter.2kb.chain.bed 16.promoter.2kb.sizes ../15_intervals/01.chrom.sizes > 16.promoter.2kb.chain
 
 bp_prox = 2000; bp_dist = 1e5
-to1 = tt %>% select(chrom,start=gstart,end=gend,gid,srd) %>% mutate(opt='genic')
+to1 = tt %>% select(chrom,start,end,gid,srd) %>% mutate(opt='genic')
 to2 = tt %>%
     mutate(s1 = ifelse(srd=='-', start, start-bp_prox)) %>%
     mutate(e1 = ifelse(srd=='-', start+bp_prox, start)) %>%
@@ -74,9 +88,7 @@ to3 = tt %>%
 to = rbind(to1, to2, to3) %>% arrange(chrom,start,end) %>%
     filter(end > 0) %>% mutate(start = pmax(start,0))
 
-#fo = file.path(dirw, '15.promoter.bed')
-#write_tsv(to2, fo, col_names = F)
-fo = file.path(dirw, '15.regulation.bed')
+fo = file.path(dirw, '16.regulation.bed')
 write_tsv(to, fo, col_names = F)
 #}}}
 
@@ -300,10 +312,9 @@ fo = file.path(dirw, '35.intervals.bed')
 write_tsv(tp, fo, col_names=F)
 #}}}
 
-#{{{ ACR
-# liftOver -bedPlus=3 acr.0.bed ../08_seq_map/mapf.chain acr.1.bed unmap
+#{{{ ACR [obsolete - see README]
 # sortBed -i acr.1.bed | cut -f1-3 > acr.2.bed
-# intersectBed -a ../50_annotation/15.regulation.bed -b acr.2.bed -wao > acr.3.bed
+## intersectBed -a ../50_annotation/15.regulation.bed -b acr.2.bed -wao > acr.3.bed
 ## closestBed -a acr.2.bed -b ../50_annotation/15.tss.bed -d > acr.3.bed
 dirw = file.path(dird, genome, 'chromatin')
 opts = c('promoter','gene_body','distal','none')
@@ -328,7 +339,7 @@ ta %>% inner_join(tsyn, by='gid') %>%
     ungroup() %>% select(ftype, opt, prop) %>% spread(opt, prop)
 #}}}
 
-#{{{ UMR
+#{{{ UMR [obsolete - see README]
 # awk -F'\t' '$4 == "Unmethylated"' umr.1.bed | cut -f1-3 > umr.2.bed
 # intersectBed -a ../50_annotation/15.regulation.bed -b umr.2.bed -wao > umr.3.bed
 opts = c('promoter','gene_body','distal','none')

@@ -6,6 +6,16 @@ tm = v3_to_v4()
 length(unique(tm$gid))
 sum(unique(tm$gid) %in% gids)
 
+#{{{ common gene alias
+fi = file.path(dirw, 'raw/genes_all.txt')
+ti = read_tsv(fi) %>% filter(row_number() != 1) %>%
+    select(gid=1,gid_v3=2,symbol=3,note=4) %>%
+    group_by(gid) %>% slice(1) %>% ungroup()
+
+fo = file.path(dirw, '00.symbols.tsv')
+write_tsv(ti, fo)
+#}}}
+
 #{{{ # interpro
 dirg = '~/data/genome/Zmays_v4/61.interpro'
 
@@ -126,7 +136,7 @@ to = ti %>%
     select(pid, gid, pathway)
 #}}}
 
-#{{{ PMN CornCyc - old
+#{{{ # PMN CornCyc - old
 fi = file.path(dirw, "raw/corncyc_pathways.20180702")
 ti = read_tsv(fi)
 to = ti %>% transmute(pid = `Pathway-id`,
@@ -175,7 +185,7 @@ ti = read_tsv(fi, quote='') %>%
     mutate(products = map(products, fix_corncyc_str)) %>%
     mutate(gids = map(gids, fix_corncyc_str)) %>%
     mutate(pathways = map(pathways, fix_corncyc_str)) %>%
-    unnest(pathways, .preserve=c('reactants','products','gids','rxn')) %>%
+    unnest(pathways) %>%
     rename(pathway=pathways) %>%
     filter(pathway != '') %>%
     select(pathway, everything())
@@ -186,7 +196,7 @@ path3 = "3,8-divinyl-chlorophyllide a biosynthesis I (aerobic, light-dependent)"
 ti %>% filter(pathway==path1) %>% print(width=Inf) %>% pull(gids)
 ti %>% filter(pathway==path3) %>% pull(reactants)
 
-tn = ti %>% mutate(net = pmap(list(reactants,products,gids,spontaneous), make_net))
+tn = ti# %>% mutate(net = pmap(list(reactants,products,gids,spontaneous), make_net))
 
 fo = file.path(dirw, '07.corncyc.rds')
 saveRDS(tn, file=fo)
