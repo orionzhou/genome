@@ -109,10 +109,6 @@ tps = tp %>%
               min = min(size), max = max(size), total = sum(size))
 #}}}
 
-x = read_tsv(file.path(dirw, 'x.bed'), col_names=F)
-x %>% group_by(X5) %>% summarise(bp = sum(X10)) %>% ungroup() %>%
-    count(bp >= 200)
-
 #{{{ gene and TE intervals for bs-seq analysis
 genome = 'Zmays_B73'
 dirw = file.path(dird, genome, '50_annotation')
@@ -261,6 +257,58 @@ tp = rbind(tva, tx) %>% select(chrom,start,end,srd, eid,i) %>%
     arrange(chrom, start, end)
 fo = file.path(dirw, '35.intervals.bed')
 write_tsv(tp, fo, col_names=F)
+#}}}
+
+#{{{ gene feature intervals for overlap with 100-bp bins
+genome = 'Zmays_Mo17'
+genome = 'Zmays_PH207'
+genome = 'Zmays_W22'
+dirw = file.path(dird, genome, '50_annotation')
+fi = file.path(dirw, "15.tsv")
+#{{{ add introns & tile sub-features
+ti = read_tsv(fi)
+ti1 = ti %>% filter(ttype == 'mRNA')
+ti2 = ti %>% filter(ttype != 'mRNA') %>%
+    distinct(chrom,start,end,ttype,etype)
+gr = with(ti2, GRanges(seqnames=chrom, ranges=IRanges(start, end=end)))
+sum(width(gr)) - sum(width(GenomicRanges::reduce(gr)))
+#
+tim = ti1 %>% filter(etype=='exon') %>% group_by(gid) %>%
+    summarise(chrom=chrom[1], start=min(start), end=max(end), srd=srd[1]) %>%
+    ungroup()
+tix = ti1 %>% filter(etype=='exon')
+tic = ti1 %>% filter(etype=='CDS')
+tiu5 = ti1 %>% filter(etype=='five_prime_UTR')
+tiu3 = ti1 %>% filter(etype=='three_prime_UTR')
+grm = with(tim, GRanges(seqnames=chrom, ranges=IRanges(start, end=end)))
+grx = with(tix, GRanges(seqnames=chrom, ranges=IRanges(start, end=end)))
+grc = with(tic, GRanges(seqnames=chrom, ranges=IRanges(start, end=end)))
+gru5 = with(tiu5, GRanges(seqnames=chrom, ranges=IRanges(start, end=end)))
+gru3 = with(tiu3, GRanges(seqnames=chrom, ranges=IRanges(start, end=end)))
+grm=GenomicRanges::reduce(grm)
+grx=GenomicRanges::reduce(grx)
+grc=GenomicRanges::reduce(grc)
+gru5=GenomicRanges::reduce(gru5)
+gru3=GenomicRanges::reduce(gru3)
+setdiff(grx, c(grc,gru5,gru3))
+gru5 = setdiff(gru5, grc)
+gru3 = setdiff(gru3, c(grc, gru5))
+gri = setdiff(grm, c(grc,gru5,gru3))
+mcols(grc)['etype'] = 'cds'
+mcols(gru5)['etype'] = 'utr5'
+mcols(gru3)['etype'] = 'utr3'
+mcols(gri)['etype'] = 'intron'
+#
+x = c(grc,gru5,gru3,gri)
+sum(width(x)) - sum(width(GenomicRanges::reduce(x)))
+tc = tibble(chrom = as.character(seqnames(x)),
+            start = start(x), end = end(x), ttype='mRNA', etype=x$etype) %>%
+    bind_rows(ti2) %>% arrange(chrom,start,end) %>%
+    mutate(start = start - 1)
+#}}}
+
+fo = file.path(dirw, '15.tile.bed')
+write_tsv(tc, fo, col_names = F)
 #}}}
 
 #{{{ [obsolete] gene and TE intervals for bs-seq analysis
