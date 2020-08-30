@@ -1,0 +1,50 @@
+genome	species	source	version	assembly	url_fas	url_gff	prefix	hybrid	gap	gffopt	blat	gatk	bwa	bismark	last	blast	salmon	star	hisat2	snpeff	tandup	rcfg	status
+Athaliana	Arabidopsis thaliana	ensembl_plants	47.0	TAIR10			At		10000.0	ensembl	T	T	T	T	T	T	T	T	T	T	T	T	C
+Alyrata	Arabidopsis lyrata	ensembl_plants	47.0	v.1.0			Al		10000.0	ensembl	T	T									T	T	
+Bdistachyon	Brachypodium distachyon	ensembl_plants	47.0	Brachypodium_distachyon_v3.0			Bd		10000.0	ensembl	T	T	T		T	T		T		T	T	T	
+Brapa	Brassica rapa	ensembl_plants	47.0	Brapa_1.0			Br		10000.0	ensembl	T	T									T	T	
+Gmax	Glycine max	ensembl_plants	47.0	Glycine_max_v2.1			Gm		10000.0	ensembl	T	T									T	T	
+Mtruncatula	Medicago truncatula	ensembl_plants	47.0	MedtrA17_4.0			Mt		10000.0	ensembl	T	T									T	T	
+Osativa	Oryza sativa	ensembl_plants	47.0	IRGSP-1.0			Os		10000.0	ensembl	T	T	T	T	T	T	T	T	T	T	T	T	
+Oindica	Oryza indica	ensembl_plants	47.0	ASM465v1			Oi		10000.0	ensembl	T	T									T	T	
+Orufipogon	Oryza rufipogon	ensembl_plants	47.0	OR_W1943			Or		10000.0	ensembl	T	T									T	T	
+Onivara	Oryza nivara	ensembl_plants	47.0	Oryza_nivara_v1.0			On		10000.0	ensembl	T	T									T	T	
+Ptrichocarpa	Populus trichocarpa	ensembl_plants	47.0	Pop_tri_v3			Pt		10000.0	ensembl	T	T									T	T	
+Ppersica	Prunus persica	ensembl_plants	47.0	Prunus_persica_NCBIv2			Pp		10000.0	ensembl	T	T									T	T	
+Sitalica	Setaria italica	ensembl_plants	47.0	Setaria_italica_v2.0			Si		10000.0	ensembl	T	T									T	T	
+Slycopersicum	Solanum lycopersicum	ensembl_plants	47.0	SL3.0			Sl		10000.0	ensembl	T	T									T	T	
+Sbicolor	Sorghum bicolor	ensembl_plants	47.0	Sorghum_bicolor_NCBIv3			Sb		10000.0	ensembl	T	T	T		T	T		T		T	T	T	
+Vvinifera	Vitis vinifera	ensembl_plants	47.0	12X			Vv		10000.0	ensembl	T	T									T	T	
+Zmays_B73	Zea mays	ensembl_plants	41.0	B73 RefGen_v4			B		10000.0	ensembl	T	T	T	T	T	T	T	T	T	T	T	T	C
+Zmays_B73v4	Zea mays	ensembl_plants	47.0	B73 RefGen_v4			B		10000.0	ensembl	T	T	T	T	T	T	T	T	T	T	T	T	C
+Zmays_Mo17		url			https://ftp.maizegdb.org/MaizeGDB/FTP/Zm-Mo17-REFERENCE-CAU-1.0/Zm-Mo17-REFERENCE-CAU-1.0.fa.gz	https://ftp.maizegdb.org/MaizeGDB/FTP/Zm-Mo17-REFERENCE-CAU-1.0/Zm-Mo17-REFERENCE-CAU-1.0_Zm00014a.1.gff3.gz	M		10000.0	mo17	T	T	T	T	T	T		T	T	T	T	T	C
+Zmays_W22		url			https://ftp.maizegdb.org/MaizeGDB/FTP/Zm-W22-REFERENCE-NRGENE-2.0/Zm-W22-REFERENCE-NRGENE-2.0.fa.gz	https://ftp.maizegdb.org/MaizeGDB/FTP/Zm-W22-REFERENCE-NRGENE-2.0/Zm-W22-REFERENCE-NRGENE-2.0_Zm00004b.1.gff3.gz	W		10000.0	w22	T	T	T	T		T		T	T	T	T	T	C
+Zmays_PH207		url			https://ftp.maizegdb.org/MaizeGDB/FTP/Zm-PH207-REFERENCE_NS-UIUC_UMN-1.0/Zm-PH207-REFERENCE_NS-UIUC_UMN-1.0.fa.gz	https://ftp.maizegdb.org/MaizeGDB/FTP/Zm-PH207-REFERENCE_NS-UIUC_UMN-1.0/Zm-PH207-REFERENCE_NS-UIUC_UMN-1.0_Zm00008a.1.gff3.gz	P		10000.0	ph207	T	T	T	T		T		T		T	T	T	C
+Zmays_B73v5		url			https://download.maizegdb.org/Zm-B73-REFERENCE-NAM-5.0/Zm-B73-REFERENCE-NAM-5.0.fa.gz	https://download.maizegdb.org/Zm-B73-REFERENCE-NAM-5.0/Zm-B73-REFERENCE-NAM-5.0_Zm00001e.1.gff3.gz	B		10000.0	nam	T	T	T	T	T	T		T	T	T	T	T	C
+Zmays_B97		url			https://download.maizegdb.org/Zm-B97-REFERENCE-NAM-1.0/Zm-B97-REFERENCE-NAM-1.0.fasta.gz	https://download.maizegdb.org/Zm-B97-REFERENCE-NAM-1.0/Zm-B97-REFERENCE-NAM-1.0_Zm00018a.1.gff.gz	B97_		10000.0	nam	T					T					T	T	
+Zmays_CML52		url			https://download.maizegdb.org/Zm-CML52-REFERENCE-NAM-1.0/Zm-CML52-REFERENCE-NAM-1.0.fasta.gz	https://download.maizegdb.org/Zm-CML52-REFERENCE-NAM-1.0/Zm-CML52-REFERENCE-NAM-1.0_Zm00019a.1.gff.gz	CML52_		10000.0	nam	T					T					T	T	
+Zmays_CML69		url			https://download.maizegdb.org/Zm-CML69-REFERENCE-NAM-1.0/Zm-CML69-REFERENCE-NAM-1.0.fa.gz	https://download.maizegdb.org/Zm-CML69-REFERENCE-NAM-1.0/Zm-CML69-REFERENCE-NAM-1.0_Zm00020a.1.gff.gz	CML69_		10000.0	nam	T					T					T	T	
+Zmays_CML103		url			https://download.maizegdb.org/Zm-CML103-REFERENCE-NAM-1.0/Zm-CML103-REFERENCE-NAM-1.0.fasta.gz	https://download.maizegdb.org/Zm-CML103-REFERENCE-NAM-1.0/Zm-CML103-REFERENCE-NAM-1.0_Zm00021a.1.gff.gz	CML103_		10000.0	nam	T					T					T	T	
+Zmays_CML228		url			https://download.maizegdb.org/Zm-CML228-REFERENCE-NAM-1.0/Zm-CML228-REFERENCE-NAM-1.0.fasta.gz	https://download.maizegdb.org/Zm-CML228-REFERENCE-NAM-1.0/Zm-CML228-REFERENCE-NAM-1.0_Zm00022a.1.gff	CML228_		10000.0	nam	T					T					T	T	
+Zmays_CML247		url			https://download.maizegdb.org/Zm-CML247-REFERENCE-NAM-1.0/Zm-CML247-REFERENCE-NAM-1.0.fasta.gz	https://download.maizegdb.org/Zm-CML247-REFERENCE-NAM-1.0/Zm-CML247-REFERENCE-NAM-1.0_Zm00023a.1.gff.gz	CML247_		10000.0	nam	T					T					T	T	
+Zmays_CML277		url			https://download.maizegdb.org/Zm-CML277-REFERENCE-NAM-1.0/Zm-CML277-REFERENCE-NAM-1.0.fasta.gz	https://download.maizegdb.org/Zm-CML277-REFERENCE-NAM-1.0/Zm-CML277-REFERENCE-NAM-1.0_Zm00024a.1.gff.gz	CML277_		10000.0	nam	T					T					T	T	
+Zmays_CML322		url			https://download.maizegdb.org/Zm-CML322-REFERENCE-NAM-1.0/Zm-CML322-REFERENCE-NAM-1.0.fa.gz	https://download.maizegdb.org/Zm-CML322-REFERENCE-NAM-1.0/Zm-CML322-REFERENCE-NAM-1.0_Zm00025a.1.gff.gz	CML322_		10000.0	nam	T					T					T	T	
+Zmays_CML333		url			https://download.maizegdb.org/Zm-CML333-REFERENCE-NAM-1.0/Zm-CML333-REFERENCE-NAM-1.0.fasta.gz	https://download.maizegdb.org/Zm-CML333-REFERENCE-NAM-1.0/Zm-CML333-REFERENCE-NAM-1.0_Zm00026a.1.gff.gz	CML333_		10000.0	nam	T					T					T	T	
+Zmays_HP301		url			https://download.maizegdb.org/Zm-HP301-REFERENCE-NAM-1.0/Zm-HP301-REFERENCE-NAM-1.0.fa.gz	https://download.maizegdb.org/Zm-HP301-REFERENCE-NAM-1.0/Zm-HP301-REFERENCE-NAM-1.0_Zm00027a.1.gff.gz	HP301_		10000.0	nam	T					T					T	T	
+Zmays_Il14H		url			https://download.maizegdb.org/Zm-Il14H-REFERENCE-NAM-1.0/Zm-Il14H-REFERENCE-NAM-1.0.fa.gz	https://download.maizegdb.org/Zm-Il14H-REFERENCE-NAM-1.0/Zm-Il14H-REFERENCE-NAM-1.0_Zm00028a.1.gff.gz	Il14H_		10000.0	nam	T					T					T	T	
+Zmays_Ki3		url			https://download.maizegdb.org/Zm-Ki3-REFERENCE-NAM-1.0/Zm-Ki3-REFERENCE-NAM-1.0.fa.gz	https://download.maizegdb.org/Zm-Ki3-REFERENCE-NAM-1.0/Zm-Ki3-REFERENCE-NAM-1.0_Zm00029a.1.gff.gz	Ki3_		10000.0	nam	T					T					T	T	
+Zmays_Ki11		url			https://download.maizegdb.org/Zm-Ki11-REFERENCE-NAM-1.0/Zm-Ki11-REFERENCE-NAM-1.0.fa.gz	https://download.maizegdb.org/Zm-Ki11-REFERENCE-NAM-1.0/Zm-Ki11-REFERENCE-NAM-1.0_Zm00030a.1.gff.gz	Ki11_		10000.0	nam	T					T					T	T	
+Zmays_Ky21		url			https://download.maizegdb.org/Zm-Ky21-REFERENCE-NAM-1.0/Zm-Ky21-REFERENCE-NAM-1.0.fa.gz	https://download.maizegdb.org/Zm-Ky21-REFERENCE-NAM-1.0/Zm-Ky21-REFERENCE-NAM-1.0_Zm00031a.1.gff.gz	Ky21_		10000.0	nam	T					T					T	T	
+Zmays_M37W		url			https://download.maizegdb.org/Zm-M37W-REFERENCE-NAM-1.0/Zm-M37W-REFERENCE-NAM-1.0.fa.gz	https://download.maizegdb.org/Zm-M37W-REFERENCE-NAM-1.0/Zm-M37W-REFERENCE-NAM-1.0_Zm00032a.1.gff.gz	M37W_		10000.0	nam	T					T					T	T	
+Zmays_M162W		url			https://download.maizegdb.org/Zm-M162W-REFERENCE-NAM-1.0/Zm-M162W-REFERENCE-NAM-1.0.fa.gz	https://download.maizegdb.org/Zm-M162W-REFERENCE-NAM-1.0/Zm-M162W-REFERENCE-NAM-1.0_Zm00033a.1.gff.gz	M162W_		10000.0	nam	T					T					T	T	
+Zmays_Mo18W		url			https://download.maizegdb.org/Zm-Mo18W-REFERENCE-NAM-1.0/Zm-Mo18W-REFERENCE-NAM-1.0.fa.gz	https://download.maizegdb.org/Zm-Mo18W-REFERENCE-NAM-1.0/Zm-Mo18W-REFERENCE-NAM-1.0_Zm00034a.1.gff.gz	Mo18W_		10000.0	nam	T					T					T	T	
+Zmays_Ms71		url			https://download.maizegdb.org/Zm-Ms71-REFERENCE-NAM-1.0/Zm-Ms71-REFERENCE-NAM-1.0.fa.gz	https://download.maizegdb.org/Zm-Ms71-REFERENCE-NAM-1.0/Zm-Ms71-REFERENCE-NAM-1.0_Zm00035a.1.gff.gz	Ms71_		10000.0	nam	T					T					T	T	
+Zmays_NC350		url			https://download.maizegdb.org/Zm-NC350-REFERENCE-NAM-1.0/Zm-NC350-REFERENCE-NAM-1.0.fa.gz	https://download.maizegdb.org/Zm-NC350-REFERENCE-NAM-1.0/Zm-NC350-REFERENCE-NAM-1.0_Zm00036a.1.gff3.gz	NC350_		10000.0	nam	T					T					T	T	
+Zmays_NC358		url			https://download.maizegdb.org/Zm-NC358-REFERENCE-NAM-1.0/Zm-NC358-REFERENCE-NAM-1.0.fa.gz	https://download.maizegdb.org/Zm-NC358-REFERENCE-NAM-1.0/Zm-NC358-REFERENCE-NAM-1.0_Zm00037a.1.gff.gz	NC358_		10000.0	nam	T					T					T	T	
+Zmays_Oh7B		url			https://download.maizegdb.org/Zm-Oh7B-REFERENCE-NAM-1.0/Zm-Oh7B-REFERENCE-NAM-1.0.fa.gz	https://download.maizegdb.org/Zm-Oh7B-REFERENCE-NAM-1.0/Zm-Oh7B-REFERENCE-NAM-1.0_Zm00038a.1.gff.gz	Oh7B_		10000.0	nam	T					T					T	T	
+Zmays_Oh43		url			https://download.maizegdb.org/Zm-Oh43-REFERENCE-NAM-1.0/Zm-Oh43-REFERENCE-NAM-1.0.fa.gz	https://download.maizegdb.org/Zm-Oh43-REFERENCE-NAM-1.0/Zm-Oh43-REFERENCE-NAM-1.0_Zm00039a.1.gff.gz	Oh43_		10000.0	nam	T					T					T	T	
+Zmays_P39		url			https://download.maizegdb.org/Zm-P39-REFERENCE-NAM-1.0/Zm-P39-REFERENCE-NAM-1.0.fa.gz	https://download.maizegdb.org/Zm-P39-REFERENCE-NAM-1.0/Zm-P39-REFERENCE-NAM-1.0_Zm00040a.1.gff.gz	P39_		10000.0	nam	T					T					T	T	
+Zmays_Tx303		url			https://download.maizegdb.org/Zm-Tx303-REFERENCE-NAM-1.0/Zm-Tx303-REFERENCE-NAM-1.0.fa.gz	https://download.maizegdb.org/Zm-Tx303-REFERENCE-NAM-1.0/Zm-Tx303-REFERENCE-NAM-1.0_Zm00041a.1.gff.gz	Tx303_		10000.0	nam	T					T					T	T	
+Zmays_Tzi8		url			https://download.maizegdb.org/Zm-Tzi8-REFERENCE-NAM-1.0/Zm-Tzi8-REFERENCE-NAM-1.0.fa.gz	https://download.maizegdb.org/Zm-Tzi8-REFERENCE-NAM-1.0/Zm-Tzi8-REFERENCE-NAM-1.0_Zm00042a.1.gff.gz	Tzi8_		10000.0	nam	T					T					T	T	
+Zmays_B73xMo17		local						T		maize								T					
+Zmays_B104		url			https://ftp.maizegdb.org/MaizeGDB/FTP/Zm-B104-DRAFT-ISU_USDA-0.1/Zm-B104-DRAFT-ISU_USDA-0.1.fa.gz	https://ftp.maizegdb.org/MaizeGDB/FTP/Zm-B104-DRAFT-ISU_USDA-0.1/Zm-B104-DRAFT-ISU_USDA-0.1_Zm00007a.1.gff3.gz	B104_		10000.0	maize	T	T	T			T		T		T	T	T	
