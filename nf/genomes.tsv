@@ -1,22 +1,22 @@
 genome	species	source	version	assembly	url_fas	url_gff	prefix	hybrid	gap	gffopt	blat	gatk	bwa	bismark	last	blast	salmon	star	hisat2	snpeff	tandup	rcfg	status
-Athaliana	Arabidopsis thaliana	ensembl_plants	47.0	TAIR10			At		10000.0	ensembl	T	T	T	T	T	T	T	T	T	T	T	T	C
-Alyrata	Arabidopsis lyrata	ensembl_plants	47.0	v.1.0			Al		10000.0	ensembl	T	T									T	T	
-Bdistachyon	Brachypodium distachyon	ensembl_plants	47.0	Brachypodium_distachyon_v3.0			Bd		10000.0	ensembl	T	T	T		T	T		T		T	T	T	
-Brapa	Brassica rapa	ensembl_plants	47.0	Brapa_1.0			Br		10000.0	ensembl	T	T									T	T	
-Gmax	Glycine max	ensembl_plants	47.0	Glycine_max_v2.1			Gm		10000.0	ensembl	T	T									T	T	
-Mtruncatula	Medicago truncatula	ensembl_plants	47.0	MedtrA17_4.0			Mt		10000.0	ensembl	T	T									T	T	
-Osativa	Oryza sativa	ensembl_plants	47.0	IRGSP-1.0			Os		10000.0	ensembl	T	T	T	T	T	T	T	T	T	T	T	T	
-Oindica	Oryza indica	ensembl_plants	47.0	ASM465v1			Oi		10000.0	ensembl	T	T									T	T	
-Orufipogon	Oryza rufipogon	ensembl_plants	47.0	OR_W1943			Or		10000.0	ensembl	T	T									T	T	
-Onivara	Oryza nivara	ensembl_plants	47.0	Oryza_nivara_v1.0			On		10000.0	ensembl	T	T									T	T	
-Ptrichocarpa	Populus trichocarpa	ensembl_plants	47.0	Pop_tri_v3			Pt		10000.0	ensembl	T	T									T	T	
-Ppersica	Prunus persica	ensembl_plants	47.0	Prunus_persica_NCBIv2			Pp		10000.0	ensembl	T	T									T	T	
-Sitalica	Setaria italica	ensembl_plants	47.0	Setaria_italica_v2.0			Si		10000.0	ensembl	T	T									T	T	
-Slycopersicum	Solanum lycopersicum	ensembl_plants	47.0	SL3.0			Sl		10000.0	ensembl	T	T									T	T	
-Sbicolor	Sorghum bicolor	ensembl_plants	47.0	Sorghum_bicolor_NCBIv3			Sb		10000.0	ensembl	T	T	T		T	T		T		T	T	T	
-Vvinifera	Vitis vinifera	ensembl_plants	47.0	12X			Vv		10000.0	ensembl	T	T									T	T	
+Athaliana	Arabidopsis thaliana	ensembl_plants	48.0	TAIR10			At		10000.0	ensembl	T	T	T	T	T	T	T	T	T	T	T	T	C
+Alyrata	Arabidopsis lyrata	ensembl_plants	48.0	v.1.0			Al		10000.0	ensembl	T	T									T	T	
+Bdistachyon	Brachypodium distachyon	ensembl_plants	48.0	Brachypodium_distachyon_v3.0			Bd		10000.0	ensembl	T	T	T		T	T		T		T	T	T	
+Brapa	Brassica rapa	ensembl_plants	48.0	Brapa_1.0			Br		10000.0	ensembl	T	T									T	T	
+Gmax	Glycine max	ensembl_plants	48.0	Glycine_max_v2.1			Gm		10000.0	ensembl	T	T									T	T	
+Mtruncatula	Medicago truncatula	ensembl_plants	48.0	MedtrA17_4.0			Mt		10000.0	ensembl	T	T									T	T	
+Osativa	Oryza sativa	ensembl_plants	48.0	IRGSP-1.0			Os		10000.0	ensembl	T	T	T	T	T	T	T	T	T	T	T	T	
+Oindica	Oryza indica	ensembl_plants	48.0	ASM465v1			Oi		10000.0	ensembl	T	T									T	T	
+Orufipogon	Oryza rufipogon	ensembl_plants	48.0	OR_W1943			Or		10000.0	ensembl	T	T									T	T	
+Onivara	Oryza nivara	ensembl_plants	48.0	Oryza_nivara_v1.0			On		10000.0	ensembl	T	T									T	T	
+Ptrichocarpa	Populus trichocarpa	ensembl_plants	48.0	Pop_tri_v3			Pt		10000.0	ensembl	T	T									T	T	
+Ppersica	Prunus persica	ensembl_plants	48.0	Prunus_persica_NCBIv2			Pp		10000.0	ensembl	T	T									T	T	
+Sitalica	Setaria italica	ensembl_plants	48.0	Setaria_italica_v2.0			Si		10000.0	ensembl	T	T									T	T	
+Slycopersicum	Solanum lycopersicum	ensembl_plants	48.0	SL3.0			Sl		10000.0	ensembl	T	T									T	T	
+Sbicolor	Sorghum bicolor	ensembl_plants	48.0	Sorghum_bicolor_NCBIv3			Sb		10000.0	ensembl	T	T	T		T	T		T		T	T	T	
+Vvinifera	Vitis vinifera	ensembl_plants	48.0	12X			Vv		10000.0	ensembl	T	T									T	T	
 Zmays_B73	Zea mays	ensembl_plants	41.0	B73 RefGen_v4			B		10000.0	ensembl	T	T	T	T	T	T	T	T	T	T	T	T	C
-Zmays_B73v4	Zea mays	ensembl_plants	47.0	B73 RefGen_v4			B		10000.0	ensembl	T	T	T	T	T	T	T	T	T	T	T	T	C
+Zmays_B73v4	Zea mays	ensembl_plants	48.0	B73 RefGen_v4			B		10000.0	ensembl	T	T	T	T	T	T	T	T	T	T	T	T	C
 Zmays_Mo17		url			https://ftp.maizegdb.org/MaizeGDB/FTP/Zm-Mo17-REFERENCE-CAU-1.0/Zm-Mo17-REFERENCE-CAU-1.0.fa.gz	https://ftp.maizegdb.org/MaizeGDB/FTP/Zm-Mo17-REFERENCE-CAU-1.0/Zm-Mo17-REFERENCE-CAU-1.0_Zm00014a.1.gff3.gz	M		10000.0	mo17	T	T	T	T	T	T		T	T	T	T	T	C
 Zmays_W22		url			https://ftp.maizegdb.org/MaizeGDB/FTP/Zm-W22-REFERENCE-NRGENE-2.0/Zm-W22-REFERENCE-NRGENE-2.0.fa.gz	https://ftp.maizegdb.org/MaizeGDB/FTP/Zm-W22-REFERENCE-NRGENE-2.0/Zm-W22-REFERENCE-NRGENE-2.0_Zm00004b.1.gff3.gz	W		10000.0	w22	T	T	T	T		T		T	T	T	T	T	C
 Zmays_PH207		url			https://ftp.maizegdb.org/MaizeGDB/FTP/Zm-PH207-REFERENCE_NS-UIUC_UMN-1.0/Zm-PH207-REFERENCE_NS-UIUC_UMN-1.0.fa.gz	https://ftp.maizegdb.org/MaizeGDB/FTP/Zm-PH207-REFERENCE_NS-UIUC_UMN-1.0/Zm-PH207-REFERENCE_NS-UIUC_UMN-1.0_Zm00008a.1.gff3.gz	P		10000.0	ph207	T	T	T	T		T		T		T	T	T	C
