@@ -311,9 +311,9 @@ fo = file.path(dirw, '15.tile.bed')
 write_tsv(tc, fo, col_names = F)
 #}}}
 
-#{{{ [obsolete] gene and TE intervals for bs-seq analysis
+#{{{ gene bins for meta plots
 genome = 'Zmays_B73'
-dirw = file.path(dird, genome, '50_annotation')
+dirw = file.path(dirp, 'data2', genome)
 gcfg = read_genome_conf(genome)
 
 tg = gcfg$gene.loc %>% filter(etype=='exon') %>%
@@ -322,19 +322,15 @@ tg = gcfg$gene.loc %>% filter(etype=='exon') %>%
     ungroup() %>% mutate(ftype='Gene') %>%
     select(fid=gid,ftype,chrom,start,end,srd)
 tg %>% count(ftype)
-#
-ft = file.path(dirw, '30.TE.tsv')
-tt = read_tsv(ft) %>% mutate(ftype='TE') %>%
-    select(fid=id,ftype,chrom,start,end,srd)
 
-tp = rbind(tg, tt) %>%
+tp = tg %>%
     mutate(len = end - start) %>%
     mutate(start0 = start-len/2, end0 = end+len/2) %>%
     arrange(chrom,start,end) %>%
-    group_by(1) %>% mutate(idx=1:n()) %>% ungroup() %>% select(-`1`)
+    mutate(idx=1:n()) %>% filter(len >= 200)
 #
 gr = with(tp, GRanges(seqnames=chrom, ranges=IRanges(start0,end0)))
-nbin = 40
+nbin = 200
 grl = tile(gr, n=nbin)
 
 tp1 = tp %>% select(idx,fid,ftype,srd)
@@ -353,68 +349,11 @@ to2 = to %>% filter(srd == '-') %>%
 tp = rbind(to1, to2) %>%
     mutate(start = start-1) %>%
     filter(start>=0, end>=0) %>%
-    select(chrom, start, end, fid, ftype, i) %>%
+    select(chrom, start, end, fid, i, srd) %>%
     arrange(chrom, start, end)
 
-fo = file.path(dirw, '35.intervals.bed')
+fo = file.path(dirw, '35.metaplot.bin.bed')
 write_tsv(tp, fo, col_names=F)
-#}}}
-
-#{{{ ACR [obsolete - see README]
-# sortBed -i acr.1.bed | cut -f1-3 > acr.2.bed
-## intersectBed -a ../50_annotation/15.regulation.bed -b acr.2.bed -wao > acr.3.bed
-## closestBed -a acr.2.bed -b ../50_annotation/15.tss.bed -d > acr.3.bed
-dirw = file.path(dird, genome, 'chromatin')
-opts = c('promoter','gene_body','distal','none')
-bp_acr = 50
-fa = file.path(dirw, 'acr.3.bed')
-ta = read_tsv(fa, col_names=c("chrom",'start','end','gid','srd','opt',
-                              'chrom2','start2','end2','bp')) %>%
-    group_by(gid,opt) %>% summarise(bp = sum(bp)) %>% ungroup() %>%
-    mutate(ovlp = bp >= bp_acr) %>%
-    select(gid, opt, ovlp) %>% spread(opt, ovlp) %>%
-    mutate(opt = ifelse(distal, 'distal', 'none')) %>%
-    mutate(opt = ifelse(genic, 'gene_body', opt)) %>%
-    mutate(opt = ifelse(proximal, 'promoter', opt)) %>%
-    mutate(opt = factor(opt, levels=opts)) %>%
-    select(gid, opt)
-ta %>% count(opt)
-
-ta %>% inner_join(tsyn, by='gid') %>%
-    group_by(ftype, opt) %>%
-    summarise(ng = n()) %>%
-    mutate(prop = ng/sum(ng)) %>%
-    ungroup() %>% select(ftype, opt, prop) %>% spread(opt, prop)
-#}}}
-
-#{{{ UMR [obsolete - see README]
-# awk -F'\t' '$4 == "Unmethylated"' umr.1.bed | cut -f1-3 > umr.2.bed
-# intersectBed -a ../50_annotation/15.regulation.bed -b umr.2.bed -wao > umr.3.bed
-opts = c('promoter','gene_body','distal','none')
-bp_umr = 200
-fu = file.path(dirw, 'umr.3.bed')
-tu = read_tsv(fu, col_names=c("chrom",'start','end','gid','srd','opt',
-                              'chrom2','start2','end2','bp')) %>%
-    group_by(gid,opt) %>% summarise(bp = sum(bp)) %>% ungroup() %>%
-    mutate(ovlp = bp >= bp_umr) %>%
-    select(gid, opt, ovlp) %>% spread(opt, ovlp) %>%
-    mutate(opt = ifelse(distal, 'distal', 'none')) %>%
-    mutate(opt = ifelse(genic, 'gene_body', opt)) %>%
-    mutate(opt = ifelse(proximal, 'promoter', opt)) %>%
-    mutate(opt = factor(opt, levels=opts)) %>%
-    select(gid, opt)
-tu %>% count(opt)
-
-tu %>% inner_join(tsyn, by='gid') %>%
-    group_by(ftype, opt) %>%
-    summarise(ng = n()) %>%
-    mutate(prop = ng/sum(ng)) %>%
-    ungroup() %>% select(ftype, opt, prop) %>% spread(opt, prop)
-
-to = ta %>% rename(acr = opt) %>% inner_join(tu, by='gid') %>% rename(umr=opt)
-to %>% count(acr, umr)
-fo = file.path(dirw, 'chromatin.tsv')
-write_tsv(to, fo)
 #}}}
 
 
