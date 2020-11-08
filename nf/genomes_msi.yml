@@ -9,6 +9,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Alyrata/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Alyrata/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Alyrata/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Alyrata/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Alyrata/50_annotation/10.gff
@@ -34,6 +35,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Athaliana/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Athaliana/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Athaliana/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Athaliana/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Athaliana/50_annotation/10.gff
@@ -60,6 +62,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Bdistachyon/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Bdistachyon/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Bdistachyon/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Bdistachyon/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Bdistachyon/50_annotation/10.gff
@@ -85,6 +88,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Brapa/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Brapa/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Brapa/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Brapa/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Brapa/50_annotation/10.gff
@@ -110,6 +114,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Gmax/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Gmax/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Gmax/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Gmax/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Gmax/50_annotation/10.gff
@@ -135,6 +140,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Mtruncatula/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Mtruncatula/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Mtruncatula/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Mtruncatula/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Mtruncatula/50_annotation/10.gff
@@ -160,11 +166,13 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Oindica/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Oindica/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Oindica/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Oindica/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Oindica/50_annotation/10.gff
     gtf: /home/springer/zhoux379/projects/genome/data/Oindica/50_annotation/10.gtf
     hisat2: /home/springer/zhoux379/projects/genome/data/Oindica/21_dbs/hisat2/db
+    macs_gsize: 531774890
     pbed: /home/springer/zhoux379/projects/genome/data/Oindica/50_annotation/15.bed
     pfaa: /home/springer/zhoux379/projects/genome/data/Oindica/50_annotation/15.aa.fasta
     pfna: /home/springer/zhoux379/projects/genome/data/Oindica/50_annotation/15.nt.fasta
@@ -185,11 +193,13 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Onivara/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Onivara/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Onivara/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Onivara/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Onivara/50_annotation/10.gff
     gtf: /home/springer/zhoux379/projects/genome/data/Onivara/50_annotation/10.gtf
     hisat2: /home/springer/zhoux379/projects/genome/data/Onivara/21_dbs/hisat2/db
+    macs_gsize: 337950324
     pbed: /home/springer/zhoux379/projects/genome/data/Onivara/50_annotation/15.bed
     pfaa: /home/springer/zhoux379/projects/genome/data/Onivara/50_annotation/15.aa.fasta
     pfna: /home/springer/zhoux379/projects/genome/data/Onivara/50_annotation/15.nt.fasta
@@ -210,11 +220,13 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Orufipogon/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Orufipogon/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Orufipogon/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Orufipogon/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Orufipogon/50_annotation/10.gff
     gtf: /home/springer/zhoux379/projects/genome/data/Orufipogon/50_annotation/10.gtf
     hisat2: /home/springer/zhoux379/projects/genome/data/Orufipogon/21_dbs/hisat2/db
+    macs_gsize: 338040714
     pbed: /home/springer/zhoux379/projects/genome/data/Orufipogon/50_annotation/15.bed
     pfaa: /home/springer/zhoux379/projects/genome/data/Orufipogon/50_annotation/15.aa.fasta
     pfna: /home/springer/zhoux379/projects/genome/data/Orufipogon/50_annotation/15.nt.fasta
@@ -235,11 +247,13 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Osativa/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Osativa/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Osativa/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Osativa/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Osativa/50_annotation/10.gff
     gtf: /home/springer/zhoux379/projects/genome/data/Osativa/50_annotation/10.gtf
     hisat2: /home/springer/zhoux379/projects/genome/data/Osativa/21_dbs/hisat2/db
+    macs_gsize: 375549285
     pbed: /home/springer/zhoux379/projects/genome/data/Osativa/50_annotation/15.bed
     pfaa: /home/springer/zhoux379/projects/genome/data/Osativa/50_annotation/15.aa.fasta
     pfna: /home/springer/zhoux379/projects/genome/data/Osativa/50_annotation/15.nt.fasta
@@ -260,6 +274,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Ppersica/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Ppersica/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Ppersica/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Ppersica/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Ppersica/50_annotation/10.gff
@@ -285,6 +300,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Ptrichocarpa/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Ptrichocarpa/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Ptrichocarpa/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Ptrichocarpa/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Ptrichocarpa/50_annotation/10.gff
@@ -310,6 +326,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Sbicolor/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Sbicolor/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Sbicolor/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Sbicolor/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Sbicolor/50_annotation/10.gff
@@ -335,6 +352,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Sitalica/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Sitalica/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Sitalica/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Sitalica/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Sitalica/50_annotation/10.gff
@@ -360,6 +378,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Slycopersicum/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Slycopersicum/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Slycopersicum/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Slycopersicum/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Slycopersicum/50_annotation/10.gff
@@ -385,6 +404,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Vvinifera/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Vvinifera/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Vvinifera/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Vvinifera/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Vvinifera/50_annotation/10.gff
@@ -410,6 +430,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_B104/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_B104/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_B104/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_B104/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_B104/50_annotation/10.gff
@@ -435,6 +456,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_B73/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_B73/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_B73/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_B73/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_B73/50_annotation/10.gff
@@ -464,6 +486,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_B73v4/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_B73v4/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_B73v4/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_B73v4/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_B73v4/50_annotation/10.gff
@@ -490,6 +513,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_B73v5/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_B73v5/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_B73v5/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_B73v5/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_B73v5/50_annotation/10.gff
@@ -516,6 +540,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_B73xMo17/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_B73xMo17/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_B73xMo17/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_B73xMo17/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_B73xMo17/50_annotation/10.gff
@@ -541,6 +566,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_B97/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_B97/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_B97/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_B97/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_B97/50_annotation/10.gff
@@ -566,6 +592,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_CML103/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_CML103/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_CML103/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_CML103/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_CML103/50_annotation/10.gff
@@ -591,6 +618,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_CML228/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_CML228/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_CML228/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_CML228/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_CML228/50_annotation/10.gff
@@ -616,6 +644,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_CML247/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_CML247/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_CML247/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_CML247/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_CML247/50_annotation/10.gff
@@ -641,6 +670,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_CML277/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_CML277/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_CML277/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_CML277/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_CML277/50_annotation/10.gff
@@ -666,6 +696,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_CML322/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_CML322/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_CML322/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_CML322/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_CML322/50_annotation/10.gff
@@ -691,6 +722,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_CML333/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_CML333/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_CML333/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_CML333/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_CML333/50_annotation/10.gff
@@ -716,6 +748,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_CML52/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_CML52/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_CML52/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_CML52/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_CML52/50_annotation/10.gff
@@ -741,6 +774,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_CML69/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_CML69/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_CML69/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_CML69/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_CML69/50_annotation/10.gff
@@ -766,6 +800,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_HP301/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_HP301/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_HP301/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_HP301/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_HP301/50_annotation/10.gff
@@ -791,6 +826,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_Il14H/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Il14H/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Il14H/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_Il14H/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_Il14H/50_annotation/10.gff
@@ -816,6 +852,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_Ki11/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Ki11/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Ki11/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_Ki11/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_Ki11/50_annotation/10.gff
@@ -841,6 +878,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_Ki3/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Ki3/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Ki3/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_Ki3/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_Ki3/50_annotation/10.gff
@@ -866,6 +904,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_Ky21/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Ky21/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Ky21/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_Ky21/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_Ky21/50_annotation/10.gff
@@ -891,6 +930,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_M162W/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_M162W/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_M162W/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_M162W/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_M162W/50_annotation/10.gff
@@ -916,6 +956,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_M37W/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_M37W/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_M37W/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_M37W/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_M37W/50_annotation/10.gff
@@ -941,6 +982,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_Mo17/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Mo17/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Mo17/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_Mo17/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_Mo17/50_annotation/10.gff
@@ -967,6 +1009,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_Mo18W/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Mo18W/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Mo18W/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_Mo18W/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_Mo18W/50_annotation/10.gff
@@ -992,6 +1035,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_Ms71/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Ms71/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Ms71/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_Ms71/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_Ms71/50_annotation/10.gff
@@ -1017,6 +1061,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_NC350/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_NC350/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_NC350/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_NC350/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_NC350/50_annotation/10.gff
@@ -1042,6 +1087,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_NC358/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_NC358/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_NC358/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_NC358/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_NC358/50_annotation/10.gff
@@ -1067,6 +1113,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_Oh43/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Oh43/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Oh43/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_Oh43/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_Oh43/50_annotation/10.gff
@@ -1092,6 +1139,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_Oh7B/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Oh7B/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Oh7B/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_Oh7B/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_Oh7B/50_annotation/10.gff
@@ -1117,6 +1165,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_P39/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_P39/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_P39/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_P39/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_P39/50_annotation/10.gff
@@ -1142,6 +1191,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_PH207/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_PH207/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_PH207/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_PH207/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_PH207/50_annotation/10.gff
@@ -1168,6 +1218,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_Tx303/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Tx303/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Tx303/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_Tx303/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_Tx303/50_annotation/10.gff
@@ -1193,6 +1244,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_Tzi8/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Tzi8/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_Tzi8/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_Tzi8/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_Tzi8/50_annotation/10.gff
@@ -1218,6 +1270,7 @@ genomes:
     fc_group_features: gene_id
     fc_group_features_type: gene_biotype
     fna: /home/springer/zhoux379/projects/genome/data/Zmays_W22/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/genome/data/Zmays_W22/15_intervals/11.gap.bed
     genome_bed: /home/springer/zhoux379/projects/genome/data/Zmays_W22/15_intervals/01.chrom.bed
     genome_sizes: /home/springer/zhoux379/projects/genome/data/Zmays_W22/15_intervals/01.chrom.sizes
     gff: /home/springer/zhoux379/projects/genome/data/Zmays_W22/50_annotation/10.gff

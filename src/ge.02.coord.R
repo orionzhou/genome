@@ -4,30 +4,6 @@ genome = 'Zmays_B73'
 gcfg = read_genome_conf(genome)
 tsyn = read_syn(gcfg)
 
-#{{{ exon intervals for each gene
-dirw = file.path(dird, genome, '50_annotation')
-fi = file.path(dirw, "10.tsv")
-ti = read_tsv(fi) %>% filter(etype == 'exon')
-
-gr = with(ti, GRanges(seqnames=chrom, ranges=IRanges(start, end=end), gid=gid))
-grl = reduce(split(gr, elementMetadata(gr)$gid))
-x = unlist(grl)
-tc = tibble(gid = names(x), chrom = as.character(seqnames(x)),
-            start = start(x), end = end(x))
-
-tc %>% group_by(gid) %>%
-    summarise(size = sum(end - start + 1)) %>%
-    ungroup() %>% group_by(1) %>%
-    summarise(n = n(), me = mean(size), md = median(size),
-              min = min(size), max = max(size),
-              q25 = quantile(size, .25), q75 = quantile(size, .75))
-
-ta = tc %>% mutate(start = start - 1) %>% select(chrom, start, end, gid) %>%
-    arrange(chrom, start)
-fo = file.path(dirw, '10.ase.bed')
-write_tsv(ta, fo, col_names = F)
-#}}}
-
 #{{{ CDS intervals for pop-gene analysis
 dirw = file.path(dird, genome, '50_annotation')
 fi = file.path(dirw, "15.tsv")
@@ -356,5 +332,18 @@ fo = file.path(dirw, '35.metaplot.bin.bed')
 write_tsv(tp, fo, col_names=F)
 #}}}
 
+#{{{ create bioconductor TxDb
+require(GenomicFeatures)
+org = 'Zmays_B73'
 
+chromInfo = gcfg$chrom %>% select(chrom,length=size)
+f_gff = file.path(dird, org, "50_annotation/10.gff")
+txdb = makeTxDbFromGFF(f_gff, format='gff3',
+                       organism='Zea mays', chrominfo=chromInfo)
+
+f_txdb = file.path(dird, org, "50_annotation/10.sqlite")
+saveDb(txdb, file=f_txdb)
+
+#x = select(txdb, keys=keys(txdb), columns="TXTYPE", keytype="GENEID")
+#}}}
 
