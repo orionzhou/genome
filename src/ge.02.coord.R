@@ -347,3 +347,40 @@ saveDb(txdb, file=f_txdb)
 #x = select(txdb, keys=keys(txdb), columns="TXTYPE", keytype="GENEID")
 #}}}
 
+#{{{ make locus lookup table
+#{{{ B73
+fa = '~/projects/genome/data2/Zmays_B73/61_functional/00.symbols.tsv'
+ta = read_tsv(fa) %>% mutate(symbol2=str_to_upper(symbol))
+ti = gcfg$gene %>% mutate(locus=glue("{chrom}:{start}-{end}")) %>%
+    left_join(ta, by='gid') %>%
+    select(locus,gid,symbol,symbol2,gid_v3,note)
+
+xref=read_xref()
+tx = xref %>% filter(qry!='B73') %>% select(gid1,qry,gid2) %>%
+    spread(qry,gid2) %>% rename(gid=gid1)
+
+tgm = read_genome_conf("Zmays_Mo17")$gene %>%
+    mutate(locus=glue("{chrom}:{start}-{end}")) %>%
+    select(Mo17=gid, Mo17_locus=locus)
+tgw = read_genome_conf("Zmays_W22")$gene %>%
+    mutate(locus=glue("{chrom}:{start}-{end}")) %>%
+    select(W22=gid, W22_locus=locus)
+tgp = read_genome_conf("Zmays_PH207")$gene %>%
+    mutate(locus=glue("{chrom}:{start}-{end}")) %>%
+    select(PH207=gid, PH207_locus=locus)
+
+tx2 = tx %>%
+    left_join(tgm, by='Mo17') %>%
+    left_join(tgw, by='W22')
+
+to = ti %>% left_join(tx2, by='gid') %>%
+    select(locus,gid,symbol,symbol2,Mo17,Mo17_locus,W22,W22_locus,gid_v3,note)
+fo = glue("{dirp}/data2/loci/Zmays_B73.tsv")
+write_tsv(to, fo, na='')
+#}}}
+
+#}}}
+
+
+
+
