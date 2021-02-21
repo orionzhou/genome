@@ -1,6 +1,7 @@
 # Project directories
 cache
 logs
+pipeline_info
 
 # data folder
 data
