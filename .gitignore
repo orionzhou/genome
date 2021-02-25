@@ -4,9 +4,7 @@ logs
 pipeline_info
 
 # data folder
-data
 data2
-data_old
 work
 results
 
