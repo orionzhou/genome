@@ -18,6 +18,8 @@ Sviridis_MEV	Setaria viridis	Svm	local			/home/springer/zhoux379/projects/genome
 Slycopersicum	Solanum lycopersicum	Sl	ensembl_plants	48.0	SL3.0			Sl		10000.0	ensembl	T	T									T	T	
 Sbicolor	Sorghum bicolor	Sb	ensembl_plants	48.0	Sorghum_bicolor_NCBIv3			Sb		10000.0	ensembl	T	T	T		T	T		T		T	T	T	
 Vvinifera	Vitis vinifera	Vv	ensembl_plants	48.0	12X			Vv		10000.0	ensembl	T	T									T	T	
+Atauschii	Aegilops tauschii	Aet	ensembl_plants	50.0	Aet_v4.0			Aet		10000.0	ensembl	T	T	T		T	T		T		T	T	T	
+Taestivum	Triticum aestivum	Ta	ensembl_plants	50.0	IWGSC			Ta		10000.0	ensembl	T	T	T		T	T		T		T	T	T	
 Zmays_B73	Zea mays	B73	ensembl_plants	41.0	B73 RefGen_v4			B		10000.0	ensembl	T	T	T	T	T	T	T	T	T	T	T	T	C
 Zmays_B73v4	Zea mays	B73	ensembl_plants	48.0	B73 RefGen_v4			B		10000.0	ensembl	T	T	T	T	T	T	T	T	T	T	T	T	C
 Zmays_Mo17		Mo17	url			https://ftp.maizegdb.org/MaizeGDB/FTP/Zm-Mo17-REFERENCE-CAU-1.0/Zm-Mo17-REFERENCE-CAU-1.0.fa.gz	https://ftp.maizegdb.org/MaizeGDB/FTP/Zm-Mo17-REFERENCE-CAU-1.0/Zm-Mo17-REFERENCE-CAU-1.0_Zm00014a.1.gff3.gz	M		10000.0	mo17	T	T	T	T	T	T		T	T	T	T	T	C
