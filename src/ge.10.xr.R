@@ -1,6 +1,6 @@
 source('functions.R')
 genome = 'Zmays_B73'
-dirw = file.path(dirp, 'data2', genome, 'gene_mapping')
+dirw = glue('{dirp}/data2/{genome}/gene_mapping')
 gcfg = read_genome_conf()
 
 #{{{ maizeGDB xref
@@ -26,13 +26,13 @@ fo = file.path(dirw, 'xref.maizeGDB.tsv')
 write_tsv(xref, fo, na='')
 #}}}
 
-fi = file.path(dirw, 'B73_Mo17.tsv')
+fi = glue('{dirw}/B73_Mo17.tsv')
 ti2 = read_tsv(fi, col_names=F) %>% select(gid=X4, Mo17=X8, type=X9)
 
 #{{{ jcvi synmap pipeline output
-read_synmap <- function(qry, tgt='B73', diri='/home/springer/zhoux379/projects/wgc/data/raw') {
+read_synmap2 <- function(qry, tgt='B73', diri='~/projects/wgc/data/raw') {
     #{{{
-fi = sprintf("%s/%s_%s/20_synteny/07.t.ortholog", diri, qry, tgt)
+fi = sprintf("%s/Zmays_%s-Zmays_%s/xref.t.tsv", diri, qry, tgt)
 read_tsv(fi, col_names=c('tid1','tid2')) %>%
     filter(tid2 != '.') %>%
     mutate(type = ifelse(str_sub(tid2, -1, -1)=="'", 'rbh','syn')) %>%
@@ -42,13 +42,25 @@ read_tsv(fi, col_names=c('tid1','tid2')) %>%
     select(gid1, gid2, type, tid1, tid2)
     #}}}
 }
+read_synmap <- function(qry, tgt='B73', diri='~/projects/wgc/data/raw') {
+    #{{{
+    fi = glue("{diri}/Zmays_{qry}-Zmays_{tgt}/xref.t.tsv")
+    read_tsv(fi, col_names=c('tid1','tid2', 'type')) %>%
+        filter(tid2 != '.') %>%
+        separate(tid1, c('gid1','iso1'), sep="[\\.\\_]", remove=F) %>%
+        separate(tid2, c('gid2','iso2'), sep="[\\.\\_]", remove=F) %>%
+        select(gid1, gid2, type, tid1, tid2)
+    #}}}
+}
 
 qrys = c("Mo17","W22",'PH207')
+qrys = gts31
 to = tibble(qry=qrys, tgt='B73') %>%
     mutate(xref = map2(qry, tgt, read_synmap)) %>%
     unnest(xref)
+to %>% count(qry,tgt) %>% print(n=40)
 
-fo = file.path(dirw, 'xref.synmap.tsv')
+fo = glue('{dirw}/xref.synmap.tsv')
 write_tsv(to, fo)
 #}}}
 
