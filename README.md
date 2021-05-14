@@ -8,7 +8,7 @@ Directory structure under each genome folder, using Arabidopsis thaliana as an e
     /datalus/genomes/Athaliana
     (base) pzhou@node12:Athaliana $ tree ./
 
-.
+```
 ├── 10.fasta  # genome fasta sequence
 ├── 10.fasta.fai
 ├── 15_intervals
@@ -155,4 +155,4 @@ Directory structure under each genome folder, using Arabidopsis thaliana as an e
     ├── Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
     ├── raw.fasta.gz -> Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
     └── raw.gff.gz -> Arabidopsis_thaliana.TAIR10.50.gff3.gz
-
+```
