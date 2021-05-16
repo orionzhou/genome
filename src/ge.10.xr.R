@@ -54,7 +54,7 @@ read_synmap <- function(qry, tgt='B73', diri='~/projects/wgc/data/raw') {
 }
 
 qrys = c("Mo17","W22",'PH207')
-qrys = gts31
+qrys = gts31_ph207
 to = tibble(qry=qrys, tgt='B73') %>%
     mutate(xref = map2(qry, tgt, read_synmap)) %>%
     unnest(xref)
