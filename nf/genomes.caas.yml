@@ -20,6 +20,7 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Alyrata/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Alyrata/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Alyrata/21_dbs/hisat2/db
+    macs_gsize: 213527935
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Alyrata/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Alyrata/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Alyrata/50_annotation/15.nt.fasta
@@ -52,6 +53,7 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Atauschii/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Atauschii/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Atauschii/21_dbs/hisat2/db
+    macs_gsize: 4334490394
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Atauschii/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Atauschii/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Atauschii/50_annotation/15.nt.fasta
@@ -84,6 +86,7 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Athaliana/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Athaliana/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Athaliana/21_dbs/hisat2/db
+    macs_gsize: 119677750
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Athaliana/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Athaliana/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Athaliana/50_annotation/15.nt.fasta
@@ -116,6 +119,7 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Bdistachyon/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Bdistachyon/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Bdistachyon/21_dbs/hisat2/db
+    macs_gsize: 271203419
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Bdistachyon/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Bdistachyon/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Bdistachyon/50_annotation/15.nt.fasta
@@ -148,6 +152,7 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Brapa/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Brapa/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Brapa/21_dbs/hisat2/db
+    macs_gsize: 687382783
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Brapa/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Brapa/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Brapa/50_annotation/15.nt.fasta
@@ -180,6 +185,7 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Gmax/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Gmax/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Gmax/21_dbs/hisat2/db
+    macs_gsize: 990181270
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Gmax/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Gmax/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Gmax/50_annotation/15.nt.fasta
@@ -244,6 +250,7 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Mtruncatula/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Mtruncatula/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Mtruncatula/21_dbs/hisat2/db
+    macs_gsize: 434570391
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Mtruncatula/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Mtruncatula/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Mtruncatula/50_annotation/15.nt.fasta
@@ -276,6 +283,7 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Oindica/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Oindica/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Oindica/21_dbs/hisat2/db
+    macs_gsize: 531774890
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Oindica/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Oindica/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Oindica/50_annotation/15.nt.fasta
@@ -308,6 +316,7 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Onivara/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Onivara/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Onivara/21_dbs/hisat2/db
+    macs_gsize: 337950324
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Onivara/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Onivara/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Onivara/50_annotation/15.nt.fasta
@@ -340,6 +349,7 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Orufipogon/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Orufipogon/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Orufipogon/21_dbs/hisat2/db
+    macs_gsize: 338040714
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Orufipogon/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Orufipogon/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Orufipogon/50_annotation/15.nt.fasta
@@ -372,6 +382,7 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Osativa/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Osativa/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Osativa/21_dbs/hisat2/db
+    macs_gsize: 375549285
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Osativa/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Osativa/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Osativa/50_annotation/15.nt.fasta
@@ -404,6 +415,7 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Ppersica/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Ppersica/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Ppersica/21_dbs/hisat2/db
+    macs_gsize: 229231381
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Ppersica/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Ppersica/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Ppersica/50_annotation/15.nt.fasta
@@ -436,6 +448,7 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Ptrichocarpa/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Ptrichocarpa/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Ptrichocarpa/21_dbs/hisat2/db
+    macs_gsize: 448392815
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Ptrichocarpa/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Ptrichocarpa/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Ptrichocarpa/50_annotation/15.nt.fasta
@@ -468,6 +481,7 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Sbicolor/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Sbicolor/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Sbicolor/21_dbs/hisat2/db
+    macs_gsize: 717295318
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Sbicolor/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Sbicolor/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Sbicolor/50_annotation/15.nt.fasta
@@ -500,6 +514,7 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Sitalica/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Sitalica/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Sitalica/21_dbs/hisat2/db
+    macs_gsize: 408992883
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Sitalica/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Sitalica/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Sitalica/50_annotation/15.nt.fasta
@@ -532,6 +547,7 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Slycopersicum/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Slycopersicum/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Slycopersicum/21_dbs/hisat2/db
+    macs_gsize: 859097456
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Slycopersicum/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Slycopersicum/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Slycopersicum/50_annotation/15.nt.fasta
@@ -564,6 +580,7 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Sviridis/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Sviridis/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Sviridis/21_dbs/hisat2/db
+    macs_gsize: 395771502
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Sviridis/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Sviridis/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Sviridis/50_annotation/15.nt.fasta
@@ -660,6 +677,7 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum/21_dbs/hisat2/db
+    macs_gsize: 14547261565
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum/50_annotation/15.nt.fasta
@@ -1268,6 +1286,7 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Vvinifera/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Vvinifera/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Vvinifera/21_dbs/hisat2/db
+    macs_gsize: 486395422
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Vvinifera/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Vvinifera/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Vvinifera/50_annotation/15.nt.fasta

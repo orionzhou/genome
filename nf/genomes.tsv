@@ -18,11 +18,10 @@ Sviridis_MEV	Setaria viridis	Svm	local			/home/springer/zhoux379/projects/genome
 Slycopersicum	Solanum lycopersicum	Sl	ensembl	50.0	SL3.0			Sl		10000	ensembl	T											T	T
 Sbicolor	Sorghum bicolor	Sb	ensembl	50.0	Sorghum_bicolor_NCBIv3			Sb		10000	ensembl	T											T	T
 Vvinifera	Vitis vinifera	Vv	ensembl	50.0	12X			Vv		10000	ensembl	T											T	T
-Atauschii	Aegilops tauschii	Aet	ensembl	50.0	Aet_v4.0			Aet		1000	ensembl	T		T			T				T		T	T
-Taestivum	Triticum aestivum	Ta	ensembl	50.0	IWGSC			Ta		1000	ensembl	T		T			T				T		T	T
+Hvulgare	Hordeum vulgare		ensembl	50.0	IBSC_v2			Hv		10000	ensembl	T											T	T
+Atauschii	Aegilops tauschii	Aet	ensembl	50.0	Aet_v4.0			Aet		1000	ensembl	T		T			T			T	T		T	T
+Taestivum	Triticum aestivum	Ta	ensembl	50.0	IWGSC			Ta		1000	ensembl	T		T			T			T	T		T	T
 Taestivum_arinalrfor	Triticum aestivum arinalrfor	arinalrfor	ensembl	50.0	PGSBv2.0			chr		1000	ensembl	T											T	T
-Taestivum_cadenza	Triticum aestivum cadenza	cadenza	ensembl	50.0	EIv1.1			chr		1000	ensembl	T											T	T
-Taestivum_claire	Triticum aestivum claire	claire	ensembl	50.0	EIv1.1			chr		1000	ensembl	T											T	T
 Taestivum_jagger	Triticum aestivum jagger	jagger	ensembl	50.0	PGSBv2.0			chr		1000	ensembl	T											T	T
 Taestivum_julius	Triticum aestivum julius	julius	ensembl	50.0	PGSBv2.0			chr		1000	ensembl	T											T	T
 Taestivum_lancer	Triticum aestivum lancer	lancer	ensembl	50.0	PGSBv2.0			chr		1000	ensembl	T											T	T
@@ -30,15 +29,16 @@ Taestivum_landmark	Triticum aestivum landmark	landmark	ensembl	50.0	PGSBv2.0			c
 Taestivum_mace	Triticum aestivum mace	mace	ensembl	50.0	PGSBv2.0			chr		1000	ensembl	T											T	T
 Taestivum_mattis	Triticum aestivum mattis	mattis	ensembl	50.0	PGSBv2.0			chr		1000	ensembl	T											T	T
 Taestivum_norin61	Triticum aestivum norin61	norin61	ensembl	50.0	PGSBv2.0			chr		1000	ensembl	T											T	T
-Taestivum_paragon	Triticum aestivum paragon	paragon	ensembl	50.0	EIv1.1			chr		1000	ensembl	T											T	T
-Taestivum_robigus	Triticum aestivum robigus	robigus	ensembl	50.0	EIv1.1			chr		1000	ensembl	T											T	T
-Taestivum_stanley	Triticum aestivum stanley	stanley	ensembl	50.0	PGSBv2.1			chr		1000	ensembl	T											T	T
-Taestivum_weebil	Triticum aestivum weebil	weebil	ensembl	50.0	WeebilV1			chr		1000	ensembl	T											T	T
+Taestivum_stanley	Triticum aestivum stanley	stanley	ensembl	50.0	PGSBv2.0			chr		1000	ensembl	T											T	T
 Tdicoccoides	Triticum dicoccoides	dicoccoides	ensembl	50.0	WEWSeq_v.1.0			chr		1000	ensembl	T											T	T
 Tspelta	Triticum spelta	spelta	ensembl	50.0	PGSBv2.0			chr		1000	ensembl	T											T	T
 Tturgidum	Triticum turgidum	turgidum	ensembl	50.0	Svevo.v1			chr		1000	ensembl	T											T	T
+Taestivum_cadenza	Triticum aestivum cadenza	cadenza	ensembl	50.0	EIv1.1			chr		1000	ensembl	T											T	T
+Taestivum_claire	Triticum aestivum claire	claire	ensembl	50.0	EIv1.1			chr		1000	ensembl	T											T	T
+Taestivum_paragon	Triticum aestivum paragon	paragon	ensembl	50.0	EIv1.1			chr		1000	ensembl	T											T	T
+Taestivum_robigus	Triticum aestivum robigus	robigus	ensembl	50.0	EIv1.1			chr		1000	ensembl	T											T	T
+Taestivum_weebil	Triticum aestivum weebil	weebil	ensembl	50.0	WeebilV1			chr		1000	ensembl	T											T	T
 Turartu	Triticum urartu	urartu	ensembl	50.0	ASM34745v1			chr		1000	ensembl	T											T	T
-Hvulgare	Hordeum vulgare		ensembl	50.0	IBSC_v2			Hv		10000	ensembl	T											T	T
 Zmays_B73	Zea mays	B73	ensembl	41.0	B73 RefGen_v4			B		10000	ensembl	T	T	T	T		T	T	T	T	T		T	T
 Zmays_B73v4	Zea mays	B73	ensembl	50.0	B73 RefGen_v4			B		10000	ensembl	T	T	T	T		T	T	T	T	T		T	T
 Zmays_Mo17		Mo17	url			https://ftp.maizegdb.org/MaizeGDB/FTP/Zm-Mo17-REFERENCE-CAU-1.0/Zm-Mo17-REFERENCE-CAU-1.0.fa.gz	https://ftp.maizegdb.org/MaizeGDB/FTP/Zm-Mo17-REFERENCE-CAU-1.0/Zm-Mo17-REFERENCE-CAU-1.0_Zm00014a.1.gff3.gz	M		10000	mo17	T					T						T	T
