@@ -1,6 +1,5 @@
 source('functions.R')
-genome = 'Zmays_B73'
-dirw = glue('{dirp}/data2/{genome}/gene_mapping')
+dirw = glue('{dirp}/data2/syntelog')
 gcfg = read_genome_conf()
 
 #{{{ maizeGDB xref
@@ -26,8 +25,6 @@ fo = file.path(dirw, 'xref.maizeGDB.tsv')
 write_tsv(xref, fo, na='')
 #}}}
 
-fi = glue('{dirw}/B73_Mo17.tsv')
-ti2 = read_tsv(fi, col_names=F) %>% select(gid=X4, Mo17=X8, type=X9)
 
 #{{{ jcvi synmap pipeline output
 read_synmap2 <- function(qry, tgt='B73', diri='~/projects/wgc/data/raw') {
@@ -60,15 +57,40 @@ to = tibble(qry=qrys, tgt='B73') %>%
     unnest(xref)
 to %>% count(qry,tgt) %>% print(n=40)
 
-fo = glue('{dirw}/xref.synmap.tsv')
+fo = glue('{dirw}/xref.maize.tsv')
 write_tsv(to, fo)
 #}}}
 
+#{{{ make xref gene model tibble
+fi = glue('{dirw}/xref.maize.tsv')
+ti = read_tsv(fi)
 
-tx %>% count(m1=='', m2=='')
-tx %>% filter(m1!='', m2!='') %>% mutate(x=m1==m2) %>% count(x)
+gts = c("B73",gts31_ph207)
+tg = tibble(gt=gts) %>% mutate(fi=glue("{dirg}/Zmays_{gt}/50_annotation/15.tsv")) %>%
+    mutate(x = map(fi, read_tsv)) %>%
+    select(gt, x) %>% unnest(x)
 
-tx = ti %>% full_join(ti3, by='gid') %>% rename(m1=Mo17,m2=gid2) %>%
-    replace_na(list(m1='',m2=''))
-tx %>% count(m1=='', m2=='')
-tx %>% filter(m1!='', m2!='') %>% mutate(x=m1==m2) %>% count(x)
+tg1 = tg %>% filter(gt=='B73') %>% select(-tid)
+tg2 = ti %>% inner_join(tg, by=c('qry'='gt','gid2'='gid','tid2'='tid')) %>%
+    select(gt=qry,gid=gid1,gid2,type,ttype,etype,chrom,start,end,srd)
+to = tg1 %>% bind_rows(tg2)
+
+top = to %>% filter(srd=='+')
+tx = top %>% group_by(gt,gid) %>% summarise(tss=min(start)) %>% ungroup()
+top = top %>% inner_join(tx, by=c('gt','gid')) %>%
+    mutate(beg=start-tss+1, end=end-tss+1)
+
+tom = to %>% filter(srd=='-')
+tx = tom %>% group_by(gt,gid) %>% summarise(tss=max(end)) %>% ungroup()
+tom = tom %>% inner_join(tx, by=c('gt','gid')) %>%
+    mutate(beg=tss-end+1, end=tss-start+1)
+
+to = top %>% bind_rows(tom) %>% select(gt,gid,type=etype,ttype,beg,end,gid2) %>%
+    arrange(gt, gid, type, beg)
+fo = glue("{dirw}/maize.gene.model.rds")
+saveRDS(to, fo)
+#}}}
+
+
+
+

@@ -1,0 +1,8 @@
+Taestivum_A
+Tspelta_A
+Tdicoccoides_A
+Tturgidum_A
+Taestivum_B
+Tspelta_B
+Tdicoccoides_B
+Tturgidum_B
