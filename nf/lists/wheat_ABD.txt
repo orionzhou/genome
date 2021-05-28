@@ -1,6 +1,10 @@
 Hvulgare
 Atauschii
 Atauschii_AS60
+Atauschii_AY17
+Atauschii_AY61
+Atauschii_T093
+Atauschii_XJ02
 Taestivum_D
 Taestivum_arinalrfor_D
 Taestivum_jagger_D

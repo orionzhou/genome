@@ -20,6 +20,10 @@ Sbicolor		Sorghum bicolor	Sb	ensembl	50.0	Sorghum_bicolor_NCBIv3			Sb		10000	ens
 Vvinifera		Vitis vinifera	Vv	ensembl	50.0	12X			Vv		10000	ensembl	T											T	T
 Hvulgare	HH	Hordeum vulgare	Hv	ensembl	50.0	IBSC_v2			Hv		10000	ensembl	T	T				T						T	T
 Atauschii	DD	Aegilops tauschii	al878	ensembl	50.0	Aet_v4.0			Aet		1000	ensembl	T	T	T			T			T	T		T	T
+Atauschii_AY61	DD	Aegilops tauschii	ay61	local			/datalus/genomes/raw_Atauschii/Atauschii_AY61/AY61.genome.fa.gz	/datalus/genomes/raw_Atauschii/Atauschii_AY61/AY61.all_gene.gff	chr		1000	ensembl	T	T				T						T	T
+Atauschii_T093	DD	Aegilops tauschii	t093	local			/datalus/genomes/raw_Atauschii/Atauschii_T093/T093.genome.fa.gz	/datalus/genomes/raw_Atauschii/Atauschii_T093/T093.all_gene.gff	chr		1000	ensembl	T	T				T						T	T
+Atauschii_XJ02	DD	Aegilops tauschii	xj02	local			/datalus/genomes/raw_Atauschii/Atauschii_XJ02/XJ02.genome.fa.gz	/datalus/genomes/raw_Atauschii/Atauschii_XJ02/XJ02.all_gene.gff	chr		1000	ensembl	T	T				T						T	T
+Atauschii_AY17	DD	Aegilops tauschii	ay17	local			/datalus/genomes/raw_Atauschii/Atauschii_AY17/AY17.genome.fa.gz	/datalus/genomes/raw_Atauschii/Atauschii_AY17/AY17.all_gene.gff	chr		1000	ensembl	T	T				T						T	T
 Tdicoccoides	AABB	Triticum dicoccoides	dicoccoides	ensembl	50.0	WEWSeq_v.1.0			chr		1000	ensembl	T											T	T
 Tturgidum	AABB	Triticum turgidum	turgidum	ensembl	50.0	Svevo.v1			chr		1000	ensembl	T											T	T
 Taestivum	AABBDD	Triticum aestivum	Ta	ensembl	50.0	IWGSC			Ta		1000	ensembl	T		T			T			T	T		T	T
@@ -39,26 +43,26 @@ Taestivum_paragon	AABBDD	Triticum aestivum paragon	paragon	ensembl	50.0	EIv1.1		
 Taestivum_robigus	AABBDD	Triticum aestivum robigus	robigus	ensembl	50.0	EIv1.1			chr		1000	ensembl	T											T	T
 Taestivum_weebil	AABBDD	Triticum aestivum weebil	weebil	ensembl	50.0	WeebilV1			chr		1000	ensembl	T											T	T
 Turartu	AA	Triticum urartu	urartu	ensembl	50.0	ASM34745v1			chr		1000	ensembl	T											T	T
-Atauschii_AS60	DD	Aegilops tauschii	as60	local			/datalus/genomes/raw_AS60/AS60.final.fasta	/datalus/genomes/raw_AS60/AS60.gff	chr		1000	nogene_noexon	T	T	T			T	T	T	T			T	
-Taestivum_D	DD	Triticum aestivum	Ta	local			/datalus/genomes/raw/Taestivum_D.fa	/datalus/genomes/raw/Taestivum_D.gff	chr		1000	ensembl	T	T				T						T	
-Taestivum_arinalrfor_D	DD	Triticum aestivum arinalrfor	arinalrfor	local			/datalus/genomes/raw/Taestivum_arinalrfor_D.fa	/datalus/genomes/raw/Taestivum_arinalrfor_D.gff	chr		1000	ensembl	T	T										T	
-Taestivum_jagger_D	DD	Triticum aestivum jagger	jagger	local			/datalus/genomes/raw/Taestivum_jagger_D.fa	/datalus/genomes/raw/Taestivum_jagger_D.gff	chr		1000	ensembl	T	T										T	
-Taestivum_julius_D	DD	Triticum aestivum julius	julius	local			/datalus/genomes/raw/Taestivum_julius_D.fa	/datalus/genomes/raw/Taestivum_julius_D.gff	chr		1000	ensembl	T	T										T	
-Taestivum_lancer_D	DD	Triticum aestivum lancer	lancer	local			/datalus/genomes/raw/Taestivum_lancer_D.fa	/datalus/genomes/raw/Taestivum_lancer_D.gff	chr		1000	ensembl	T	T										T	
-Taestivum_landmark_D	DD	Triticum aestivum landmark	landmark	local			/datalus/genomes/raw/Taestivum_landmark_D.fa	/datalus/genomes/raw/Taestivum_landmark_D.gff	chr		1000	ensembl	T	T										T	
-Taestivum_mace_D	DD	Triticum aestivum mace	mace	local			/datalus/genomes/raw/Taestivum_mace_D.fa	/datalus/genomes/raw/Taestivum_mace_D.gff	chr		1000	ensembl	T	T										T	
-Taestivum_mattis_D	DD	Triticum aestivum mattis	mattis	local			/datalus/genomes/raw/Taestivum_mattis_D.fa	/datalus/genomes/raw/Taestivum_mattis_D.gff	chr		1000	ensembl	T	T										T	
-Taestivum_norin61_D	DD	Triticum aestivum norin61	norin61	local			/datalus/genomes/raw/Taestivum_norin61_D.fa	/datalus/genomes/raw/Taestivum_norin61_D.gff	chr		1000	ensembl	T	T										T	
-Taestivum_stanley_D	DD	Triticum aestivum stanley	stanley	local			/datalus/genomes/raw/Taestivum_stanley_D.fa	/datalus/genomes/raw/Taestivum_stanley_D.gff	chr		1000	ensembl	T	T										T	
-Tspelta_D	DD	Triticum spelta	spelta	local			/datalus/genomes/raw/Tspelta_D.fa	/datalus/genomes/raw/Tspelta_D.gff	chr		1000	ensembl	T	T										T	
-Taestivum_A	AA	Triticum aestivum	Ta	local			/datalus/genomes/raw/Taestivum_A.fa	/datalus/genomes/raw/Taestivum_A.gff	chr		1000	ensembl	T	T										T	
-Tspelta_A	AA	Triticum spelta	spelta	local			/datalus/genomes/raw/Tspelta_A.fa	/datalus/genomes/raw/Tspelta_A.gff	chr		1000	ensembl	T	T										T	
-Tdicoccoides_A	AA	Triticum dicoccoides	dicoccoides	local			/datalus/genomes/raw/Tdicoccoides_A.fa	/datalus/genomes/raw/Tdicoccoides_A.gff	chr		1000	ensembl	T	T										T	
-Tturgidum_A	AA	Triticum turgidum	turgidum	local			/datalus/genomes/raw/Tturgidum_A.fa	/datalus/genomes/raw/Tturgidum_A.gff	chr		1000	ensembl	T	T										T	
-Taestivum_B	BB	Triticum aestivum	Ta	local			/datalus/genomes/raw/Taestivum_B.fa	/datalus/genomes/raw/Taestivum_B.gff	chr		1000	ensembl	T	T										T	
-Tspelta_B	BB	Triticum spelta	spelta	local			/datalus/genomes/raw/Tspelta_B.fa	/datalus/genomes/raw/Tspelta_B.gff	chr		1000	ensembl	T	T										T	
-Tdicoccoides_B	BB	Triticum dicoccoides	dicoccoides	local			/datalus/genomes/raw/Tdicoccoides_B.fa	/datalus/genomes/raw/Tdicoccoides_B.gff	chr		1000	ensembl	T	T										T	
-Tturgidum_B	BB	Triticum turgidum	turgidum	local			/datalus/genomes/raw/Tturgidum_B.fa	/datalus/genomes/raw/Tturgidum_B.gff	chr		1000	ensembl	T	T										T	
+Atauschii_AS60	DD	Aegilops tauschii	as60	local			/datalus/genomes/raw_Atauschii/raw_AS60/AS60.final.fasta	/datalus/genomes/raw_Atauschii/raw_AS60/AS60.gff	chr		1000	nogene_noexon	T	T	T			T	T	T	T			T	T
+Taestivum_D	DD	Triticum aestivum	Ta	local			/datalus/genomes/raw/Taestivum_D.fa	/datalus/genomes/raw/Taestivum_D.gff	chr		1000	ensembl	T	T				T						T	T
+Taestivum_arinalrfor_D	DD	Triticum aestivum arinalrfor	arinalrfor	local			/datalus/genomes/raw/Taestivum_arinalrfor_D.fa	/datalus/genomes/raw/Taestivum_arinalrfor_D.gff	chr		1000	ensembl	T	T										T	T
+Taestivum_jagger_D	DD	Triticum aestivum jagger	jagger	local			/datalus/genomes/raw/Taestivum_jagger_D.fa	/datalus/genomes/raw/Taestivum_jagger_D.gff	chr		1000	ensembl	T	T										T	T
+Taestivum_julius_D	DD	Triticum aestivum julius	julius	local			/datalus/genomes/raw/Taestivum_julius_D.fa	/datalus/genomes/raw/Taestivum_julius_D.gff	chr		1000	ensembl	T	T										T	T
+Taestivum_lancer_D	DD	Triticum aestivum lancer	lancer	local			/datalus/genomes/raw/Taestivum_lancer_D.fa	/datalus/genomes/raw/Taestivum_lancer_D.gff	chr		1000	ensembl	T	T										T	T
+Taestivum_landmark_D	DD	Triticum aestivum landmark	landmark	local			/datalus/genomes/raw/Taestivum_landmark_D.fa	/datalus/genomes/raw/Taestivum_landmark_D.gff	chr		1000	ensembl	T	T										T	T
+Taestivum_mace_D	DD	Triticum aestivum mace	mace	local			/datalus/genomes/raw/Taestivum_mace_D.fa	/datalus/genomes/raw/Taestivum_mace_D.gff	chr		1000	ensembl	T	T										T	T
+Taestivum_mattis_D	DD	Triticum aestivum mattis	mattis	local			/datalus/genomes/raw/Taestivum_mattis_D.fa	/datalus/genomes/raw/Taestivum_mattis_D.gff	chr		1000	ensembl	T	T										T	T
+Taestivum_norin61_D	DD	Triticum aestivum norin61	norin61	local			/datalus/genomes/raw/Taestivum_norin61_D.fa	/datalus/genomes/raw/Taestivum_norin61_D.gff	chr		1000	ensembl	T	T										T	T
+Taestivum_stanley_D	DD	Triticum aestivum stanley	stanley	local			/datalus/genomes/raw/Taestivum_stanley_D.fa	/datalus/genomes/raw/Taestivum_stanley_D.gff	chr		1000	ensembl	T	T										T	T
+Tspelta_D	DD	Triticum spelta	spelta	local			/datalus/genomes/raw/Tspelta_D.fa	/datalus/genomes/raw/Tspelta_D.gff	chr		1000	ensembl	T	T										T	T
+Taestivum_A	AA	Triticum aestivum	Ta	local			/datalus/genomes/raw/Taestivum_A.fa	/datalus/genomes/raw/Taestivum_A.gff	chr		1000	ensembl	T	T										T	T
+Tspelta_A	AA	Triticum spelta	spelta	local			/datalus/genomes/raw/Tspelta_A.fa	/datalus/genomes/raw/Tspelta_A.gff	chr		1000	ensembl	T	T										T	T
+Tdicoccoides_A	AA	Triticum dicoccoides	dicoccoides	local			/datalus/genomes/raw/Tdicoccoides_A.fa	/datalus/genomes/raw/Tdicoccoides_A.gff	chr		1000	ensembl	T	T										T	T
+Tturgidum_A	AA	Triticum turgidum	turgidum	local			/datalus/genomes/raw/Tturgidum_A.fa	/datalus/genomes/raw/Tturgidum_A.gff	chr		1000	ensembl	T	T										T	T
+Taestivum_B	BB	Triticum aestivum	Ta	local			/datalus/genomes/raw/Taestivum_B.fa	/datalus/genomes/raw/Taestivum_B.gff	chr		1000	ensembl	T	T										T	T
+Tspelta_B	BB	Triticum spelta	spelta	local			/datalus/genomes/raw/Tspelta_B.fa	/datalus/genomes/raw/Tspelta_B.gff	chr		1000	ensembl	T	T										T	T
+Tdicoccoides_B	BB	Triticum dicoccoides	dicoccoides	local			/datalus/genomes/raw/Tdicoccoides_B.fa	/datalus/genomes/raw/Tdicoccoides_B.gff	chr		1000	ensembl	T	T										T	T
+Tturgidum_B	BB	Triticum turgidum	turgidum	local			/datalus/genomes/raw/Tturgidum_B.fa	/datalus/genomes/raw/Tturgidum_B.gff	chr		1000	ensembl	T	T										T	T
 Zmays_B73		Zea mays	B73	ensembl	41.0	B73 RefGen_v4			B		10000	ensembl	T	T	T	T		T	T	T	T	T		T	T
 Zmays_B73v4		Zea mays	B73	ensembl	50.0	B73 RefGen_v4			B		10000	ensembl	T	T	T	T		T	T	T	T	T		T	T
 Zmays_Mo17			Mo17	url			https://ftp.maizegdb.org/MaizeGDB/FTP/Zm-Mo17-REFERENCE-CAU-1.0/Zm-Mo17-REFERENCE-CAU-1.0.fa.gz	https://ftp.maizegdb.org/MaizeGDB/FTP/Zm-Mo17-REFERENCE-CAU-1.0/Zm-Mo17-REFERENCE-CAU-1.0_Zm00014a.1.gff3.gz	M		10000	mo17	T					T	T		T			T	T
