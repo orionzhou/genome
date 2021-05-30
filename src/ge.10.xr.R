@@ -57,7 +57,7 @@ to = tibble(qry=qrys, tgt='B73') %>%
     unnest(xref)
 to %>% count(qry,tgt) %>% print(n=40)
 
-fo = glue('{dirw}/xref.maize.tsv')
+fo = glue('{dirw}/xref.maize.v4.tsv')
 write_tsv(to, fo)
 #}}}
 
