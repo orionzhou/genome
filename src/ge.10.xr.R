@@ -1,6 +1,30 @@
 source('functions.R')
 dirw = glue('{dirp}/data2/syntelog')
 gcfg = read_genome_conf()
+#{{{ functions
+read_synmap2 <- function(qry, tgt='B73', diri='~/projects/wgc/data/raw') {
+    #{{{
+fi = sprintf("%s/Zmays_%s-Zmays_%s/xref.t.tsv", diri, qry, tgt)
+read_tsv(fi, col_names=c('tid1','tid2')) %>%
+    filter(tid2 != '.') %>%
+    mutate(type = ifelse(str_sub(tid2, -1, -1)=="'", 'rbh','syn')) %>%
+    mutate(tid2 = str_replace(tid2, "'", '')) %>%
+    separate(tid1, c('gid1','iso1'), sep="[\\.\\_]", remove=F) %>%
+    separate(tid2, c('gid2','iso2'), sep="[\\.\\_]", remove=F) %>%
+    select(gid1, gid2, type, tid1, tid2)
+    #}}}
+}
+read_synmap <- function(qry, tgt='B73', diri='~/projects/wgc/data/raw') {
+    #{{{
+    fi = glue("{diri}/Zmays_{qry}-Zmays_{tgt}/xref.t.tsv")
+    read_tsv(fi, col_names=c('tid1','tid2', 'type')) %>%
+        filter(tid2 != '.') %>%
+        separate(tid1, c('gid1','iso1'), sep="[\\.\\_]", remove=F) %>%
+        separate(tid2, c('gid2','iso2'), sep="[\\.\\_]", remove=F) %>%
+        select(gid1, gid2, type, tid1, tid2)
+    #}}}
+}
+#}}}
 
 #{{{ maizeGDB xref
 fi = file.path(dirw, 'gene_model_xref_v4.txt')
@@ -26,43 +50,20 @@ write_tsv(xref, fo, na='')
 #}}}
 
 
-#{{{ jcvi synmap pipeline output
-read_synmap2 <- function(qry, tgt='B73', diri='~/projects/wgc/data/raw') {
-    #{{{
-fi = sprintf("%s/Zmays_%s-Zmays_%s/xref.t.tsv", diri, qry, tgt)
-read_tsv(fi, col_names=c('tid1','tid2')) %>%
-    filter(tid2 != '.') %>%
-    mutate(type = ifelse(str_sub(tid2, -1, -1)=="'", 'rbh','syn')) %>%
-    mutate(tid2 = str_replace(tid2, "'", '')) %>%
-    separate(tid1, c('gid1','iso1'), sep="[\\.\\_]", remove=F) %>%
-    separate(tid2, c('gid2','iso2'), sep="[\\.\\_]", remove=F) %>%
-    select(gid1, gid2, type, tid1, tid2)
-    #}}}
-}
-read_synmap <- function(qry, tgt='B73', diri='~/projects/wgc/data/raw') {
-    #{{{
-    fi = glue("{diri}/Zmays_{qry}-Zmays_{tgt}/xref.t.tsv")
-    read_tsv(fi, col_names=c('tid1','tid2', 'type')) %>%
-        filter(tid2 != '.') %>%
-        separate(tid1, c('gid1','iso1'), sep="[\\.\\_]", remove=F) %>%
-        separate(tid2, c('gid2','iso2'), sep="[\\.\\_]", remove=F) %>%
-        select(gid1, gid2, type, tid1, tid2)
-    #}}}
-}
-
+#{{{ V4 syntelog xref table
 qrys = c("Mo17","W22",'PH207')
 qrys = gts31_ph207
 to = tibble(qry=qrys, tgt='B73') %>%
     mutate(xref = map2(qry, tgt, read_synmap)) %>%
     unnest(xref)
-to %>% count(qry,tgt) %>% print(n=40)
+to %>% count(qry,tgt,type) %>% spread(type,n) %>% print(n=40)
 
 fo = glue('{dirw}/xref.maize.v4.tsv')
 write_tsv(to, fo)
 #}}}
 
-#{{{ make xref gene model tibble
-fi = glue('{dirw}/xref.maize.tsv')
+#{{{ make xref gene model tibble (v4)
+fi = glue('{dirw}/xref.maize.v4.tsv')
 ti = read_tsv(fi)
 
 gts = c("B73",gts31_ph207)
@@ -89,6 +90,18 @@ to = top %>% bind_rows(tom) %>% select(gt,gid,type=etype,ttype,beg,end,gid2) %>%
     arrange(gt, gid, type, beg)
 fo = glue("{dirw}/maize.gene.model.rds")
 saveRDS(to, fo)
+#}}}
+
+
+#{{{ V5 syntelog xref table
+qrys = gts31_ph207
+to = tibble(qry=qrys, tgt='B73v5') %>%
+    mutate(xref = map2(qry, tgt, read_synmap)) %>%
+    unnest(xref)
+to %>% count(qry,tgt) %>% print(n=40)
+
+fo = glue('{dirw}/xref.maize.v5.tsv')
+write_tsv(to, fo)
 #}}}
 
 
