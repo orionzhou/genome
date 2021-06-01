@@ -1,0 +1,39 @@
+#!/bin/bash -l
+#SBATCH -N 1 -n 1 -c 4
+#SBATCH --time=10:00:00
+#SBATCH --mem=30gb
+#SBATCH -p small,amdsmall
+#SBATCH --mail-type=FAIL
+#SBATCH --mail-user=pzhou@caas.cn
+#SBATCH -o job.out
+
+echo ${SLURM_JOBID}
+cpu=4
+
+source activate genome
+cd $genome/data/raw_wheat
+pre=$genome/src/chr
+
+for gt in Taestivum Taestivum_arinalrfor Taestivum_jagger Taestivum_julius Taestivum_lancer Taestivum_landmark Taestivum_mace Taestivum_mattis Taestivum_norin61 Taestivum_stanley Tspelta
+do
+    for sub in A B D
+    do
+        fasta.py extract --list ../$gt/10.fasta $pre$sub.txt > ${gt}_$sub.fa
+        python -m jcvi.formats.gff extract --contigs $pre$sub.txt ../$gt/50_annotation/10.gff -o ${gt}_$sub.gff
+        pigz -p $cpu ${gt}_$sub.fa
+        pigz -p $cpu ${gt}_$sub.gff
+        echo "done ${gt}_$sub"
+    done
+done
+
+for gt in Tdicoccoides Tturgidum
+do
+    for sub in A B
+    do
+        fasta.py extract --list ../$gt/10.fasta $pre$sub.txt > ${gt}_$sub.fa
+        python -m jcvi.formats.gff extract --contigs $pre$sub.txt ../$gt/50_annotation/10.gff -o ${gt}_$sub.gff
+        pigz -p $cpu ${gt}_$sub.fa
+        pigz -p $cpu ${gt}_$sub.gff
+        echo "done ${gt}_$sub"
+    done
+done

@@ -1,0 +1,7 @@
+chr1D
+chr2D
+chr3D
+chr4D
+chr5D
+chr6D
+chr7D

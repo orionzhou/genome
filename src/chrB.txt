@@ -1,0 +1,7 @@
+chr1B
+chr2B
+chr3B
+chr4B
+chr5B
+chr6B
+chr7B
