@@ -50,37 +50,38 @@ write_tsv(xref, fo, na='')
 #}}}
 
 
-#{{{ V4 syntelog xref table
-qrys = c("Mo17","W22",'PH207')
+#{{{ syntelog xref table
+v = 'v5'
+gt0 = ifelse(v == 'v4', 'B73', 'B73v5')
 qrys = gts31_ph207
-to = tibble(qry=qrys, tgt='B73') %>%
+to = tibble(qry=qrys, tgt=gt0) %>%
     mutate(xref = map2(qry, tgt, read_synmap)) %>%
     unnest(xref)
 to %>% count(qry,tgt,type) %>% spread(type,n) %>% print(n=40)
 
-fo = glue('{dirw}/xref.maize.v4.tsv')
+fo = glue('{dirw}/xref.maize.{v}.tsv')
 write_tsv(to, fo)
-#}}}
 
-#{{{ make xref gene model tibble (v4)
-fi = glue('{dirw}/xref.maize.v4.tsv')
-ti = read_tsv(fi)
+#{{{ make xref gene model tibble (v4/v5)
+#fi = glue('{dirw}/xref.maize.{v}.tsv')
+#ti = read_tsv(fi)
+ti = to
 
-gts = c("B73",gts31_ph207)
+gts = c(gt0,gts31_ph207)
 tg = tibble(gt=gts) %>% mutate(fi=glue("{dirg}/Zmays_{gt}/50_annotation/15.tsv")) %>%
     mutate(x = map(fi, read_tsv)) %>%
     select(gt, x) %>% unnest(x)
 
-tg1 = tg %>% filter(gt=='B73') %>% select(-tid)
+tg1 = tg %>% filter(gt==gt0) %>% select(-tid)
 tg2 = ti %>% inner_join(tg, by=c('qry'='gt','gid2'='gid','tid2'='tid')) %>%
     select(gt=qry,gid=gid1,gid2,type,ttype,etype,chrom,start,end,srd)
 to = tg1 %>% bind_rows(tg2)
-
+#
 top = to %>% filter(srd=='+')
 tx = top %>% group_by(gt,gid) %>% summarise(tss=min(start)) %>% ungroup()
 top = top %>% inner_join(tx, by=c('gt','gid')) %>%
     mutate(beg=start-tss+1, end=end-tss+1)
-
+#
 tom = to %>% filter(srd=='-')
 tx = tom %>% group_by(gt,gid) %>% summarise(tss=max(end)) %>% ungroup()
 tom = tom %>% inner_join(tx, by=c('gt','gid')) %>%
@@ -88,21 +89,11 @@ tom = tom %>% inner_join(tx, by=c('gt','gid')) %>%
 
 to = top %>% bind_rows(tom) %>% select(gt,gid,type=etype,ttype,beg,end,gid2) %>%
     arrange(gt, gid, type, beg)
-fo = glue("{dirw}/maize.gene.model.rds")
+fo = glue("{dirw}/maize.genes.{v}.rds")
 saveRDS(to, fo)
 #}}}
-
-
-#{{{ V5 syntelog xref table
-qrys = gts31_ph207
-to = tibble(qry=qrys, tgt='B73v5') %>%
-    mutate(xref = map2(qry, tgt, read_synmap)) %>%
-    unnest(xref)
-to %>% count(qry,tgt) %>% print(n=40)
-
-fo = glue('{dirw}/xref.maize.v5.tsv')
-write_tsv(to, fo)
 #}}}
+
 
 
 
