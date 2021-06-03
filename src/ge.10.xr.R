@@ -62,7 +62,7 @@ write_tsv(xref, fo, na='')
 
 
 #{{{ syntelog xref table - maize
-v = 'v5'
+v = 'v4'
 gt0 = ifelse(v == 'v4', 'B73', 'B73v5')
 qrys = gts31_ph207
 to = tibble(qry=qrys, tgt=gt0) %>%
