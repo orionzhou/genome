@@ -59,7 +59,7 @@ genomes:
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Atauschii/50_annotation/15.nt.fasta
     pgff: /datalus/weiyu//projects/s3/zhoup-genome/Atauschii/50_annotation/15.gff
     pgtf: /datalus/weiyu//projects/s3/zhoup-genome/Atauschii/50_annotation/15.gtf
-    prefix: Aet
+    prefix: chr
     rcfg: /datalus/weiyu//projects/s3/zhoup-genome/Atauschii/55.rds
     salmon: /datalus/weiyu//projects/s3/zhoup-genome/Atauschii/21_dbs/salmon/db
     star: /datalus/weiyu//projects/s3/zhoup-genome/Atauschii/21_dbs/star/
@@ -849,7 +849,7 @@ genomes:
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum/50_annotation/15.nt.fasta
     pgff: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum/50_annotation/15.gff
     pgtf: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum/50_annotation/15.gtf
-    prefix: Ta
+    prefix: chr
     rcfg: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum/55.rds
     salmon: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum/21_dbs/salmon/db
     star: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum/21_dbs/star/
@@ -2169,7 +2169,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_B73/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_B73/21_dbs/salmon/tx2gene.csv
   Zmays_B73v4:
-    alias: B73
+    alias: B73v4
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_B73v4/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_B73v4/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_B73v4/21_dbs/blastn
@@ -2195,7 +2195,7 @@ genomes:
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_B73v4/50_annotation/15.nt.fasta
     pgff: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_B73v4/50_annotation/15.gff
     pgtf: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_B73v4/50_annotation/15.gtf
-    prefix: B
+    prefix: chr
     rcfg: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_B73v4/55.rds
     salmon: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_B73v4/21_dbs/salmon/db
     star: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_B73v4/21_dbs/star/
@@ -2228,7 +2228,7 @@ genomes:
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_B73v5/50_annotation/15.nt.fasta
     pgff: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_B73v5/50_annotation/15.gff
     pgtf: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_B73v5/50_annotation/15.gtf
-    prefix: B
+    prefix: chr
     rcfg: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_B73v5/55.rds
     salmon: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_B73v5/21_dbs/salmon/db
     star: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_B73v5/21_dbs/star/
@@ -2585,7 +2585,7 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_EP1/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_EP1/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_EP1/21_dbs/hisat2/db
-    macs_gsize: 3060819639
+    macs_gsize: 2515815639
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_EP1/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_EP1/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_EP1/50_annotation/15.nt.fasta
@@ -2618,7 +2618,7 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_F7/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_F7/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_F7/21_dbs/hisat2/db
-    macs_gsize: 3018791755
+    macs_gsize: 2455400755
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_F7/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_F7/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_F7/50_annotation/15.nt.fasta
@@ -2888,7 +2888,7 @@ genomes:
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_Mo17/50_annotation/15.nt.fasta
     pgff: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_Mo17/50_annotation/15.gff
     pgtf: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_Mo17/50_annotation/15.gtf
-    prefix: M
+    prefix: chr
     rcfg: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_Mo17/55.rds
     salmon: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_Mo17/21_dbs/salmon/db
     star: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_Mo17/21_dbs/star/
@@ -3179,13 +3179,13 @@ genomes:
     gff: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_PH207/50_annotation/10.gff
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_PH207/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_PH207/21_dbs/hisat2/db
-    macs_gsize: 2588987326
+    macs_gsize: 2199467326
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_PH207/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_PH207/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_PH207/50_annotation/15.nt.fasta
     pgff: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_PH207/50_annotation/15.gff
     pgtf: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_PH207/50_annotation/15.gtf
-    prefix: P
+    prefix: chr
     rcfg: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_PH207/55.rds
     salmon: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_PH207/21_dbs/salmon/db
     star: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_PH207/21_dbs/star/
@@ -3284,7 +3284,7 @@ genomes:
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_W22/50_annotation/15.nt.fasta
     pgff: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_W22/50_annotation/15.gff
     pgtf: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_W22/50_annotation/15.gtf
-    prefix: W
+    prefix: chr
     rcfg: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_W22/55.rds
     salmon: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_W22/21_dbs/salmon/db
     star: /datalus/weiyu//projects/s3/zhoup-genome/Zmays_W22/21_dbs/star/
