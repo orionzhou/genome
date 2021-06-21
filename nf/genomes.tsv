@@ -36,7 +36,7 @@ Taestivum_mace	AABBDD	Triticum aestivum mace	mace	ensembl	50.0	PGSBv2.0			chr		1
 Taestivum_mattis	AABBDD	Triticum aestivum mattis	mattis	ensembl	50.0	PGSBv2.0			chr		1000	ensembl	T											T	T
 Taestivum_norin61	AABBDD	Triticum aestivum norin61	norin61	ensembl	50.0	PGSBv2.0			chr		1000	ensembl	T											T	T
 Taestivum_stanley	AABBDD	Triticum aestivum stanley	stanley	ensembl	50.0	PGSBv2.0			chr		1000	ensembl	T											T	T
-Taestivum_z	AABBDD	Triticum aestivum synthetic	Taz	local			raw_Atauschii/raw_AS60/combine_Ta_genome.fa	raw_Atauschii/raw_AS60/combine_Ta_genome.gff3	chr		1000	ensembl	T	T	T					T	T	T		T	T
+Taestivum_z	AABBDD	Triticum aestivum synthetic	Taz	local			raw_Atauschii/raw_AS60/combine_Ta_genome.fa.gz	raw_Atauschii/raw_AS60/combine_Ta_genome.gff3.gz	chr		1000	ensembl	T	T	T					T	T	T		T	T
 Tspelta	AABBDD	Triticum spelta	spelta	ensembl	50.0	PGSBv2.0			chr		1000	ensembl	T											T	T
 Taestivum_cadenza	AABBDD	Triticum aestivum cadenza	cadenza	ensembl	50.0	EIv1.1			chr		1000	ensembl	T											T	T
 Taestivum_claire	AABBDD	Triticum aestivum claire	claire	ensembl	50.0	EIv1.1			chr		1000	ensembl	T											T	T
@@ -44,7 +44,7 @@ Taestivum_paragon	AABBDD	Triticum aestivum paragon	paragon	ensembl	50.0	EIv1.1		
 Taestivum_robigus	AABBDD	Triticum aestivum robigus	robigus	ensembl	50.0	EIv1.1			chr		1000	ensembl	T											T	T
 Taestivum_weebil	AABBDD	Triticum aestivum weebil	weebil	ensembl	50.0	WeebilV1			chr		1000	ensembl	T											T	T
 Turartu	AA	Triticum urartu	urartu	ensembl	50.0	ASM34745v1			chr		1000	ensembl	T											T	T
-Atauschii_AS60	DD	Aegilops tauschii	as60	local			raw_Atauschii/raw_AS60/AS60.final.fasta	raw_Atauschii/raw_AS60/final.as60.gene.gff3	chr		1000	nogene_noexon	T	T	T			T	T	T	T			T	T
+Atauschii_AS60	DD	Aegilops tauschii	as60	local			raw_Atauschii/raw_AS60/AS60.final.fasta.gz	raw_Atauschii/raw_AS60/final.as60.gene.gff3.gz	chr		1000	nogene_noexon	T	T	T			T	T	T	T			T	T
 Taestivum_D	DD	Triticum aestivum	Ta	local			raw_wheat/Taestivum_D.fa.gz	raw_wheat/Taestivum_D.gff.gz	chr		1000	ensembl	T	T				T						T	T
 Taestivum_arinalrfor_D	DD	Triticum aestivum arinalrfor	arinalrfor	local			raw_wheat/Taestivum_arinalrfor_D.fa.gz	raw_wheat/Taestivum_arinalrfor_D.gff.gz	chr		1000	ensembl	T	T										T	T
 Taestivum_jagger_D	DD	Triticum aestivum jagger	jagger	local			raw_wheat/Taestivum_jagger_D.fa.gz	raw_wheat/Taestivum_jagger_D.gff.gz	chr		1000	ensembl	T	T										T	T
