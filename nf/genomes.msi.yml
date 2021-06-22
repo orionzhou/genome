@@ -1692,6 +1692,38 @@ genomes:
     star: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_weebil/21_dbs/star/
     tss: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_weebil/50_annotation/10.tss.bed
     tx2gene: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_weebil/21_dbs/salmon/tx2gene.csv
+  Taestivum_z:
+    alias: Taz
+    bed: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/50_annotation/10.bed
+    bismark: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/21_dbs/bismark
+    blastn: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/21_dbs/blastn
+    blastp: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/21_dbs/blastp
+    blat: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/21_dbs/blat/db.2bit
+    bwa: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/21_dbs/bwa/db
+    faa: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/50_annotation/10.aa.fasta
+    fasta: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/10.fasta
+    fasta_idx: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/10.fasta.fai
+    fc_group_features: gene_id
+    fc_group_features_type: gene_biotype
+    fna: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/50_annotation/10.nt.fasta
+    gap_bed: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/15_intervals/11.gap.bed
+    gatk: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/21_dbs/gatk/
+    genome_bed: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/15_intervals/01.chrom.bed
+    genome_sizes: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/15_intervals/01.chrom.sizes
+    gff: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/50_annotation/10.gff
+    gtf: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/50_annotation/10.gtf
+    hisat2: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/21_dbs/hisat2/db
+    pbed: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/50_annotation/15.bed
+    pfaa: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/50_annotation/15.aa.fasta
+    pfna: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/50_annotation/15.nt.fasta
+    pgff: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/50_annotation/15.gff
+    pgtf: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/50_annotation/15.gtf
+    prefix: chr
+    rcfg: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/55.rds
+    salmon: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/21_dbs/salmon/db
+    star: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/21_dbs/star/
+    tss: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/50_annotation/10.tss.bed
+    tx2gene: /home/springer/zhoux379/projects/s3/zhoup-genome/Taestivum_z/21_dbs/salmon/tx2gene.csv
   Tdicoccoides:
     alias: dicoccoides
     bed: /home/springer/zhoux379/projects/s3/zhoup-genome/Tdicoccoides/50_annotation/10.bed
@@ -2568,7 +2600,7 @@ genomes:
     gff: /home/springer/zhoux379/projects/s3/zhoup-genome/Zmays_EP1/50_annotation/10.gff
     gtf: /home/springer/zhoux379/projects/s3/zhoup-genome/Zmays_EP1/50_annotation/10.gtf
     hisat2: /home/springer/zhoux379/projects/s3/zhoup-genome/Zmays_EP1/21_dbs/hisat2/db
-    macs_gsize: 3060819639
+    macs_gsize: 2515815639
     pbed: /home/springer/zhoux379/projects/s3/zhoup-genome/Zmays_EP1/50_annotation/15.bed
     pfaa: /home/springer/zhoux379/projects/s3/zhoup-genome/Zmays_EP1/50_annotation/15.aa.fasta
     pfna: /home/springer/zhoux379/projects/s3/zhoup-genome/Zmays_EP1/50_annotation/15.nt.fasta
@@ -2601,7 +2633,7 @@ genomes:
     gff: /home/springer/zhoux379/projects/s3/zhoup-genome/Zmays_F7/50_annotation/10.gff
     gtf: /home/springer/zhoux379/projects/s3/zhoup-genome/Zmays_F7/50_annotation/10.gtf
     hisat2: /home/springer/zhoux379/projects/s3/zhoup-genome/Zmays_F7/21_dbs/hisat2/db
-    macs_gsize: 3018791755
+    macs_gsize: 2455400755
     pbed: /home/springer/zhoux379/projects/s3/zhoup-genome/Zmays_F7/50_annotation/15.bed
     pfaa: /home/springer/zhoux379/projects/s3/zhoup-genome/Zmays_F7/50_annotation/15.aa.fasta
     pfna: /home/springer/zhoux379/projects/s3/zhoup-genome/Zmays_F7/50_annotation/15.nt.fasta
@@ -3162,7 +3194,7 @@ genomes:
     gff: /home/springer/zhoux379/projects/s3/zhoup-genome/Zmays_PH207/50_annotation/10.gff
     gtf: /home/springer/zhoux379/projects/s3/zhoup-genome/Zmays_PH207/50_annotation/10.gtf
     hisat2: /home/springer/zhoux379/projects/s3/zhoup-genome/Zmays_PH207/21_dbs/hisat2/db
-    macs_gsize: 2588987326
+    macs_gsize: 2199467326
     pbed: /home/springer/zhoux379/projects/s3/zhoup-genome/Zmays_PH207/50_annotation/15.bed
     pfaa: /home/springer/zhoux379/projects/s3/zhoup-genome/Zmays_PH207/50_annotation/15.aa.fasta
     pfna: /home/springer/zhoux379/projects/s3/zhoup-genome/Zmays_PH207/50_annotation/15.nt.fasta
