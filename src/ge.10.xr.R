@@ -2,22 +2,9 @@ source('functions.R')
 dirw = glue('{dirp}/data2/syntelog')
 gcfg = read_genome_conf()
 #{{{ functions
-read_synmap2 <- function(qry, tgt='B73', diri='~/projects/wgc/data/raw') {
+read_synmap <- function(qry, tgt='Zmays_B73', diri='~/projects/wgc/data/raw') {
     #{{{
-fi = sprintf("%s/Zmays_%s-Zmays_%s/xref.t.tsv", diri, qry, tgt)
-read_tsv(fi, col_names=c('tid1','tid2')) %>%
-    filter(tid2 != '.') %>%
-    mutate(type = ifelse(str_sub(tid2, -1, -1)=="'", 'rbh','syn')) %>%
-    mutate(tid2 = str_replace(tid2, "'", '')) %>%
-    separate(tid1, c('gid1','iso1'), sep="[\\.\\_]", remove=F) %>%
-    separate(tid2, c('gid2','iso2'), sep="[\\.\\_]", remove=F) %>%
-    select(gid1, gid2, type, tid1, tid2)
-    #}}}
-}
-read_synmap <- function(qry, tgt='B73', maize=T, diri='~/projects/wgc/data/raw') {
-    #{{{
-    fi = ifelse(maize, glue("{diri}/Zmays_{qry}-Zmays_{tgt}/xref.t.tsv"),
-                glue("{diri}/{qry}-{tgt}/xref.t.tsv"))
+    fi = glue("{diri}/{qry}-{tgt}/xref.t.tsv")
     ti = read_tsv(fi, col_names=c('tid1','tid2', 'type')) %>%
         filter(tid2 != '.')
     if (qry == 'Atauschii_AS60') {
@@ -61,91 +48,65 @@ write_tsv(xref, fo, na='')
 #}}}
 
 
-#{{{ syntelog xref table - maize
-v = 'v4'
-gt0 = ifelse(v == 'v4', 'B73', 'B73v5')
-qrys = gts31_ph207
-to = tibble(qry=qrys, tgt=gt0) %>%
-    mutate(xref = map2(qry, tgt, read_synmap, maize=T)) %>%
-    unnest(xref)
-to %>% count(qry,tgt,type) %>% spread(type,n) %>% print(n=40)
+#{{{ syntelog xref table
+org='maize'; gt0="Zmays_B73"; v='v4'
+org='maize'; gt0="Zmays_B73v5"; v='v5'
+org='wheat'; gt0="Taestivum_D"; v='csd'
+#org='wheat'; gt0="Atauschii_AS60"; v='as60'
 
-fo = glue('{dirw}/xref.maize.{v}.tsv')
-write_tsv(to, fo)
-
-#{{{ make xref gene model tibble (v4/v5)
-#fi = glue('{dirw}/xref.maize.{v}.tsv')
-#ti = read_tsv(fi)
-ti = to
-
-gts = c(gt0,gts31_ph207)
-tg = tibble(gt=gts) %>% mutate(fi=glue("{dirg}/Zmays_{gt}/50_annotation/15.tsv")) %>%
-    mutate(x = map(fi, read_tsv)) %>%
-    select(gt, x) %>% unnest(x)
-
-tg1 = tg %>% filter(gt==gt0) %>% select(-tid)
-tg2 = ti %>% inner_join(tg, by=c('qry'='gt','gid2'='gid','tid2'='tid')) %>%
-    select(gt=qry,gid=gid1,gid2,type,ttype,etype,chrom,start,end,srd)
-to = tg1 %>% bind_rows(tg2)
-#
-top = to %>% filter(srd=='+')
-tx = top %>% group_by(gt,gid) %>% summarise(tss=min(start)) %>% ungroup()
-top = top %>% inner_join(tx, by=c('gt','gid')) %>%
-    mutate(beg=start-tss+1, end=end-tss+1)
-#
-tom = to %>% filter(srd=='-')
-tx = tom %>% group_by(gt,gid) %>% summarise(tss=max(end)) %>% ungroup()
-tom = tom %>% inner_join(tx, by=c('gt','gid')) %>%
-    mutate(beg=tss-end+1, end=tss-start+1)
-
-to = top %>% bind_rows(tom) %>% select(gt,gid,type=etype,ttype,beg,end,gid2) %>%
-    arrange(gt, gid, type, beg)
-fo = glue("{dirw}/maize.genes.{v}.rds")
-saveRDS(to, fo)
-#}}}
-#}}}
-
-#{{{ syntelog xref table - wheat
-v = 'csd'
-v = 'as60'
-gt0 = ifelse(v == 'csd', 'Taestivum_D', 'Atauschii_AS60')
-qrys = gts_wheat26[!gts_wheat26 %in% gt0]
-to = tibble(qry=qrys, tgt=gt0) %>%
-    mutate(xref = map2(qry, tgt, read_synmap, maize=F)) %>%
-    unnest(xref)
-to %>% count(qry,tgt,type) %>% spread(type,n) %>% print(n=40)
-
-fo = glue('{dirw}/xref.wheat.{v}.tsv')
-write_tsv(to, fo)
-
-#{{{ make xref gene model tibble
-ti = to
-#
+qrys = if(org=='maize') glue("Zmays_{gts31_ph207}") else gts_wheat26[!gts_wheat26 %in% gt0]
 gts = c(gt0,qrys)
+to = tibble(qry=qrys, tgt=gt0) %>%
+    mutate(xref = map2(qry, tgt, read_synmap)) %>%
+    unnest(xref)
+to %>% count(qry,tgt,type) %>% spread(type,n) %>% print(n=40)
+
+fo = glue('{dirw}/xref.{org}.{v}.tsv')
+write_tsv(to, fo)
+#}}}
+
+#{{{ syntelog xref gene structure tibble
+ti = to
+fi = glue('{dirw}/xref.{org}.{v}.tsv')
+ti = read_tsv(fi)
+
 tg = tibble(gt=gts) %>% mutate(fi=glue("{dirg}/{gt}/50_annotation/15.tsv")) %>%
     mutate(x = map(fi, read_tsv)) %>%
     select(gt, x) %>% unnest(x)
+tg = tg %>% mutate(gid = str_replace(gid, "\\.1$", ""))
+tg2 = tg %>% group_by(gt,gid,tid,ttype) %>% nest() %>% ungroup()
+#
+tg3a = tg2 %>% filter(gt==gt0) %>% select(-tid, -ttype)
+tg3b = ti %>% inner_join(tg2, by=c('qry'='gt','gid2'='gid','tid2'='tid')) %>%
+    select(gt=qry,gid=gid1,gid2,type,data)
+#
+to = tg3a %>% bind_rows(tg3b) %>%
+    select(gt, gid, type, gid2, gene=data)
+to %>% count(gt,type) %>% spread(type,n) %>% print(n=40)
+#
+fo = glue("{dirw}/xref.{org}.{v}.rds")
+saveRDS(to, fo)
+#}}}
 
-tg1 = tg %>% filter(gt==gt0) %>% select(-tid)
+#{{{ # obsolete TSS-based locations
+tg1 = tg %>% filter(gt==gt0) %>% select(-tid) %>% rename(cstart=start,cend=end)
 tg2 = ti %>% inner_join(tg, by=c('qry'='gt','gid2'='gid','tid2'='tid')) %>%
-    select(gt=qry,gid=gid1,gid2,type,ttype,etype,chrom,start,end,srd)
+    select(gt=qry,gid=gid1,gid2,type,ttype,etype,chrom,cstart=start,cend=end,srd)
 to = tg1 %>% bind_rows(tg2)
 #
 top = to %>% filter(srd=='+')
-tx = top %>% group_by(gt,gid) %>% summarise(tss=min(start)) %>% ungroup()
+tx = top %>% group_by(gt,gid) %>% summarise(tss=min(cstart)) %>% ungroup()
 top = top %>% inner_join(tx, by=c('gt','gid')) %>%
-    mutate(beg=start-tss+1, end=end-tss+1)
+    mutate(beg=cstart-tss+1, end=cend-tss+1)
 #
 tom = to %>% filter(srd=='-')
-tx = tom %>% group_by(gt,gid) %>% summarise(tss=max(end)) %>% ungroup()
+tx = tom %>% group_by(gt,gid) %>% summarise(tss=max(cend)) %>% ungroup()
 tom = tom %>% inner_join(tx, by=c('gt','gid')) %>%
-    mutate(beg=tss-end+1, end=tss-start+1)
+    mutate(beg=tss-cend+1, end=tss-cstart+1)
 
-to = top %>% bind_rows(tom) %>% select(gt,gid,type=etype,ttype,beg,end,gid2) %>%
+to = top %>% bind_rows(tom) %>%
+    select(gt,gid,type=etype,ttype,beg,end,gid2,chrom,cstart,cend,srd) %>%
     arrange(gt, gid, type, beg)
-fo = glue("{dirw}/wheat.genes.{v}.rds")
-saveRDS(to, fo)
-#}}}
 #}}}
 
 

@@ -1,7 +1,0 @@
-chr1A
-chr2A
-chr3A
-chr4A
-chr5A
-chr6A
-chr7A
