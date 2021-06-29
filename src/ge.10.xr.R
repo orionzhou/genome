@@ -7,9 +7,7 @@ read_synmap <- function(qry, tgt='Zmays_B73', diri='~/projects/wgc/data/raw') {
     fi = glue("{diri}/{qry}-{tgt}/xref.t.tsv")
     ti = read_tsv(fi, col_names=c('tid1','tid2', 'type')) %>%
         filter(tid2 != '.')
-    if (qry == 'Atauschii_AS60') {
-        ti = ti %>% separate(tid2, c('iso2','gid2'), sep="[\\.]", remove=F)
-    } else if (str_detect(qry, '^Atauschii_')) {
+    if (str_detect(qry, '^Atauschii_')) {
         ti = ti %>% separate(tid2, c('gid2','iso2'), sep="[\\.]", remove=F)
     } else {
         ti = ti %>% separate(tid2, c('gid2','iso2'), sep="[\\.\\_]", remove=F)
@@ -73,7 +71,6 @@ ti = read_tsv(fi)
 tg = tibble(gt=gts) %>% mutate(fi=glue("{dirg}/{gt}/50_annotation/15.tsv")) %>%
     mutate(x = map(fi, read_tsv)) %>%
     select(gt, x) %>% unnest(x)
-tg = tg %>% mutate(gid = str_replace(gid, "\\.1$", ""))
 tg2 = tg %>% group_by(gt,gid,tid,ttype) %>% nest() %>% ungroup()
 #
 tg3a = tg2 %>% filter(gt==gt0) %>% select(-tid, -ttype)
