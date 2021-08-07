@@ -1,0 +1,14 @@
+chr1A
+chr2A
+chr3A
+chr4A
+chr5A
+chr6A
+chr7A
+chr1B
+chr2B
+chr3B
+chr4B
+chr5B
+chr6B
+chr7B

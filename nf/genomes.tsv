@@ -18,14 +18,15 @@ Sviridis_MEV		Setaria viridis	Svm	local			raw/Sviridis_ME034v/raw.fas	raw/Svirid
 Slycopersicum		Solanum lycopersicum	Sl	ensembl	50.0	SL3.0			Sl		10000	ensembl	T											T	T
 Sbicolor		Sorghum bicolor	Sb	ensembl	50.0	Sorghum_bicolor_NCBIv3			Sb		10000	ensembl	T											T	T
 Vvinifera		Vitis vinifera	Vv	ensembl	50.0	12X			Vv		10000	ensembl	T											T	T
-Hvulgare	HH	Hordeum vulgare	Hv	ensembl	50.0	IBSC_v2			Hv		10000	ensembl	T	T				T						T	T
-Atauschii	DD	Aegilops tauschii	al878	ensembl	50.0	Aet_v4.0			chr		1000	ensembl	T	T	T			T			T	T		T	T
+Hvulgare	HH	Hordeum vulgare	Hv	ensembl	50.0	IBSC_v2			Hv		10000	ensembl	T	T				T		T	T			T	T
+Atauschii	DD	Aegilops tauschii	al878	ensembl	50.0	Aet_v4.0			chr		1000	ensembl	T	T	T			T		T	T	T		T	T
 Atauschii_AY61	DD	Aegilops tauschii	ay61	local			raw_Atauschii/Atauschii_AY61/AY61.genome.fa.gz	raw_Atauschii/Atauschii_AY61/AY61.all_gene.gff	chr		1000	ensembl	T	T				T						T	T
 Atauschii_T093	DD	Aegilops tauschii	t093	local			raw_Atauschii/Atauschii_T093/T093.genome.fa.gz	raw_Atauschii/Atauschii_T093/T093.all_gene.gff	chr		1000	ensembl	T	T				T						T	T
 Atauschii_XJ02	DD	Aegilops tauschii	xj02	local			raw_Atauschii/Atauschii_XJ02/XJ02.genome.fa.gz	raw_Atauschii/Atauschii_XJ02/XJ02.all_gene.gff	chr		1000	ensembl	T	T				T						T	T
 Atauschii_AY17	DD	Aegilops tauschii	ay17	local			raw_Atauschii/Atauschii_AY17/AY17.genome.fa.gz	raw_Atauschii/Atauschii_AY17/AY17.all_gene.gff	chr		1000	ensembl	T	T				T						T	T
 Tdicoccoides	AABB	Triticum dicoccoides	dicoccoides	ensembl	50.0	WEWSeq_v.1.0			chr		1000	ensembl	T											T	T
-Tturgidum	AABB	Triticum turgidum	turgidum	ensembl	50.0	Svevo.v1			chr		1000	ensembl	T											T	T
+Tturgidum	AABB	Triticum turgidum	turgidum	ensembl	50.0	Svevo.v1			chr		1000	ensembl	T							T	T			T	T
+Taestivum_AB	AABB		TaAB	local			raw_wheat/Taestivum_AB.fa.gz	raw_wheat/Taestivum_AB.gff.gz	chr		1000	ensembl	T	T	T			T		T	T			T	T
 Taestivum	AABBDD	Triticum aestivum	Ta	ensembl	50.0	IWGSC			chr		1000	ensembl	T	T	T			T		T	T	T		T	T
 Taestivum_arinalrfor	AABBDD	Triticum aestivum arinalrfor	arinalrfor	ensembl	50.0	PGSBv2.0			chr		1000	ensembl	T											T	T
 Taestivum_jagger	AABBDD	Triticum aestivum jagger	jagger	ensembl	50.0	PGSBv2.0			chr		1000	ensembl	T											T	T
@@ -44,8 +45,8 @@ Taestivum_paragon	AABBDD	Triticum aestivum paragon	paragon	ensembl	50.0	EIv1.1		
 Taestivum_robigus	AABBDD	Triticum aestivum robigus	robigus	ensembl	50.0	EIv1.1			chr		1000	ensembl	T											T	T
 Taestivum_weebil	AABBDD	Triticum aestivum weebil	weebil	ensembl	50.0	WeebilV1			chr		1000	ensembl	T											T	T
 Turartu	AA	Triticum urartu	urartu	ensembl	50.0	ASM34745v1			chr		1000	ensembl	T											T	T
-Atauschii_AS60	DD	Aegilops tauschii	as60	local			raw_Atauschii/raw_AS60/AS60.final.fasta.gz	raw_Atauschii/raw_AS60/final.as60.gene.gff3.gz	chr		1000	as60	T	T	T			T	T	T	T			T	T
-Taestivum_D	DD	Triticum aestivum	Ta	local			raw_wheat/Taestivum_D.fa.gz	raw_wheat/Taestivum_D.gff.gz	chr		1000	ensembl	T	T				T						T	T
+Atauschii_AS60	DD	Aegilops tauschii	as60	local			raw_Atauschii/raw_AS60/AS60.final.fasta.gz	raw_Atauschii/raw_AS60/final.as60.gene.gff3.gz	chr		1000	as60	T	T	T			T		T	T			T	T
+Taestivum_D	DD	Triticum aestivum	TaD	local			raw_wheat/Taestivum_D.fa.gz	raw_wheat/Taestivum_D.gff.gz	chr		1000	ensembl	T	T	T			T		T	T			T	T
 Taestivum_arinalrfor_D	DD	Triticum aestivum arinalrfor	arinalrfor	local			raw_wheat/Taestivum_arinalrfor_D.fa.gz	raw_wheat/Taestivum_arinalrfor_D.gff.gz	chr		1000	ensembl	T	T										T	T
 Taestivum_jagger_D	DD	Triticum aestivum jagger	jagger	local			raw_wheat/Taestivum_jagger_D.fa.gz	raw_wheat/Taestivum_jagger_D.gff.gz	chr		1000	ensembl	T	T										T	T
 Taestivum_julius_D	DD	Triticum aestivum julius	julius	local			raw_wheat/Taestivum_julius_D.fa.gz	raw_wheat/Taestivum_julius_D.gff.gz	chr		1000	ensembl	T	T										T	T

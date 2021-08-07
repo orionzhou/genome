@@ -942,6 +942,41 @@ genomes:
     star: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_A/21_dbs/star/
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_A/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_A/21_dbs/salmon/tx2gene.csv
+  Taestivum_AB:
+    alias: TaAB
+    bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/50_annotation/10.bed
+    bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/21_dbs/bismark
+    blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/21_dbs/blastn
+    blastp: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/21_dbs/blastp
+    blat: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/21_dbs/blat/db.2bit
+    bwa: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/21_dbs/bwa/db
+    faa: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/50_annotation/10.aa.fasta
+    fasta: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/10.fasta
+    fasta_idx: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/10.fasta.fai
+    fc_group_features: gene_id
+    fc_group_features_type: gene_biotype
+    fna: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/50_annotation/10.nt.fasta
+    gap_bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/15_intervals/11.gap.bed
+    gatk: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/21_dbs/gatk/
+    genome_bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/15_intervals/01.chrom.bed
+    genome_sizes: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/15_intervals/01.chrom.sizes
+    gff: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/50_annotation/10.gff
+    gff_db: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/50_annotation/10.gff.db
+    gtf: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/50_annotation/10.gtf
+    hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/21_dbs/hisat2/db
+    macs_gsize: 10115206116
+    pbed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/50_annotation/15.bed
+    pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/50_annotation/15.aa.fasta
+    pfna: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/50_annotation/15.nt.fasta
+    pgff: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/50_annotation/15.gff
+    pgff_db: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/50_annotation/15.gff.db
+    pgtf: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/50_annotation/15.gtf
+    prefix: chr
+    rcfg: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/55.rds
+    salmon: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/21_dbs/salmon/db
+    star: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/21_dbs/star/
+    tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/50_annotation/10.tss.bed
+    tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/21_dbs/salmon/tx2gene.csv
   Taestivum_B:
     alias: Ta
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_B/50_annotation/10.bed
@@ -978,7 +1013,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_B/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_B/21_dbs/salmon/tx2gene.csv
   Taestivum_D:
-    alias: Ta
+    alias: TaD
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_D/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_D/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_D/21_dbs/blastn

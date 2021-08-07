@@ -1,13 +1,17 @@
 #!/bin/bash -l
-#SBATCH -N 1 -n 1 -c 4
-#SBATCH --time=10:00:00
-#SBATCH --mem=30gb
-#SBATCH -p small,amdsmall
-#SBATCH --mail-type=FAIL
-#SBATCH --mail-user=pzhou@caas.cn
-#SBATCH -o job.out
+#$ -N test
+#$ -cwd
+#$ -S /bin/bash
+#$ -V
+#$ -q all.q
+#$ -l h_vmem=20G
+#$ -l s_rt=10:00:00
+#$ -pe smp 4
+#$ -m a
+#$ -M pzhou@caas.cn
+#$ -j y
+#$ -o job.out
 
-echo ${SLURM_JOBID}
 cpu=4
 
 source activate genome
