@@ -908,7 +908,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum/21_dbs/salmon/tx2gene.csv
   Taestivum_A:
-    alias: Ta
+    alias: TaA
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_A/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_A/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_A/21_dbs/blastn
@@ -978,7 +978,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_AB/21_dbs/salmon/tx2gene.csv
   Taestivum_B:
-    alias: Ta
+    alias: TaB
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_B/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_B/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_B/21_dbs/blastn
@@ -1048,7 +1048,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_D/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_D/21_dbs/salmon/tx2gene.csv
   Taestivum_arinalrfor:
-    alias: arinalrfor
+    alias: Taa
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_arinalrfor/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_arinalrfor/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_arinalrfor/21_dbs/blastn
@@ -1083,7 +1083,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_arinalrfor/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_arinalrfor/21_dbs/salmon/tx2gene.csv
   Taestivum_arinalrfor_D:
-    alias: arinalrfor
+    alias: TaaD
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_arinalrfor_D/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_arinalrfor_D/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_arinalrfor_D/21_dbs/blastn
@@ -1118,7 +1118,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_arinalrfor_D/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_arinalrfor_D/21_dbs/salmon/tx2gene.csv
   Taestivum_cadenza:
-    alias: cadenza
+    alias: Tac
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_cadenza/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_cadenza/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_cadenza/21_dbs/blastn
@@ -1152,7 +1152,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_cadenza/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_cadenza/21_dbs/salmon/tx2gene.csv
   Taestivum_claire:
-    alias: claire
+    alias: Tac
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_claire/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_claire/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_claire/21_dbs/blastn
@@ -1186,7 +1186,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_claire/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_claire/21_dbs/salmon/tx2gene.csv
   Taestivum_jagger:
-    alias: jagger
+    alias: Taj
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_jagger/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_jagger/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_jagger/21_dbs/blastn
@@ -1221,7 +1221,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_jagger/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_jagger/21_dbs/salmon/tx2gene.csv
   Taestivum_jagger_D:
-    alias: jagger
+    alias: TajD
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_jagger_D/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_jagger_D/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_jagger_D/21_dbs/blastn
@@ -1256,7 +1256,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_jagger_D/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_jagger_D/21_dbs/salmon/tx2gene.csv
   Taestivum_julius:
-    alias: julius
+    alias: Taj
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_julius/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_julius/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_julius/21_dbs/blastn
@@ -1291,7 +1291,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_julius/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_julius/21_dbs/salmon/tx2gene.csv
   Taestivum_julius_D:
-    alias: julius
+    alias: TajD
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_julius_D/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_julius_D/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_julius_D/21_dbs/blastn
@@ -1326,7 +1326,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_julius_D/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_julius_D/21_dbs/salmon/tx2gene.csv
   Taestivum_lancer:
-    alias: lancer
+    alias: Tal
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_lancer/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_lancer/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_lancer/21_dbs/blastn
@@ -1361,7 +1361,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_lancer/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_lancer/21_dbs/salmon/tx2gene.csv
   Taestivum_lancer_D:
-    alias: lancer
+    alias: TalD
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_lancer_D/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_lancer_D/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_lancer_D/21_dbs/blastn
@@ -1396,7 +1396,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_lancer_D/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_lancer_D/21_dbs/salmon/tx2gene.csv
   Taestivum_landmark:
-    alias: landmark
+    alias: Tal
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_landmark/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_landmark/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_landmark/21_dbs/blastn
@@ -1431,7 +1431,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_landmark/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_landmark/21_dbs/salmon/tx2gene.csv
   Taestivum_landmark_D:
-    alias: landmark
+    alias: TalD
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_landmark_D/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_landmark_D/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_landmark_D/21_dbs/blastn
@@ -1466,7 +1466,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_landmark_D/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_landmark_D/21_dbs/salmon/tx2gene.csv
   Taestivum_mace:
-    alias: mace
+    alias: Tam
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_mace/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_mace/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_mace/21_dbs/blastn
@@ -1501,7 +1501,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_mace/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_mace/21_dbs/salmon/tx2gene.csv
   Taestivum_mace_D:
-    alias: mace
+    alias: TamD
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_mace_D/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_mace_D/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_mace_D/21_dbs/blastn
@@ -1536,7 +1536,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_mace_D/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_mace_D/21_dbs/salmon/tx2gene.csv
   Taestivum_mattis:
-    alias: mattis
+    alias: Tam
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_mattis/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_mattis/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_mattis/21_dbs/blastn
@@ -1571,7 +1571,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_mattis/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_mattis/21_dbs/salmon/tx2gene.csv
   Taestivum_mattis_D:
-    alias: mattis
+    alias: TamD
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_mattis_D/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_mattis_D/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_mattis_D/21_dbs/blastn
@@ -1606,7 +1606,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_mattis_D/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_mattis_D/21_dbs/salmon/tx2gene.csv
   Taestivum_norin61:
-    alias: norin61
+    alias: Tan
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_norin61/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_norin61/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_norin61/21_dbs/blastn
@@ -1641,7 +1641,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_norin61/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_norin61/21_dbs/salmon/tx2gene.csv
   Taestivum_norin61_D:
-    alias: norin61
+    alias: TanD
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_norin61_D/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_norin61_D/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_norin61_D/21_dbs/blastn
@@ -1676,7 +1676,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_norin61_D/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_norin61_D/21_dbs/salmon/tx2gene.csv
   Taestivum_paragon:
-    alias: paragon
+    alias: Tap
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_paragon/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_paragon/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_paragon/21_dbs/blastn
@@ -1710,7 +1710,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_paragon/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_paragon/21_dbs/salmon/tx2gene.csv
   Taestivum_robigus:
-    alias: robigus
+    alias: Tar
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_robigus/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_robigus/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_robigus/21_dbs/blastn
@@ -1744,7 +1744,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_robigus/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_robigus/21_dbs/salmon/tx2gene.csv
   Taestivum_stanley:
-    alias: stanley
+    alias: Tas
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_stanley/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_stanley/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_stanley/21_dbs/blastn
@@ -1779,7 +1779,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_stanley/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_stanley/21_dbs/salmon/tx2gene.csv
   Taestivum_stanley_D:
-    alias: stanley
+    alias: TasD
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_stanley_D/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_stanley_D/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_stanley_D/21_dbs/blastn
@@ -1814,7 +1814,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_stanley_D/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_stanley_D/21_dbs/salmon/tx2gene.csv
   Taestivum_weebil:
-    alias: weebil
+    alias: Taw
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_weebil/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_weebil/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_weebil/21_dbs/blastn
@@ -1869,6 +1869,7 @@ genomes:
     gff_db: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_z/50_annotation/10.gff.db
     gtf: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_z/50_annotation/10.gtf
     hisat2: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_z/21_dbs/hisat2/db
+    macs_gsize: 14058705103
     pbed: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_z/50_annotation/15.bed
     pfaa: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_z/50_annotation/15.aa.fasta
     pfna: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_z/50_annotation/15.nt.fasta
@@ -1882,7 +1883,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_z/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Taestivum_z/21_dbs/salmon/tx2gene.csv
   Tdicoccoides:
-    alias: dicoccoides
+    alias: Td
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Tdicoccoides/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Tdicoccoides/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Tdicoccoides/21_dbs/blastn
@@ -1917,7 +1918,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Tdicoccoides/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Tdicoccoides/21_dbs/salmon/tx2gene.csv
   Tdicoccoides_A:
-    alias: dicoccoides
+    alias: TdA
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Tdicoccoides_A/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Tdicoccoides_A/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Tdicoccoides_A/21_dbs/blastn
@@ -1952,7 +1953,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Tdicoccoides_A/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Tdicoccoides_A/21_dbs/salmon/tx2gene.csv
   Tdicoccoides_B:
-    alias: dicoccoides
+    alias: TdB
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Tdicoccoides_B/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Tdicoccoides_B/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Tdicoccoides_B/21_dbs/blastn
@@ -1987,7 +1988,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Tdicoccoides_B/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Tdicoccoides_B/21_dbs/salmon/tx2gene.csv
   Tspelta:
-    alias: spelta
+    alias: Ts
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Tspelta/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Tspelta/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Tspelta/21_dbs/blastn
@@ -2022,7 +2023,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Tspelta/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Tspelta/21_dbs/salmon/tx2gene.csv
   Tspelta_A:
-    alias: spelta
+    alias: TsA
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Tspelta_A/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Tspelta_A/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Tspelta_A/21_dbs/blastn
@@ -2057,7 +2058,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Tspelta_A/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Tspelta_A/21_dbs/salmon/tx2gene.csv
   Tspelta_B:
-    alias: spelta
+    alias: TsB
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Tspelta_B/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Tspelta_B/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Tspelta_B/21_dbs/blastn
@@ -2092,7 +2093,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Tspelta_B/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Tspelta_B/21_dbs/salmon/tx2gene.csv
   Tspelta_D:
-    alias: spelta
+    alias: TsD
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Tspelta_D/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Tspelta_D/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Tspelta_D/21_dbs/blastn
@@ -2127,7 +2128,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Tspelta_D/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Tspelta_D/21_dbs/salmon/tx2gene.csv
   Tturgidum:
-    alias: turgidum
+    alias: Tt
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Tturgidum/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Tturgidum/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Tturgidum/21_dbs/blastn
@@ -2162,7 +2163,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Tturgidum/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Tturgidum/21_dbs/salmon/tx2gene.csv
   Tturgidum_A:
-    alias: turgidum
+    alias: TtA
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Tturgidum_A/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Tturgidum_A/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Tturgidum_A/21_dbs/blastn
@@ -2197,7 +2198,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Tturgidum_A/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Tturgidum_A/21_dbs/salmon/tx2gene.csv
   Tturgidum_B:
-    alias: turgidum
+    alias: TtB
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Tturgidum_B/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Tturgidum_B/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Tturgidum_B/21_dbs/blastn
@@ -2232,7 +2233,7 @@ genomes:
     tss: /datalus/weiyu//projects/s3/zhoup-genome/Tturgidum_B/50_annotation/10.tss.bed
     tx2gene: /datalus/weiyu//projects/s3/zhoup-genome/Tturgidum_B/21_dbs/salmon/tx2gene.csv
   Turartu:
-    alias: urartu
+    alias: Tu
     bed: /datalus/weiyu//projects/s3/zhoup-genome/Turartu/50_annotation/10.bed
     bismark: /datalus/weiyu//projects/s3/zhoup-genome/Turartu/21_dbs/bismark
     blastn: /datalus/weiyu//projects/s3/zhoup-genome/Turartu/21_dbs/blastn
